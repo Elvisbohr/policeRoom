@@ -1,0 +1,320 @@
+/* pages/dang/dang.wxss */
+
+page, .pages {
+  width: 100%;
+  height: 100%;
+}
+
+.banner {
+  width: 100%;
+  height: 22%;
+}
+
+.banner swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.banner .heng {
+  width: 100%;
+  height: 20px;
+  position: relative;
+  margin-top: -20px;
+}
+
+.banner .heng image {
+  width: 100%;
+  height: 100%;
+}
+
+.slide-image {
+  width: 100%;
+  height: 100%;
+}
+
+.banner image {
+  width: 100%;
+}
+
+/*要闻*/
+
+.subNav {
+  width: 100%;
+  height: 6%;
+  font-size: 0.8rem;
+  overflow: hidden;
+  display: table;
+}
+
+.subNav .navTag, .subNav #summary, .subNav .line {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.subNav .line {
+  width: 5px;
+}
+
+.subNav .navTag {
+  color: #fe6850;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-align: right;
+  width: 60px;
+  padding-left: 10px;
+}
+
+.example {
+  display: block;
+  width: 100%;
+  height: 100rpx;
+}
+
+/* tabMenu */
+
+.tabMenu {
+  width: 100%;
+  height: 20%;
+  border-top: 1px solid #f1f1f1;
+  border-bottom: 1px solid #f1f1f1;
+  position: relative;
+}
+
+.tabMenu .box {
+  flex-wrap: nowrap;
+  align-content: center;
+  height: 100%;
+  position: absolute;
+}
+
+.tabMenu swiper-item {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  height: 100%;
+  font-size: 0.7rem;
+  color: #7d7d7d;
+}
+
+.tabMenu swiper-item .s-box {
+  width: 25%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.tabMenu image {
+  width: 30px;
+  height: 30px;
+  display: block;
+  margin: 0 auto;
+}
+
+.tabMenu .text {
+  margin-top: 16rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.djMenu {
+  height: 53%;
+  box-sizing: border-box;
+  padding-left: 15px;
+  padding-right: 15px;
+  overflow: hidden;
+}
+
+.djTit {
+  display: flex;
+  font-weight: bold;
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 14px;
+}
+
+.djTit view:first-of-type {
+  color: #fe6850;
+  margin-left: -10px;
+  font-weight: 800;
+}
+
+.djList {
+  display: flex;
+  width: 100%;
+  padding: 20rpx 0;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.djList .listL {
+  width: 35%;
+  height: 170rpx;
+  display: inline-block;
+}
+
+.djList .listR {
+  width: 65%;
+  padding: 0 0 0 2.5%;
+  font-size: 14px;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.Rbottom {
+  width: 100%;
+  font-size: 12px;
+  color: #a0a0a0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bState {
+  color: #3e86ff;
+  border: 1px solid #3e86ff;
+  padding: 2px 5px;
+  border-radius: 3px;
+}
+
+.marquee_box {
+  width: 100%;
+  position: relative;
+}
+
+.marquee_text {
+  white-space: nowrap;
+  position: absolute;
+  top: 0;
+}
+
+.right-icon {
+  position: absolute;
+  right: 0;
+  top: 7%;
+  height: 100%;
+  visibility: hidden;
+}
+
+.right-icon.jmjy {
+  visibility: visible;
+  -webkit-animation-name: flash;
+  animation-name: flash;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-iteration-count: 3;
+  animation-iteration-count: 3;
+}
+
+@-webkit-keyframes flash {
+  50%, 99% {
+    opacity: 1;
+  }
+
+  from, 25%, 75% {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes flash {
+  50%, 99% {
+    opacity: 1;
+  }
+
+  from, 25%, 75% {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* 引导页 */
+
+.guide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: fixed;
+  z-index: 5;
+  width: 100%;
+  top: 32%;
+  left: 0;
+}
+
+.guide image {
+  width: 100%;
+  height: 0;
+}
+
+.guide .guide-btn {
+  width: 105px;
+  height: 40px;
+  line-height: 40px;
+  border: 1px solid #fff;
+  border-radius: 100px;
+  margin: 40px auto 0;
+  text-align: center;
+  color: #fff;
+  font-size: 18px;
+}
+
+/* 浮动新闻 */
+
+#summary {
+  position: relative;
+  vertical-align: top;
+}
+
+#summary .box {
+  width:100%;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  display: block;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+#summary .box view {
+  width: 100%;
+  padding: 0 10px;
+  box-sizing: border-box;
+  display: block;
+  overflow:hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.edit-btn {
+  position: fixed;
+  top: 81%;
+  right: 0;
+  width: 12.5%;
+}
+
+.edit-btn image {
+  width: 100%;
+}
+/* 加载更多 */
+
+.loadMore {
+    text-align: center;
+    width: 100%;
+    height: 60rpx;
+    line-height: 60rpx;
+    margin-top: 30rpx;
+    font-size: 14px;
+    color: #666;
+}

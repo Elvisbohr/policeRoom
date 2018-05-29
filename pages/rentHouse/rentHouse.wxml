@@ -1,0 +1,257 @@
+<!--pages/rentHouse/rentHouse.wxml-->
+<form bindsubmit="onFlow" report-submit='true'>
+<scroll-view scroll-y='true' scroll-top='{{top}}' id='step'>
+  <!-- 头部 开始 -->
+  <view class='header relative'>
+    <view class='xuline'>
+      <view class="box box1 {{step===1?'active':''}}">
+        <view class='yuan'></view>
+        <view class='text'>房主信息</view>
+      </view>
+      <view class="box box2 {{step===2?'active':''}}">
+        <view class='yuan'></view>
+        <view class='text'>房屋信息</view>
+      </view>
+      <view class="box box3 {{step===3?'active':''}}">
+        <view class='yuan'></view>
+        <view class='text'>承租人信息</view>
+      </view> 
+      <view class="box box4 {{step===4?'active':''}}">
+        <view class='yuan'></view>
+        <view class='text'>确认信息</view>
+      </view>  
+    </view>
+  </view>
+  <!-- 头部 结束 -->
+  <!-- 房主信息 开始 -->
+  <view hidden="{{step===1?false:true}}">
+    <view class='tit flex'>
+      <view class='line'></view>  
+      <view class='text'>个人信息</view>
+    </view>
+    <view class='inputbox'>
+      <view class='input flex vc'>
+        <view>姓名</view>
+        <input name="name" placeholder='请输入姓名'></input>
+      </view>
+      <view class='input flex vc'>
+        <view>性别</view>
+        <view class='ul flex vc'>
+          <view wx:for="{{sexArr}}" class="li {{sex==item.id?'active':''}}" data-value="{{item.id}}" data-index="sex" bindtap='choose'>{{item.name}}</view>
+        </view>
+      </view>
+      <view class='input flex vc'>
+        <view>联系电话</view>
+        <input name='tel' type='number' placeholder='请输入联系电话'></input>
+      </view>
+      <view class='input flex vc'>
+        <view>身份证号码</view>
+        <input name='idCard' type="idcard" placeholder='请输入身份证号码'></input>
+      </view>
+      <view class='input flex vc'>
+        <view>详细地址</view>
+        <input name='delAddress' placeholder='请输入详细地址'></input>
+      </view>
+      <view class='input flex long vc'>
+        <view>签订治安责任保证书</view>
+        <view class='ul flex vc'>
+          <view wx:for="{{bookArr}}" class="li duo {{book==item.id?'active':''}}" data-value="{{item.id}}" data-index="book" bindtap='choose'>{{item.name}}</view>
+        </view>
+      </view>
+      <view class='input flex vc'>
+        <view>出租房屋编码</view>
+        <input name='code' placeholder='请输入出租房屋编码'></input>
+      </view>
+    </view>
+    <view class='button flex hb'>
+      <!-- <navigator url='' class='prev'>上一步</navigator> -->
+      <!-- <view class='next' data-step='2' bindtap='next'>下一步</view> -->
+      <button class='next' data-index='1' data-step='2'  formType="submit">下一步</button>
+    </view>
+  </view>
+  <!-- 房主信息 结束 -->
+  <!-- 房屋信息 开始 -->
+  <view hidden="{{step===2?false:true}}">
+    <view class='tit flex'>
+      <view class='line'></view>  
+      <view class='text'>房屋信息</view>
+    </view>
+    <view class='inputbox'>
+      <view class='input flex vc'>
+        <view id="six1">房屋类别</view>
+        <view class='ul flex vc newline'>
+          <view wx:for="{{houseCategoryArr}}" class="li duo {{houseCategory==item.id?'active':''}}" data-value="{{item.id}}" data-index="houseCategory" bindtap='choose'>{{item.name}}</view>
+        </view>
+      </view>
+      <view class='input flex vc'>
+        <view id="six2">房屋用途</view>
+        <view class='ul flex vc newline' id='six'>          
+          <view wx:for="{{houseUseArr}}" class="li duo {{houseUse==item.id?'active':''}}" data-value="{{item.id}}" data-index="houseUse" bindtap='choose'>{{item.name}}</view>
+        </view>
+      </view>
+      <view class='input flex vc'>
+        <view>出租面积</view>
+        <input name="area" placeholder='请输入出租面积'></input>
+      </view>
+      
+      <view class='input flex vc'>
+        <view>出租间数</view>
+        <input name="homeNum" placeholder='请输入出租间数'></input>
+      </view>
+      <view class='input flex vc'>
+        <view>床位数</view>
+        <input name="bedNum" placeholder='请输入床位数'></input>
+      </view>
+      <view class='input flex long vc'>
+        <view>消防设施</view>
+        <view class='ul flex vc'>
+          <view wx:for="{{fireArr}}" class="li {{fire==item.id?'active':''}}" data-value="{{item.id}}" data-index="fire" bindtap='choose'>{{item.name}}</view>
+        </view>
+      </view>
+      <view class='input flex long vc'>
+        <view>房产出租登记备案</view>
+        <view class='ul flex vc'>
+          <view wx:for="{{cordArr}}" class="li {{code==item.id?'active':''}}" data-value="{{item.id}}" data-index="code" bindtap='choose'>{{item.name}}</view>
+        </view>
+      </view>
+      <view class='input flex long vc'>
+        <view>房产出租登记备案证号</view>
+        <input name="Bcord" placeholder='请输入房产出租登记备案证号'></input>
+      </view>
+    </view>
+    <view class='button flex hb'>
+      <view class='prev' data-step='1' bindtap='prev'>上一步</view>
+      <!-- <view class='next' data-step='3' bindtap='next'>下一步</view> -->
+      <button class='next' data-index='2' data-step='3'  formType="submit">下一步</button>
+    </view>
+  </view>
+  <!-- 房屋信息 结束 -->
+  <!-- 承租人信息 开始 -->
+  <view hidden="{{step===3?false:true}}">
+    <view class='tit flex'>
+      <view class='line'></view>  
+      <view class='text'>承租人信息</view>
+    </view>
+    <view class='inputbox'>
+      <view class='input flex vc'>
+        <view>姓名</view>
+        <input name="Cname" placeholder='请输入姓名'></input>
+      </view>
+      <view class='input flex vc'>
+        <view>身份证号码</view>
+        <input name="CidCard" type="idcard" placeholder='请输入身份证号码'></input>
+      </view>
+      <view class='input flex vc'>
+        <view>承租屋编码</view>
+        <input name='Ccard' placeholder='请输入承租屋编码'></input>
+      </view>
+    </view>
+    <view class='button flex hb'>
+      <view class='prev' data-step='2' bindtap='prev'>上一步</view>
+      <button class='next'  data-index='3' data-step='4'  formType="submit">下一步</button>
+    </view>
+  </view>
+  <!-- 承租人信息 结束 -->
+  <!-- 确认信息 -->
+  <view class='confirm' hidden="{{step===4?false:true}}">
+    <view class='title'>出租屋信息—登记单</view>
+    <view class="con">
+      <view class="li flex">
+        <view>房主姓名：</view>
+        <view>{{infoData.name}}</view>
+      </view>
+      <view class="li flex">
+        <view>房主性别：</view>
+        <view wx:if="{{sex===1}}">男</view>
+        <view wx:if="{{sex===2}}">女</view>
+      </view>
+      <view class="li flex">
+        <view>房主联系电话：</view>
+        <view>{{infoData.tel}}</view>
+      </view>
+      <view class="li flex">
+        <view>房主身份证号码：</view>
+        <view>{{infoData.idCard}}</view>
+      </view>
+      <view class="li flex">
+        <view>详细地址：</view>
+        <view>{{infoData.delAddress}}</view>
+      </view>
+      <view class="li flex">
+        <view>签订治安责任保证书：</view>
+        <view wx:if="{{book==1}}">是</view>
+        <view wx:if="{{book==2}}">否</view>
+      </view>
+      <view class="li flex">
+        <view>出租房屋编码：</view>
+        <view>{{infoData.code}}</view>
+      </view>
+      <view class="li flex">
+        <view>房屋类别：</view>
+        <view wx:if="{{houseCategory==1}}">楼房</view>
+        <view wx:if="{{houseCategory==2}}">平房</view>
+        <view wx:if="{{houseCategory==3}}">临时建房</view>
+        <view wx:if="{{houseCategory==4}}">地下建筑</view>
+      </view>
+      <view class="li flex">
+        <view>房屋用途：</view>
+        <view wx:if="{{houseUse==1}}">居住</view>
+        <view wx:if="{{houseUse==2}}">办公</view>
+        <view wx:if="{{houseUse==3}}">生产</view>
+        <view wx:if="{{houseUse==4}}">经营</view>
+        <view wx:if="{{houseUse==5}}">仓储</view>
+        <view wx:if="{{houseUse==6}}">其他</view>
+      </view>
+      <view class="li flex">
+        <view>出租面积：</view>
+        <view>{{infoData.area}}</view>
+      </view>
+      <view class="li flex">
+        <view>出租间数：</view>
+        <view>{{infoData.homeNum}}</view>
+      </view>
+      <view class="li flex">
+        <view>床位数：</view>
+        <view>{{infoData.bedNum}}</view>
+      </view>
+      <view class="li flex">
+        <view>消防设施：</view>
+        <view wx:if="{{fire==1}}">有</view>
+        <view wx:if="{{fire==2}}">无</view>
+      </view>
+      <view class="li flex">
+        <view>房产出租登记备案：</view>
+        <view wx:if="{{code==1}}">是</view>
+        <view wx:if="{{code==2}}">否</view>
+      </view>
+      <view class="li flex">
+        <view>房产出租登记备案证号：</view>
+        <view>{{infoData.Bcord}}</view>
+      </view>
+      <view class="li flex">
+        <view>承租人姓名：</view>
+        <view>{{infoData.Cname}}</view>
+      </view>
+      <view class="li flex">
+        <view>承租人身份证号码：</view>
+        <view>{{infoData.CidCard}}</view>
+      </view>
+    </view>
+    <view class='bluebox'>
+      <view class='title'>
+        <view class="hao">!</view>
+        温馨提示:
+      </view>
+      <view>请仔细核对以上信息，如果准确无误，请在下面方框内打勾并提交，如果有差错，请按“上一步”回退到相应页面修改。谢谢您的支持！</view>  
+    </view>
+    <label class="checkbox">
+      <checkbox value="" checked='true'  color='#2b7aff'/>
+      <text class='tip'>本人已仔细核对，上述信息准确无误。</text>        
+    </label>
+    <view class='button flex hb'>
+      <view class='prev' data-step='3' bindtap='prev'>上一步</view>
+      <view class='next' bindtap='submit'>提交</view>
+    </view>
+  </view>
+</scroll-view>
+</form>

@@ -1,0 +1,112 @@
+.title,.tag{
+    border-bottom:1px solid #dcdcdc;
+    width:98%;
+    margin:0 auto;
+}
+.title input{
+    height: 90rpx;
+    line-height: 90rpx;
+    color:#aaa;
+    font-size: 14px;
+    padding-left:6.5%;
+    box-sizing: border-box;
+}
+.title input{
+    font-family: "微软雅黑"
+}
+.fill-info{
+    width: 98%;
+    margin: 0 auto;
+}
+/* 填写信息框 */
+.fill-info input{
+    font-family: "微软雅黑";
+    color:#aaa;
+}
+.fill-info .content-box,.fill-info .icon-box{
+    width: 89.7%;
+    margin:0 auto;
+}
+.fill-info .textarea{
+    color:#707070;
+    font-size: 0.85rem;
+    padding: 20px 0;
+    width: 100%;
+    height: 80px;
+}
+.fill-info .img-box{
+    display:flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.fill-info .img-box .img-item{
+    width: 23%;
+    border-radius: 3px;
+    overflow:hidden;
+    margin-right:1.2%;
+    margin-bottom: 2%;
+    position:relative;
+    padding-top: 8px;
+}
+.fill-info .img-box .img-item icon{
+    position:absolute;
+    right: 0;
+    top: 0;
+}
+.fill-info .img-box .img-item image{
+    width: 84%;
+    height: 40px;
+    display:block;
+    border:1px solid #dcdcdc;
+}
+.fill-info .video-box{
+    margin-bottom: 2%;
+}
+.fill-info .video-box video{
+    width: 100%;
+    height:500rpx;
+}
+.fill-info .icon-box{
+    text-align:right;
+}
+.fill-info .icon-box image{
+    width: 39px;
+    margin-right: 10px;
+}
+
+
+.fill-info .address {
+  position: relative;
+  height: 125.88rpx;
+  line-height: 125.88rpx;
+  margin-top: 25rpx;
+  padding-bottom: 0;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.fill-info .address-icon {
+  width: 5.1%;
+  margin-right: 22rpx;
+}
+
+.fill-info .address text {
+  margin-right: 22rpx;
+  font-size: 14px;
+  color: #898989;
+}
+
+.fill-info .address .res-text {
+  width: 48%;
+  font-size: 14px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.fill-info .arrow-icon {
+  width: 3%;
+  position: absolute;
+  right: 5%;
+}

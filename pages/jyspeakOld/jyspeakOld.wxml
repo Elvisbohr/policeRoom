@@ -1,0 +1,66 @@
+
+<!--pages/jyspeak/jyspeak.wxml-->
+<view class="pages">
+  <view class="section">
+    <input placeholder="标题" auto-focus/>
+  </view>
+  <view wx:if="{{title=='建言献策'}}" class="fill-info">
+    <view class="item address flex" style="padding-left:0;">
+        <picker bindchange="bindPickerChange" value="{{wayIndex}}" range="{{way}}">
+          <view class="picker">
+            当前选择：{{way[wayIndex]}}
+          </view>
+        </picker>
+    </view>
+  </view>
+  <!-- 选择标签 -->
+  <view class="choose-type">
+    <view bindtap="setChecked" wx:for="{{typeArr}}" data-index="{{index}}" class="type-item {{item.curClass}}">
+      {{item.content}}
+      <icon hidden="{{item.iconShow}}" type="success" size="20" />
+    </view>
+  </view>
+  <!--图片预览-->
+    <view class="page__bd" hidden="{{imgstart}}">
+      <view class="weui-cells">
+        <view class="weui-cell">
+          <view class="weui-cell__bd">
+            <view class="weui-uploader">
+              <view class="weui-uploader__hd">
+                <view class="weui-uploader__title">图片上传数量</view>
+                <view class="weui-uploader__info">{{files.length}}/6</view>
+              </view>
+              <view class="weui-uploader__bd">
+                <view class="weui-uploader__files" id="uploaderFiles">
+                  <block wx:for-items="{{files}}" wx:key="{{index}}">
+                    <view class="weui-uploader__file" bindtap="previewImage" id="{{item}}">
+                      <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+                    </view>
+                  </block>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  <textarea class="someany" placeholder="说点什么......" />
+  <view class="upload" bindtap="chooseImg">
+    <image src="{{serverAddress}}/img/jmhome/fzxc/xj.png"></image>
+  </view>
+  <view class="fill-info">
+    <view class="item address flex">
+      <image class="address-icon" src="{{serverAddress}}/img/jmhome/fzxc/sj.png" mode="widthFix"></image>
+      <input class="sjadd" placeholder="联系电话 （如需反馈,请留真实电话）" auto-focus/>
+    </view>
+  </view>
+  <!--<view class="fill-info">
+    <view bindtap="chooseLocation" class="item address flex">
+      <image class="address-icon" src="{{serverAddress}}/img/jmhome/fzxc/wz.png" mode="widthFix"></image>
+      <text>所在位置 : </text>
+      <text class="res-text">{{nowAddress}}</text>
+      <image class="arrow-icon" src="{{serverAddress}}/img/jmhome/fzxc/arrow.png" mode="widthFix"></image>
+    </view>
+  </view>-->
+  <button class="btn btn-square" bindtap="put">提交</button>
+</view>

@@ -1,0 +1,115 @@
+/* pages/jyspeak/jyspeak.wxss */
+
+.pages {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.section {
+  height: 120rpx;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.section input {
+  height: 120rpx;
+}
+
+.someany {
+  padding: 10px 0 0 0;
+  font-size: 16px;
+  height: 200px;
+}
+
+.upload {
+  width: 110rpx;
+  height: 110rpx;
+}
+
+.upload image {
+  width: 100%;
+  height: 100%;
+}
+.fill-info .address {
+  position: relative;
+  height: 125.88rpx;
+  line-height: 125.88rpx;
+  margin-top: 25rpx;
+  padding-bottom: 0;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.fill-info .address-icon {
+  width: 5.1%;
+  margin-right: 22rpx;
+}
+
+.fill-info .address text {
+  margin-right: 22rpx;
+  font-size: 14px;
+  color: #898989;
+}
+.fill-info .picker,input,.someany{
+  font-size: 14px;
+  color: #898989;
+  font-family: "微软雅黑";
+}
+.fill-info .address .res-text {
+  width: 48%;
+  font-size: 14px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.fill-info .arrow-icon {
+  width: 3%;
+  position: absolute;
+  right: 5%;
+}
+
+.sjadd {
+  Width: 90%;
+  font-size: 14px;
+}
+
+.put {
+  margin-top: 20rpx;
+  width: 90%;
+}
+
+
+.choose-type{
+  padding:39rpx 0 6rpx;
+  z-index:3;
+  display:flex;
+  flex-wrap:wrap;
+  border-bottom:1px solid #f7f6f6;
+}
+.choose-type .type-item{
+    border-radius: 3px;
+    box-sizing: border-box;
+    width: 20.4%;
+    height: 52.55rpx;
+    line-height: 52.55rpx;
+    position:relative;
+    font-size: 0.82rem;
+    border:1px solid #dcdcdc;
+    color:#aaaaaa;
+    margin:0 2.3% 33rpx;
+    text-align:center;
+}
+.choose-type .type-item.on{
+    background:#6a9ef7;
+    color:#fff;
+}
+.choose-type .type-item icon{
+    position:absolute;
+    right: -10px;
+    top: -10px;
+}
+.choose-type .green-btn{
+    float:right;
+    margin-right:2.3%;
+}

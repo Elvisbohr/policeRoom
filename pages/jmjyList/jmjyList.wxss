@@ -1,0 +1,294 @@
+/* pages/djwhList/djwhList.wxss */
+
+page, .pages {
+  width: 100%;
+  height: 100%;
+}
+
+.banner {
+  width: 100%;
+  height: 22%;
+}
+
+.banner swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.banner .heng {
+  width: 100%;
+  height: 20px;
+  position: relative;
+  margin-top: -20px;
+}
+
+.banner .heng image {
+  width: 100%;
+  height: 100%;
+}
+
+.slide-image {
+  width: 100%;
+  height: 100%;
+}
+
+.banner image {
+  width: 100%;
+}
+
+.list-caption {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  height: 8%;
+  font-size: 1rem;
+  color: #434343;
+  position: relative;
+  padding-left: 7%;
+  border-bottom: 1px solid #dcdcdc;
+  width: 99%;
+  box-sizing: border-box;
+}
+
+.list-caption input {
+  font-size: 0.8rem;
+  width: 90%;
+}
+
+.list-caption .caption-line {
+  left: 3%;
+}
+
+.search-wrap {
+  width: 50%;
+}
+
+.djMenu {
+  padding-left: 15px;
+  padding-right: 15px;
+  height: 67%;
+  margin-top: 2%;
+  box-sizing: border-box;
+}
+
+.djTit {
+  display: flex;
+  font-weight: bold;
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 14px;
+}
+
+.djTit view:first-of-type {
+  color: #fe6850;
+  margin-left: -10px;
+  font-weight: 800;
+}
+
+.djList {
+  display: flex;
+  width: 100%;
+  padding: 20rpx 0;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.djList .listL {
+  width: 35%;
+  height: 170rpx;
+}
+
+.djList .listR {
+  width: 60%;
+  padding: 0 2.5%;
+  font-size: 14px;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.Rbottom {
+  width: 100%;
+  font-size: 12px;
+  color: #a0a0a0;
+}
+
+.Rbottom .flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.Rbottom .show-praise {
+  width: 24px;
+  height: 24px;
+}
+
+.Rbottom .show-praise image {
+  width: 100%;
+}
+
+.Rbottom .icon-box {
+  overflow: hidden;
+  height: 22px;
+  border-radius: 3px;
+}
+
+.Rbottom .icon-box .wrap {
+  width: 58px;
+  height: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Rbottom .icon-box .praise.on {
+  color: #478cff;
+}
+
+.widthChange {
+  -webkit-animation: widthChange 0.3s;
+  animation: widthChange 0.3s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.Rbottom .icon-box image {
+  width: 23px;
+  margin-right: 6px;
+}
+
+.Rbottom .icon-box view {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  color: #919191;
+}
+
+.bState {
+  border: 1px solid #3e86ff;
+  color: #3e86ff;
+  padding: 2px 5px;
+  border-radius: 3px;
+  display: inline;
+  font-size: 12px;
+}
+
+.edit-btn {
+  position: fixed;
+  top: 81%;
+  right: 0;
+  width: 12.5%;
+}
+
+.edit-btn image {
+  width: 100%;
+}
+
+.tabMenu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 41rpx;
+  height: 8%;
+  font-size: 0.9rem;
+  color: #7d7d7d;
+}
+
+.tabMenu view {
+  width: 50%;
+  text-align: center;
+}
+
+.cur {
+  color: #3e86ff !important;
+}
+
+.djList {
+  width: 100%;
+  padding: 20rpx 0;
+  border-bottom: 1px solid #f1f1f1;
+  display: none;
+}
+
+.djList.cur-con {
+  display: flex;
+}
+
+.djList .text-con {
+  font-size: 0.9rem;
+  color: #7d7d7d;
+  line-height: 1.3rem;
+}
+
+.djList .tag-box {
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+}
+
+.djList .tag-box .time {
+  color: #a0a0a0;
+}
+
+.tag {
+  color: #3e86ff;
+  border: 1px solid #3e86ff;
+  padding: 2px 5px;
+  border-radius: 3px;
+}
+
+@-webkit-keyframes widthChange {
+  form {
+    width: 0;
+  }
+
+  to {
+    width: 58px;
+  }
+}
+
+@keyframes widthChange {
+  form {
+    width: 0;
+  }
+
+  to {
+    width: 58px;
+  }
+}
+
+.scaleAni {
+  -webkit-animation: scaleAni 1s;
+  animation: scaleAni 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes scaleAni {
+  form {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+
+  to {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1.5, 1.5);
+  }
+}
+
+@keyframes scaleAni {
+  form {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+
+  to {
+    -webkit-transform: scale(1.5, 1.5);
+    transform: scale(1.5, 1.5);
+  }
+}

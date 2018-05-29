@@ -1,0 +1,83 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/mine/mine",
+    "pages/signIn/signIn",
+    "pages/hint/hint",
+    "pages/Certification/Certification",
+    "pages/jyspeak/jyspeak",
+    "pages/writeArti/writeArti",
+    "pages/djwhList/djwhList",
+    "pages/jmjyList/jmjyList",
+    "pages/dang/dang",
+    "pages/cellselection/cellselection",
+    "pages/jqtbList/jqtbList",
+    "pages/sdfb/sdfb",
+    "pages/crime/crime",
+    "pages/rentHouse/rentHouse",
+    "pages/flow/flow",
+    "pages/newborn/newborn",
+    "pages/baoliao/baoliao",
+    "pages/suishou/suishou",
+    "pages/tongzhi/tongzhi",
+    "pages/zaixian/zaixian",
+    "pages/test/test",
+    "pages/catalogIndex/catalogIndex",
+    "pages/catalogDetail/catalogDetail",
+    "pages/distinguish/distinguish",
+    "pages/notice/notice",
+    "pages/wxsq/wxsq",
+    "pages/djwhDetail/djwhDetail",
+    "pages/volunteerIndex/volunteerIndex",
+    "pages/volunteerHdfc/volunteerHdfc",
+    "pages/hdDetails/hdDetails",
+    "pages/detailHf/detailHf",
+    "pages/dProgress/dProgress",
+    "pages/dOffer/dOffer",
+    "pages/dVolunteer/dVolunteer",
+    "pages/dVolunteerFlow/dVolunteerFlow",
+    "pages/tzggDetail/tzggDetail",
+    "pages/huji/huji",
+    "pages/sspDetail/sspDetail",
+    "pages/suishouList/suishouList",
+    "pages/logs/logs",
+    "pages/wxsqList/wxsqList"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#3e86ff",
+    "navigationBarTitleText": "掌上警务室",
+    "navigationBarTextStyle": "#ffff"
+  },
+  "tabBar": {
+    "color": "#666666",
+    "selectedColor": "#666666",
+    "borderStyle": "white",
+    "list": [
+      {
+        "selectedIconPath": "images/homeT.png",
+        "iconPath": "images/home.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "images/workT.png",
+        "iconPath": "images/work.png",
+        "pagePath": "pages/zaixian/zaixian",
+        "text": "在线办事"
+      },
+      {
+        "selectedIconPath": "images/informT.png",
+        "iconPath": "images/inform.png",
+        "pagePath": "pages/notice/notice",
+        "text": "社情民意"
+      },
+      {
+        "selectedIconPath": "images/mineT.png",
+        "iconPath": "images/mine.png",
+        "pagePath": "pages/mine/mine",
+        "text": "我的"
+      }
+    ]
+  }
+}

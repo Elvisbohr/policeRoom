@@ -1,0 +1,169 @@
+/* pages/createHF/createHF.wxss */
+
+page {
+  background: #eee;
+  padding-bottom: 30px;
+}
+
+.box {
+  background: #fff;
+  margin-bottom: 15px;
+}
+
+.box-head {
+  position: relative;
+  padding: 14px 16px 10px 10px;
+  margin-left: 3px;
+  font-size: 0;
+  border-bottom: 1px solid #ececec;
+}
+
+.box-head view {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 0;
+}
+
+.box-head .line {
+  width: 2px;
+  height: 18px;
+  margin-right: 11px;
+  border-radius: 2px;
+  background: #fe6850;
+}
+
+.box-head .line.back9ec1f1 {
+  background: #9ec1f1;
+}
+
+.box-head .line.backf19ec2 {
+  background: #f19ec2;
+}
+
+.box-head .line.back8fc31f {
+  background: #8fc31f;
+}
+
+.box-head .text {
+  line-height: 18px;
+  font-size: 14px;
+  color: #434343;
+}
+
+.box-con {
+  padding-left: 15px;
+}
+
+.box-con .input-box {
+  height: 40px;
+  padding: 0 8px;
+  border-bottom: 1px solid #f2f2f2;
+  font-size: 12px;
+  color: #aaa;
+}
+
+.box-con .input-box .label {
+  margin-right: 15px;
+}
+
+.box-con .input-box .input {
+  width: 99%;
+  overflow: hidden;
+}
+
+.box-con .input-box picker {
+  position: relative;
+  /* border: 1px solid #f00; */
+}
+
+.box-con .input-box picker .arrow {
+  position: absolute;
+  right: 9px;
+  top: 0px;
+  width: 8px;
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.box-con .input-box picker .arrow image {
+  width: 100%;
+}
+
+.fill-info {
+  padding-right: 15px;
+  box-sizing: border-box;
+}
+
+.fill-info .icon-box {
+  width: 100%;
+  padding-bottom: 10px;
+  text-align: right;
+}
+
+.fill-info .icon-box image {
+  width: 38px;
+  margin-left: 15px;
+}
+
+.fill-info .textarea-box {
+  padding: 15px 0;
+}
+
+.fill-info .textarea-box textarea {
+  font-size: 12px;
+}
+
+.place-holder {
+  color: #aaa;
+}
+
+.fill-info .img-box {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.fill-info .img-box .img-item {
+  width: 23%;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-right: 1.2%;
+  margin-bottom: 2%;
+  position: relative;
+  padding-top: 8px;
+}
+
+.fill-info .img-box .img-item icon {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.fill-info .img-box .img-item image {
+  width: 84%;
+  height: 100rpx;
+  display: block;
+  border: 1px solid #dcdcdc;
+}
+
+.fill-info .video-box {
+  margin-bottom: 2%;
+}
+
+.fill-info .video-box video {
+  width: 100%;
+  height: 500rpx;
+}
+
+/* 当事人添加 */
+
+.write-add {
+  position: absolute;
+  width: 22px;
+  right: 10px;
+  top: 11px;
+}
+
+.write-add image {
+  width: 100%;
+}

@@ -1,0 +1,26 @@
+/* pages/volunteerHdfc/volunteerHdfc.wxss */
+.main{
+    padding: 0 24rpx;
+}
+.list{
+    border-bottom: 1rpx solid #e2e2e2;
+    padding: 20rpx 15rpx;
+}
+.listL{
+    width: 150rpx;
+    height: 150rpx;
+    margin-right: 24rpx;
+}
+.listR{
+    color: #333333;
+}
+.listRtit{
+    font-size: 28rpx;
+    font-weight: bold;
+}
+.listRb{
+    font-size: 24rpx;
+}
+.listRsite,.listRtime{
+    padding: 20rpx 0;
+}

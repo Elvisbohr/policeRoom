@@ -1,0 +1,81 @@
+<!--pages/dang/dang.wxml-->
+<view class="pages">
+  <view class="banner">
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="true" interval="5000" duration="800">
+      <block wx:for="{{collection.bannerUrls}}">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image" />
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="heng">
+      <image src="{{serverAddress}}/img/party/jdbannerbtm.png"></image>
+    </view>
+  </view>
+  <view wx:if="{{nowTitle!='温馨提示'}}" class="list-caption">
+    <view class="caption-line"></view>
+    <view>{{nowTitle}}</view>
+  </view>
+  <view wx:if="{{nowTitle=='温馨提示'}}" class="tabMenu">
+    <view class="{{isCur[0]}}" bindtap="getReleased" data-type-text="mine">最新发布</view>
+    <view class="{{isCur[1]}}" bindtap="getReleased" data-type-text="all">温馨提示</view>
+  </view>
+
+  <!-- 列表 -->
+  <scroll-view wx:if="{{nowTitle!='温馨提示'}}" scroll-y="true" class="djMenu">
+    <view class="djList {{isCur[0]}}-con" bindtap="skipUrl" wx:for="{{collection.lists}}" data-list-id="{{item.listId}}">
+      <image class="listL" src="{{item.titPicUrl}}"></image>
+      <view class="listR">
+        <text>{{item.titText}}</text>
+        <view class="Rbottom">
+          <!-- 小标签 -->
+          <view wx:if="{{nowTitle==='温馨社区' && item.categoryName.length>0}}" style="margin-bottom:3px;">
+            <view class="bState bState0">{{item.categoryName}}</view>
+          </view>
+          <view class="flex">
+            <!-- 温馨社区中点赞功能 -->
+            <block wx:if="{{nowTitle === '温馨社区'}}">
+              <view class="">{{item.time}}</view>
+              <view class="icon-box {{item.isAni}}">
+                <view class="praise {{item.isLike?'on':''}}" catchtap="thumbUp" data-article-id="{{item.listId}}" data-index="{{index}}" style="width:100%;">
+                  <image src="{{item.isLike?'../../img/praise2.png':'../../img/praise1.png'}}" mode="widthFix"></image>
+                  <text style="padding-top:3px;">{{item.likesCount}}</text>
+                </view>
+              </view>
+            </block>
+            <block wx:else>
+              <view class="">{{item.time}}</view>
+            </block>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <scroll-view wx:if="{{nowTitle=='温馨提示'}}" scroll-y="true" class="djMenu">
+    <view class="djList {{isCur[0]}}-con" bindtap="skipUrl" wx:for="{{collection.prompt.mine}}" data-list-id="{{item.listId}}">
+      <image class="listL" src="{{item.titPicUrl}}"></image>
+      <view class="listR">
+        <text>{{item.titText}}</text>
+        <view class="Rbottom">
+          <view wx:if="" class="fl bState bState{{index}}"></view>
+          <view class="fr">{{item.time}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="djList {{isCur[1]}}-con" bindtap="skipUrl" wx:for="{{collection.prompt.all}}" data-list-id="{{item.listId}}">
+      <image class="listL" src="{{item.titPicUrl}}"></image>
+      <view class="listR">
+        <text>{{item.titText}}</text>
+        <view class="Rbottom">
+          <view wx:if="" class="fl bState bState{{index}}"></view>
+          <view class="fr">{{item.time}}</view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+
+<!-- 编辑按钮 -->
+<view wx:if="{{nowTitle=='温馨社区' || nowTitle=='时代发布'}}" class="edit-btn" bindtap="skipJyxc">
+  <image src="../../img/edit.png" mode="widthFix"></image>
+</view>

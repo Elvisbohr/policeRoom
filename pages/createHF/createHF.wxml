@@ -1,0 +1,246 @@
+<!--pages/createHF/createHF.wxml-->
+<!--pages/createHF/createHF.wxml-->
+<view class='container'>
+  <form bindsubmit='submitFun'>
+    <view class='box'>
+      <view class='box-head'>
+        <view class='line'></view>
+        <view class='text'>案件类型</view>
+      </view>
+      <view class='box-con'>
+        <view class='input-box flex vc hs'>
+          <view class='label shrink0'>类型</view>
+          <view class='input'>
+            <picker range='{{types}}' range-key='text' bindchange='pickerChange' data-str-name='classStr' data-name='classId' data-arr-name="types">
+              <view>{{submitDataStr.classStr}}</view>
+              <view class='arrow'>
+                <image src='../../img/arrow.png' mode='widthFix'></image>
+              </view>
+            </picker>
+          </view>
+        </view>
+        <view class='input-box flex vc hs'>
+          <view class='label shrink0'>日期</view>
+          <view class='input'>
+            <picker mode='date' bindchange='pickerChange' data-str-name='date'>
+              <view>{{submitDataStr.date}}</view>
+              <view class='arrow'>
+                <image src='../../img/arrow.png' mode='widthFix'></image>
+              </view>
+            </picker>
+          </view>
+        </view>
+        <view class='input-box flex vc hs'>
+          <view class='label shrink0'>时间</view>
+          <view class='input'>
+            <picker mode='time' bindchange='pickerChange' data-str-name='time'>
+              <view>{{submitDataStr.time}}</view>
+              <view class='arrow'>
+                <image src='../../img/arrow.png' mode='widthFix'></image>
+              </view>
+            </picker>
+          </view>
+        </view>
+        <view class='input-box flex vc hs'>
+          <view class='label shrink0'>派出所</view>
+          <view class='input'>
+            <picker mode="selector" range='{{police}}' range-key='text' bindchange='pickerChange' data-str-name='police' data-arr-name="police">
+              <view>{{submitDataStr.police}}</view>
+              <view class='arrow'>
+                <image src='../../img/arrow.png' mode='widthFix'></image>
+              </view>
+            </picker>
+          </view>
+        </view>
+        <view class='input-box flex vc hs'>
+          <view class='label shrink0'>社区</view>
+          <view class='input'>
+            <picker mode="selector" range='{{communityArr}}' range-key='text' bindchange='pickerChange' data-str-name='community' data-arr-name="communityArr">
+              <view>{{submitDataStr.community}}</view>
+              <view class='arrow'>
+                <image src='../../img/arrow.png' mode='widthFix'></image>
+              </view>
+            </picker>
+          </view>
+        </view>
+        <view class='input-box flex vc hs'>
+          <view class='label shrink0'>地址</view>
+          <view class='input'>
+            <input type='text' placeholder-class='place-holder' placeholder='请输入详细地址' name='detailAddress' value="{{submitDataStr.detailAddress}}"></input>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!--  当事人情况  -->
+    <block wx:for="{{submitDataStr.victims}}">
+      <view class='box'>
+        <view class='box-head'>
+          <view class='line back9ec1f1'></view>
+          <view class='text'>当事人情况{{(index>0)?index:''}}</view>
+          <block wx:if="{{index>0}}">
+            <view class='write-add' bindtap='removeVictim' data-index="{{index}}">
+              <image src='../../img/remove.png' mode='widthFix'></image>
+            </view>
+          </block>
+          <block wx:else>
+            <view class='write-add' bindtap='addVictim'>
+              <image src='../../img/write-add.png' mode='widthFix'></image>
+            </view>
+          </block>
+        </view>
+        <view class='box-con'>
+          <view class='input-box flex vc hs'>
+            <view class='label shrink0'>姓名</view>
+            <view class='input'>
+              <input type='text' bindblur='inputBlurVictim' data-index='{{index}}' data-str-name='name' value='{{item.name}}'></input>
+            </view>
+          </view>
+          <view class='input-box flex vc hs'>
+            <view class='label shrink0'>性别</view>
+            <view class='input'>
+              <picker mode="selector" range='{{sexs}}' range-key='text' bindchange='victimsPoliceChange' data-str-name='sex' data-index='{{index}}' data-arr-name="sexs" data-key='text'>
+                <view>{{submitDataStr.victims[index].sex}}</view>
+                <view class='arrow'>
+                  <image src='../../img/arrow.png' mode='widthFix'></image>
+                </view>
+              </picker>
+            </view>
+          </view>
+          <view class='input-box flex vc hs'>
+            <view class='label shrink0'>年龄</view>
+            <view class='input'>
+              <picker mode="selector" range='{{ages}}' bindchange='victimsPoliceChange' data-str-name='age' data-index='{{index}}' data-arr-name="ages">
+                <view>{{submitDataStr.victims[index].age}}</view>
+                <view class='arrow'>
+                  <image src='../../img/arrow.png' mode='widthFix'></image>
+                </view>
+              </picker>
+            </view>
+          </view>
+          <view class='input-box flex vc hs'>
+            <view class='label shrink0'>派出所</view>
+            <view class='input'>
+              <picker mode="selector" range='{{police}}' range-key='text' bindchange='victimsPoliceChange' data-str-name='police' data-index='{{index}}' data-arr-name="police" data-key='text'>
+                <view>{{submitDataStr.victims[index].police}}</view>
+                <view class='arrow'>
+                  <image src='../../img/arrow.png' mode='widthFix'></image>
+                </view>
+              </picker>
+            </view>
+          </view>
+          <view class='input-box flex vc hs'>
+            <view class='label shrink0'>社区</view>
+            <view class='input'>
+              <picker mode="selector" range='{{submitDataStr.victims[index].communityArr}}' range-key='text' bindchange='victimsPoliceChange' data-str-name='community' data-arr-name="communityArr" data-index='{{index}}' data-key="text">
+                <view>{{submitDataStr.victims[index].community}}</view>
+                <view class='arrow'>
+                  <image src='../../img/arrow.png' mode='widthFix'></image>
+                </view>
+              </picker>
+            </view>
+          </view>
+          <view class='input-box flex vc hs'>
+            <view class='label shrink0'>住址</view>
+            <view class='input'>
+              <input type='text' bindblur='inputBlurVictim' data-index='{{index}}' data-str-name='detailAddress' value='{{item.detailAddress}}'></input>
+            </view>
+          </view>
+          <view class='input-box flex vc hs'>
+            <view class='label shrink0'>联系方式</view>
+            <view class='input'>
+              <input type='number' bindblur='inputBlurVictim' data-index='{{index}}' data-str-name='telephone' value='{{item.telephone}}'></input>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+    <!--  简要情况  -->
+    <view class='box'>
+      <view class='box-head'>
+        <view class='line backf19ec2'></view>
+        <block wx:if="{{submitDataStr.classStr !== '矛盾纠纷化解'}}">
+          <view class='text'>简要案情</view>
+        </block>
+        <block wx:else>
+          <view class='text'>简要情况</view>
+        </block>
+      </view>
+      <view class='box-con'>
+        <view class="fill-info">
+          <!-- 内容框 -->
+          <view class="content-box">
+            <view class="textarea-box">
+              <textarea maxlength="-1" value="" placeholder-class="place-holder" placeholder="写点什么..." class="textarea" name="content" bindblur="loseFocus" data-input-type="textarea" data-index="{{index}}" value="{{submitDataStr.content}}" />
+            </view>
+
+            <!-- 图片模块 -->
+            <view hidden="{{typeArr.firstImgUrls<=0}}" class="img-box">
+              <block wx:for="{{typeArr.firstImgUrls}}" wx:for-item="imgItem">
+                <view class="img-item">
+                  <icon type="clear" color="red" size="20" catchtap="removeFile" data-index="{{index}}" data-types='first' />
+                  <image src="{{imgItem}}" mode="widthFix"></image>
+                </view>
+              </block>
+            </view>
+
+            <!-- 视频模块 -->
+            <view wx:if="{{typeArr.firstTempVideoSrc !== ''}}" class="video-box">
+              <video src="{{typeArr.firstTempVideoSrc}}"></video>
+            </view>
+          </view>
+
+          <!-- 图标点击框 -->
+          <view class="icon-box">
+            <image catchtap="chooseImage" data-index="first" src="../../img/photo-icon.png" mode="widthFix"></image>
+            <image catchtap="uploadVideo" data-index="first" src="../../img/video-icon.png" mode="widthFix"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!--  调解结果  -->
+    <view class='box'>
+      <view class='box-head'>
+        <view class='line back8fc31f'></view>
+        <block wx:if="{{submitDataStr.classStr !== '矛盾纠纷化解'}}">
+          <view class='text'>处理结果</view>
+        </block>
+        <block wx:else>
+          <view class='text'>调解结果</view>
+        </block>
+      </view>
+      <view class='box-con'>
+        <view class="fill-info">
+          <!-- 内容框 -->
+          <view class="content-box">
+            <view class="textarea-box">
+              <textarea maxlength="-1" value="" placeholder-class="place-holder" placeholder="写点什么..." class="textarea" name="handResult" bindblur="loseFocus" data-input-type="textarea" data-index="{{index}}" value="{{submitDataStr.handResult}}" />
+            </view>
+
+            <!-- 图片模块 -->
+            <view hidden="{{typeArr.secondImgUrls<=0}}" class="img-box">
+              <block wx:for="{{typeArr.secondImgUrls}}" wx:for-item="imgItem">
+                <view class="img-item">
+                  <icon type="clear" color="red" size="20" catchtap="removeFile" data-index="{{index}}"  data-types='second' />
+                  <image src="{{imgItem}}" mode="widthFix"></image>
+                </view>
+              </block>
+            </view>
+
+            <!-- 视频模块 -->
+            <view wx:if="{{typeArr.secondTempVideoSrc !== ''}}" class="video-box">
+              <video src="{{typeArr.secondTempVideoSrc}}"></video>
+            </view>
+          </view>
+
+          <!-- 图标点击框 -->
+          <view class="icon-box">
+            <image catchtap="chooseImage" data-index="second" src="../../img/photo-icon.png" mode="widthFix"></image>
+            <image catchtap="uploadVideo" data-index="second" src="../../img/video-icon.png" mode="widthFix"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+    <button class="btn btn-square" data-url="../previewBook/previewBook" formType="submit">提交</button>
+  </form>
+</view>

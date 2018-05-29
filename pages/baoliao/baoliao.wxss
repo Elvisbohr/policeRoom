@@ -1,0 +1,81 @@
+/* pages/baoliao/baoliao.wxss */
+.content{
+  padding: 20rpx 30rpx;
+}
+.inputTitle{
+  height:100rpx;
+  width:100%;
+  padding:15rpx 0;
+  line-height: 40rpx;
+  border-bottom: 1px solid #f1f1f1;
+}
+.title-pic-wrap{
+  padding-top:15rpx;
+}
+.con{
+  margin: 20rpx 0;
+  border-top: 1rpx solid #e5e5e5;
+  padding-top: 20rpx;
+}
+.dizhiIcon{
+  width: 32rpx;
+  height: 40rpx;
+  display: inline-block;
+  line-height: 40rpx;
+  vertical-align: middle;
+  margin-right: 6rpx;
+}
+.dizhi{
+  display: inline-block;
+  line-height: 40rpx;
+  height: 40rpx;
+  color: #626262;
+}
+.section{
+  padding:20rpx 0;
+  border-top:1px solid #f1f1f1;
+  border-bottom:1px solid #f1f1f1;
+}
+.opera-wrap{
+  margin: 40rpx 0;
+}
+.opera{
+  border-radius: 10rpx;
+  border: 1rpx solid #2f91fd;
+  display: inline-block;
+  padding: 15rpx;
+  margin-right: 30rpx;
+}
+.icon{
+  width: 60rpx;
+  height: 50rpx;
+}
+.btn{
+  background-color: #449bfb;
+  width: 100%;
+  margin: 100rpx auto 0;
+  color: white;
+  border-radius: 15rpx;
+  font-size: 32rpx;
+  text-align: center;
+  /* padding: 20rpx; */
+}
+.preimg-wrap{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 15rpx 0;
+}
+.preVideo-wrap{
+  text-align: center;
+  margin: 15rpx 0;
+}
+.preimg{
+  height: 26vw;
+  flex: 0 0 26vw;
+  margin-bottom: 20rpx;
+}
+.title-pic-img{
+  width: 400rpx;
+  height: 300rpx;
+}

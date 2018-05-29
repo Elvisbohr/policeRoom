@@ -1,0 +1,7 @@
+<!--pages/test/test.wxml-->
+<scroll-view scroll-y scroll-into-view="{{toView}}" style='height: 100vh' scroll-with-animation="true" enable-back-to-top="true" bindscroll="scroll">
+<view bindtap='jump' style='height: 40rpx'>点击</view>
+  <view data-id='test1' id='test1' class='item' style='background-color: red'></view>
+  <view data-id='test2' id='test2' class='item' style='background-color: green'></view>
+  <view data-id='test3' id='test3' class='item' style='background-color: yellow'></view>
+</scroll-view>

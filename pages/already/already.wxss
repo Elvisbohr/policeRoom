@@ -1,0 +1,88 @@
+/* pages/already/already.wxss */
+/* 警务回访 */
+
+.jwhf-elegant .header {
+  position: relative;
+  padding-left: 10px;
+}
+
+.jwhf-elegant .line {
+  width: 3px;
+  height: 15px;
+  background-color: #80c269;
+  border-radius: 10px;
+  position: absolute;
+  margin-right: 7px;
+  left: 0;
+  top: 50%;
+  margin-top: -7.5px;
+}
+
+.jwhf-elegant .title {
+  height: 30px;
+  line-height: 30px;
+  border-bottom: 1px solid #eee;
+  color: #707070;
+  font-size: 15px;
+}
+
+.jwhf-elegant .con .item {
+  float: none;
+  width: auto;
+}
+
+.already, .already {
+  background: #fff;
+  padding: 0 10px 10px;
+  margin-top: 10px;
+}
+
+.already .time {
+  color: #bfbfbf;
+  padding-left: 10px;
+  font-size: 12px;
+  line-height: 18px;
+  margin: 8px 0 6px;
+}
+
+.already .desc {
+  margin: 0 auto;
+  background-color: #80c269;
+  color: #fff;
+  padding: 7px 7px;
+  border-radius: 5px;
+  position: relative;
+}
+
+.already .desc .s-item {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  overflow: hidden;
+  white-space: nowrap;
+  height: 24px;
+  line-height: 24px;
+}
+
+.already .desc .s-item .label {
+  color: #60934e;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+.already .desc .s-item .text {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.already .desc .btn {
+  width: 70px;
+  height: 24px;
+  line-height: 24px;
+  background: #fbbd15;
+  position: absolute;
+  right: 7px;
+  top: 50%;
+  margin-top: -12px;
+}

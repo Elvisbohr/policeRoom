@@ -1,0 +1,60 @@
+<!--pages/hdDetails/hdDetails.wxml-->
+<view class='pages'>
+<form bindsubmit="signUp" report-submit='true'>
+    <view class='head'>
+        <view class='headTit'>
+            {{details.title}}
+        </view>
+        <view class='headMain flex vc'>
+            <image class='headMainL' src='{{details.cover}}'></image>
+            <view class='headMainR'>
+                <view class='flex vc hb'>
+                    <view>招募人数: {{details.planNumber}}</view>
+                    <view>已招人数: {{details.joinNumber}}</view>
+                </view>
+                <view class='flex vc hb'>
+                    <view>服务时数: {{details.serviceHour}}</view>
+                    <view>诚信指数: {{details.requires}}</view>
+                </view>
+                <view>诚信要求: 0及以上</view>
+                <view>参加对象: {{details.joinObject}}</view>
+                <view>报名截止: {{details.joinEndTime}}</view>
+            </view>
+        </view>
+    </view>
+    <view class='details'>
+        <view class='detailsTit'>活动详情</view>
+        <view class='detailsList'>活动时间: {{details.beginTime}}</view>
+        <view class='detailsList'>活动地点:
+            <text>{{details.title}}</text>
+        </view>
+        <view class='detailsList'>集合时间: {{details.joinEndTime}}</view>
+        <view class='detailsList'>集合地点:
+            <text>{{details.title}}</text>
+        </view>
+        <view class='detailsList'>活动领队: 程慧 18717879825</view>
+    </view>
+    <view class='intro'>
+        <view class='introTit'>
+            <text>活动简介</text>
+        </view>
+        <view class='introList'>
+            <block wx:for="{{intro}}">
+                <view class='introListItem'>
+                    <view class='introListItemTit'>{{item.tit}}</view>
+                    <block wx:for="{{item.cont}}" wx:for-item="i">
+                        <view class='introListItemCont'>{{i}}</view>
+                    </block>
+                </view>
+            </block>
+        </view>
+        <view class='contacts'>
+            <view>联系人：王晓娜  15678735735</view>
+            <view>程慧  18717879825</view>
+        </view>
+    </view>
+    <view class='signUp'>
+        <button class='signUpBtn' formType='submit'>立即报名</button>
+    </view>
+    </form>
+</view>

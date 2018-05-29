@@ -1,0 +1,233 @@
+/* pages/flow/flow.wxss */
+#step{
+  width:100%;
+  height:100%;
+  font-size:26rpx;
+}
+/* 步骤条----------------开始 */
+.header{
+  width:100%;
+  height:140rpx;
+}
+.header .xuline{
+  width:500rpx;
+  height:0;
+  border:1px dashed #2b7aff;
+  position: absolute;
+  top:50%;
+  left:50%;
+  margin-left:-250rpx;
+}
+.header .xuline .box{
+  position: absolute;
+  top:-10rpx;
+  overflow: hidden;
+}
+.header .xuline .box.active{
+  top:-15rpx;
+}
+.header .xuline .box1{
+  left:-45rpx;
+}
+.header .xuline .box2{
+  left:110rpx;
+}
+.header .xuline .box3{
+  left:265rpx;
+}
+.header .xuline .box4{
+  right:-35rpx;
+}
+.header .xuline .box .yuan{
+  width:20rpx;
+  height:20rpx;
+  margin: 0 auto;
+  background:#2b7aff;
+  border-radius:50%;
+}
+.header .xuline .box.active .yuan{
+  width:30rpx;
+  height:30rpx;
+}
+.header .xuline .box .text{
+  font-size: 22rpx;
+  color:#2f5eac;
+  margin-top:15rpx;
+  white-space:nowrap;
+}
+.header .xuline .box.active .text{
+  margin-top:10rpx;
+}
+/* 步骤条----------------结束 */
+/* 灰色标题----------------开始 */
+.tit{
+  width:100%;
+  height:74rpx;
+  padding:20rpx 23rpx;
+  background:#f8f8f8;
+}
+.tit > .line{
+  width:5rpx;
+  height:100%;
+  background:#2b7aff;
+}
+.tit > .text{
+  font-size:26rpx;
+  color:#2b7aff;
+  margin-left:20rpx;
+  position: relative;
+}
+/* 灰色标题----------------开始 */
+.inputbox{
+  padding:0 23rpx;
+}
+.inputbox .input{
+  width:100%;
+  padding:15rpx 0;
+  border-bottom:1px solid #c9c9c9;
+}
+.inputbox .input:last-child{
+  border:0;
+}
+.inputbox .input > view:first-child{
+  width:200rpx;
+  font-size: 32rpx;
+}
+.inputbox .input input,.inputbox .input picker{
+  width:calc(100% - 200rpx);
+  font-size: 28rpx;
+}
+ .picker{
+  width:100%;
+  height:100%;
+  overflow: hidden;
+} 
+.rightJ{
+  float:right;
+  font-size:30rpx;
+  font-family: "宋体";
+  font-weight: bold;
+}
+.inputbox  .input .ul{
+  width:calc(100% - 200rpx);
+}
+.input .ul .li{
+  width:200rpx;
+  height:50rpx;
+  border:1px solid #bfbebe;
+  color:#bfbebe;
+  line-height: 45rpx;
+  text-align: center;
+  margin:0 20rpx 0 0; 
+  border-radius: 5px;
+  font-size: 26rpx;
+}
+.input .ul .li.duo{
+  margin:0 20rpx 10rpx 0;
+}
+.input .ul .li.long{
+  width:250rpx;
+}
+.input .ul .li.active{
+  border:1px solid #2b7aff;
+  color:#2b7aff;
+}
+/* 温馨提示----------------------开始 */
+.bluebox{
+  background:#f0f6ff;
+   border:1px solid #3e86ff;
+   border-radius: 5px; 
+   padding:30rpx;
+   margin:20rpx 23rpx 20rpx;
+}
+.bluebox > .title{
+  color:#2b7aff;
+  font-size:28rpx;
+  margin-bottom: 30rpx;
+}
+.bluebox > .con{
+  line-height: 40rpx;
+}
+.bluebox > .title > .hao{
+  display: inline-block;
+  width:30rpx;
+  height:30rpx;
+  background:#2b7aff;
+  border-radius: 50%;
+  text-align: center;   
+  line-height: 30rpx;
+  color:#fff;
+  font-size:24rpx;
+  margin-right:10rpx;
+}
+/* 温馨提示-------------------结束 */
+/* 上一步下一步提交按钮--------------开始 */
+.button > view,.button > navigator,.button > button{
+  width:280rpx;
+  height:75rpx;
+  background:#2b7aff;
+  color:#fff;
+  border-radius: 5px;
+  margin:60rpx auto;
+  text-align: center;
+  line-height: 75rpx;
+  border:1px solid #2b7aff;
+}
+.button > .prev{
+  background:#fff;
+  color:#2b7aff;
+}
+/* 上一步下一步提交按钮--------------结束 */
+/* 照片上传 */
+.uplodePhoto{
+  margin:0 23rpx;
+  border-bottom:1px solid #c9c9c9;
+}
+.uplodePhoto .title .titl{
+  font-size: 32rpx;
+}
+.uplodePhoto .imgbox .img{
+  margin:20rpx 0; 
+  width:155rpx;
+  height:155rpx;
+  border:1px solid #c9c9c9;
+  color:#c9c9c9;
+}
+.uplodePhoto .imgbox .img image{
+  width:153rpx;
+}
+/* 确认信息 */
+.confirm > .title{
+  text-align: center;
+  line-height: 110rpx;
+  color:#2b7aff;
+  font-size:36rpx;
+}
+.confirm .con{
+  padding:0 55rpx;
+  line-height: 45rpx;
+}
+.confirm .con .li view:first-child{
+  font-size: 28rpx;
+  color:#000;
+  white-space:nowrap;
+  font-weight: bold;
+}
+.confirm .con .li view:last-child{
+  font-size: 26rpx;
+  color:#4f4f4f;
+}
+.confirm .bluebox{
+  margin:20rpx 55rpx 20rpx;
+}
+.confirm .checkbox{
+  padding:0 55rpx;
+}
+.weui-uploader__file{
+  margin:20rpx 20rpx 20rpx 0;
+  width:155rpx;
+  height:155rpx;
+}
+.weui-uploader__file > image{
+  height:100%;
+}

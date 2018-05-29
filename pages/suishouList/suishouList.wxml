@@ -1,0 +1,24 @@
+<view class="pages">
+  <view class="content">
+    <view class="item" wx:if="{{arr.length>0}}" wx:for="{{arr}}" bindtap="goDetail" data-id="{{item.id}}">
+      <image class="img" mode='aspectFill' src="{{item.cover}}"></image>
+      <view class="list-right">
+        <view class="title">{{item.title}}</view>
+        <view class="qu">{{item.qu}}</view>
+        <view class="item-bottom">
+          <view class="time">{{item.time}}</view>
+        </view>
+      </view>
+      <image wx:if="{{item.status == 1}}" class="chuli" src="../../images/listIcon2/yibg.png"></image>
+      <image wx:if="{{item.status == 2}}" class="chuli" src="../../images/listIcon2/weibg.png"></image>
+    </view>
+  </view>
+   <view class='noNum' wx:if="{{arr.length==0}}">
+      <image src="../../img/noNum1.jpg" mode="aspectFill"></image>
+    </view>
+  <view class="place"></view>
+  <view class="bottom">
+    <view class="btn" bindtap='jump'>我要报料</view>
+  </view>
+</view>
+

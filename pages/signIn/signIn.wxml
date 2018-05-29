@@ -1,0 +1,16 @@
+<!--pages/signIn/signIn.wxml-->
+<view class='pages'>
+    <view class='mian flex vc column'>        
+            <icon class='iconfont icon-dingweiweizhi locationIcon'></icon>
+            <view class='locationTit'>{{city}}</view>    
+            <view class='locationTxt'>{{address}}</view>    
+            <view class='locationBtn flex vc hc column' bindtap='signIn'>
+                <view class='time'>{{time}}</view>
+                <view class='tap'>打卡</view>
+            </view>
+        
+    </view>
+    <!-- 背景 -->
+    <image class='signBj' src='../../images/mine/signBj.png'></image>
+</view>
+

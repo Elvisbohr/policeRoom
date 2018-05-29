@@ -1,0 +1,93 @@
+<!--pages/mine/mine.wxml-->
+<view class='pages'>
+    <view class='h40'></view>
+    <view class='head flex vc hb'>
+        <view class='user flex vc'>
+            <view class="userImg">
+                <open-data type="userAvatarUrl"></open-data>
+            </view>
+            <open-data type="userNickName"></open-data>
+        </view>
+        <view class='binding'><text wx:if="{{isOk}}">已绑定</text><text wx:else>未绑定</text></view>
+    </view>
+    <view class='nav'>
+        <navigator url='' catchtap="onNo" class='navList flex vc hb'>
+            <view class='navListLeft flex vc'>
+                <icon class='iconfont icon-yewu pR30 nav-yellow'></icon>
+                <view>我的业务</view>
+            </view>
+            <view class='navListRight flex vc hb'>
+                <view>查看办理过的业务</view>
+                <icon class='iconfont icon-xiangyoujiantou pL30'></icon>
+            </view>
+        </navigator>
+        <navigator catchtap="onNo" url='' class='navList flex vc hb' >
+            <view class='navListLeft flex vc'>
+                <icon class='iconfont icon-biangeng pR30 nav-red'></icon>
+                <view>变更联系电话</view>
+            </view>
+            <view class='navListRight flex vc hb'>
+                <view>修改电话号码</view>
+                <icon class='iconfont icon-xiangyoujiantou pL30'></icon>
+            </view>
+        </navigator>
+        <navigator url='../Certification/Certification' class='navList flex vc hb'>
+            <view class='navListLeft flex vc'>
+                <icon class='iconfont icon-gongjijin- pR30 nav-purple'></icon>
+                <view>实名认证  </view>
+            </view>
+            <view class='navListRight flex vc hb'>
+                <view><text wx:if="{{isOk}}">实名认证成功</text><text wx:else>尚未实名认证</text></view>
+                <icon class='iconfont icon-xiangyoujiantou pL30'></icon>
+            </view>
+        </navigator>
+        <view class='navList flex vc hb' bindtap='callPhone'>
+            <view class='navListLeft flex vc'>
+                <icon class='iconfont icon-rexian pR30 nav-green'></icon>
+                <view>服务热线</view>
+            </view>
+            <view class='navListRight flex vc hb'>
+                <icon class='iconfont icon-xiangyoujiantou pL30'></icon>
+            </view>
+        </view>
+        <navigator url='../signIn/signIn' class='navList flex vc hb'>
+            <view class='navListLeft flex vc'>
+                <icon class='iconfont icon-qiandao pR30 nav-blue'></icon>
+                <view>签到打卡</view>
+            </view>
+            <view class='navListRight flex vc hb'>
+                <icon class='iconfont icon-xiangyoujiantou pL30'></icon>
+            </view>
+        </navigator>
+    </view>
+    <view class='h40'></view>
+    <view class='nav'>
+        <navigator url='../dOffer/dOffer' class='navList flex vc hb'>
+            <view class='navListLeft flex vc'>
+                <icon class='iconfont icon-shenbao pR30 nav-jyxc'></icon>
+                <view>建言献策</view>
+            </view>
+            <view class='navListRight flex vc hb'>
+                <icon class='iconfont icon-xiangyoujiantou pL30'></icon>
+            </view>
+        </navigator>
+        <navigator url='../suishouList/suishouList' class='navList flex vc hb'>
+            <view class='navListLeft flex vc'>
+                <icon class='iconfont icon-suishoupai pR30 nav-suishou'></icon>
+                <view>随手拍</view>
+            </view>
+            <view class='navListRight flex vc hb'>
+                <icon class='iconfont icon-xiangyoujiantou pL30'></icon>
+            </view>
+        </navigator>
+        <navigator url='../wxsq/wxsq' class='navList flex vc hb'>
+            <view class='navListLeft flex vc'>
+                <icon class='iconfont icon-fabu pR30 nav-wxsq'></icon>
+                <view>温馨社区</view>
+            </view>
+            <view class='navListRight flex vc hb'>
+                <icon class='iconfont icon-xiangyoujiantou pL30'></icon>
+            </view>
+        </navigator>
+    </view>
+</view>

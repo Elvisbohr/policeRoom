@@ -1,0 +1,7 @@
+<!--pages/huji/huji.wxml-->
+<view class="content">
+  <view class="li" wx:for="{{curList}}" data-name='{{item}}' bindtap='jump'>
+    <view class="title">{{item}}</view>
+    <image class="icon" src="../../images/arrow.png"></image>
+  </view>
+</view>

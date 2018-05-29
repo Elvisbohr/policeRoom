@@ -1,0 +1,10 @@
+<!--pages/tongzhi/tongzhi.wxml-->
+<view class="wrap">
+  <view class='item' wx:for="{{lists}}" data-id='{{item.id}}' bindtap="goDetail">
+    <image class="img" src="{{item.cover}}"></image>
+    <view class='item-right'>
+      <view class="title">{{item.title}}</view>
+      <view class="time">{{item.createTime}}</view>
+    </view>
+  </view>
+</view>

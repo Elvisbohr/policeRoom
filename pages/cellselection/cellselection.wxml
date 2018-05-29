@@ -1,0 +1,24 @@
+
+<!--pages/cellselection/cellselection.wxml-->
+<view class="pages">
+  <view class="zblist">
+    <view class="ltop">
+      <image class='maps' mode="widthFix" src="../../img/maps1.png"></image>
+      <text>选择社区</text>
+      <view>
+        <text class="intro">欢迎登陆警民之家，现已开通以下社区</text>
+      </view>
+    </view>
+  </view>
+  <view class="zblist">
+    <view class="">
+      <view class="zblabe">
+        默认社区:
+        <text class="mor">{{location.name}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="zblist" wx:for="{{site}}" bindtap="form" data-id="{{item.id}}" data-name="{{item.name}}">
+    <view class="zblabe">{{item.name}}</view>
+  </view>
+</view>

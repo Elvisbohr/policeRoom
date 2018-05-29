@@ -1,0 +1,35 @@
+<!--pages/dOffer/dOffer.wxml-->
+<view class="pages">
+  <scroll-view wx:if="{{list.length>0}}" class="scroll" scroll-y='true' bindscrolltolower="bindscrolltolower">
+    <view class="box"> 
+      <navigator url="../detailHf/detailHf?title=建言献策&articleId={{item.id}}&type={{item.status}}" wx:for="{{list}}">
+        <view class="li">
+          <view class='header flex hb'>
+            <view>来源：{{item.name}}</view>
+            <view class='time'>{{item.createTime}}</view>
+          </view>
+           <view class='con'>{{item.content}}</view>  
+          <view class='bottom'>
+            <image wx:if="{{item.videoAll!=null}}" src='../../img/sp.png'></image>
+            <image wx:if="{{item.imgs[0].img!=null||item.imgs[0].img!=''}}" src='../../img/tp.png'></image>
+            <!-- <image src='../../img/yy.png'></image> -->
+          </view>
+          <!-- 1已通过2待审核3未通过 -->
+          <view class="ti {{item.status===2?'a1':''}} {{item.status===3?'a2':''}}"></view>
+          <view wx:if='{{item.status===1}}' class="ti1">已回复</view>
+          <view wx:if='{{item.status===2}}' class="ti1 a11">待回复</view>
+          <view wx:if='{{item.status===3}}' class="ti1 a22">已驳回</view>
+        </view>
+      </navigator>
+    </view> 
+    <view class="jia" hidden='{{hidden}}'>已经到底了！！！</view>
+  </scroll-view>
+  <view class='noNum' wx:if="{{list.length==0}}">
+    <image src="../../img/noNum1.jpg" mode="aspectFill"></image>
+  </view> 
+  <!-- 编辑按钮 -->
+  <navigator url='../jyspeak/jyspeak' class="edit-btn">
+    <image src="../../img/edit.png" mode="widthFix"></image>
+  </navigator>   
+
+</view>

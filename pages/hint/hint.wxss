@@ -1,0 +1,10 @@
+/* pages/hint/hint.wxss */
+.discern{
+    width: 100%;
+}
+.discernbtn{
+    width: 90%;
+    margin-top: 60rpx;
+    background: #1cac1b;
+    color: #fff;
+}

@@ -1,0 +1,113 @@
+<!--pages/dVolunteerFlow/dVolunteerFlow.wxml-->
+<view class="pages" >
+    <form bindsubmit="onFlow" report-submit='true'>
+        <view class="box">
+            <view class='inputbox flex vc'>
+                <label>真实姓名</label>
+                <input name='name' placeholder='请输入真实姓名（中英文长度2-25)' cursor='right'></input>
+            </view>
+            <view class='inputbox flex vc'>
+                <label>性别</label>
+                <radio-group class="radio-group" bindchange="sexChange">
+                    <label class="radio" wx:for="{{sexArr}}">
+                        <radio value="{{item.id}}" checked="{{item.checked}}" color='#36bbff' />{{item.name}}
+                    </label>
+                </radio-group>
+            </view>
+            <view class='inputbox flex vc'>
+                <label>出生年月</label>
+                <picker class="flex he vc" mode="date" value="{{birthday}}" bindchange="bindDateChange">
+                    <view class="picker">{{birthday}}</view>
+                    <icon class='iconfont icon-xiangyoujiantou pL30'></icon>
+                </picker>
+            </view>
+            <view class='inputbox flex vc'>
+                <label>国籍</label>
+                <input name="nationality" class='nationality' placeholder='请输入国籍' cursor='right'></input>
+            </view>
+            <view class='inputbox flex vc'>
+                <label>身份证号</label>
+                <input name="idCard" placeholder='请输入身份证号码' cursor='right'></input>
+            </view>
+            <!-- <view class='inputbox flex vc'>
+                <label>银行卡号</label>
+                <input name="bankCard" placeholder='请输入银行卡号' cursor='right'></input>
+            </view> -->
+            <view class='inputbox flex vc'>
+                <label>民族</label>
+                <input name="nation" placeholder='请输入民族' cursor='right'></input>
+            </view>
+            <view class='inputbox flex vc'>
+                <label>户籍地省市</label>
+                <picker class="flex he vc" mode="region" data-index="1" bindchange="bindRegionChange" value="{{region}}">
+                    <view class="picker">
+                        {{region[0]}} {{region[1]}} {{region[2]}}
+                    </view>
+                    <icon class='iconfont icon-xiangyoujiantou pL30'></icon>
+                </picker>
+            </view>
+            <view class='inputbox flex vc'>
+                <label>户籍详细地址</label>
+                <input name="address" placeholder='请输入详细地址' cursor='right'></input>
+            </view>
+            <view class='inputbox flex vc'>
+                <label>籍贯</label>
+                <picker class="flex vc he" mode="region" data-index="2" bindchange="bindRegionChange" value="{{region1}}">
+                    <view class="picker">
+                        {{region1[0]}} {{region1[1]}} {{region1[2]}}
+                    </view>
+                    <icon class='iconfont icon-xiangyoujiantou pL30'></icon>
+                </picker>
+            </view>
+            <view class='inputbox flex vc'>
+                <label>通讯地址</label>
+                <input name="txsite" placeholder='请输入详细地址' cursor='right'></input>
+            </view>
+            <view class='inputbox flex vc'>
+                <label>联系电话</label>
+                <input name="telephone" placeholder='请输入手机号码' cursor='right'></input>
+            </view>
+            <view class='inputbox flex vc'>
+                <label>紧急联系人</label>
+                <input name="emergencyContact" placeholder='请输入姓名' cursor='right'></input>
+            </view>
+            <view class='inputbox flex vc noborder'>
+                <label>紧急联系方式</label>
+                <input name="emergencyContactTelephone" placeholder='请输入联系方式' cursor='right'></input>
+            </view>
+        </view>
+        <view class="hui"></view>
+        <view class="box">
+            <view class='textbox noborder'>
+                <label>自我评价和志愿者服务经历</label>
+                <textarea name="selfInfo" maxlength='-1' placeholder='请填写自我评价和志愿者服务经历...'></textarea>
+            </view>
+            <view class='imgbox flex vc border'>
+                <label>一寸证件照（1张）</label>
+                <view class='img'>
+                    <image data-index='1' bindtap="chooseImage" mode="aspectFill" src='{{imgsrc1}}'></image>
+                </view>
+            </view>
+            <view class='imgbox flex vc'>
+                <label>身份证照片（2张）</label>
+                <view class='img'>
+                    <image data-index='2' bindtap="chooseImage" mode="aspectFill" src='{{imgsrc2}}'></image>
+                </view>
+                <view class='img'>
+                    <image data-index='3' bindtap="chooseImage" mode="aspectFill" src='{{imgsrc3}}'></image>
+                </view>
+            </view>
+        </view>
+        <view class="hui"></view>
+        <!-- <view class="box">
+            <view class='inputbox flex vc noborder'>
+                <label>验证码</label>
+                <input placeholder='请输入验证码' cursor='right'></input>
+            </view>
+        </view>
+        <view class="hui"></view> -->
+        <view class="box">
+            <button class="but" formType='submit'>确定</button>
+        </view>
+    </form>
+</view>

@@ -1,0 +1,57 @@
+<!--pages/write/write.wxml-->
+<form bindsubmit="formSubmit" report-submit='true'>
+  <view class="caption">
+    <view class="caption-line"></view>
+    <view class="text">温馨社区</view>
+  </view>
+
+  <!-- 选择标签 -->
+  <view wx:if="{{tagArr.length > 0}}" class="choose-type">
+    <view bindtap="setChecked" wx:for="{{tagArr}}" data-index="{{index}}" class="type-item {{item.curClass}}">
+      {{item.name}}
+      <icon hidden="{{item.iconShow}}" type="success" size="20" />
+    </view>
+  </view>
+  <!-- 来源 -->
+  <view class="title flex vc">
+    <label>来源：</label>
+    <input type="text" name="source" value="{{source}}" placeholder="请输入来源" placeholder-class="place-holder" data-input-type="text" />
+  </view>
+  <!-- 标题 -->
+  <view class="title flex vc">
+    <label>标题：</label>
+    <input type="text" name="sTitle" value="{{inputTitle}}" placeholder="请输入标题" placeholder-class="place-holder" bindblur="loseFocus" data-input-type="text" />
+  </view>
+  <!-- 填写框 -->
+  <view class="fill-info">
+    <!-- 内容框 -->
+    <view class="content-box">
+      <view class="textarea-box">
+        <textarea maxlength="-1" value="{{typeArr.textareaValue}}" placeholder-class="place-holder" placeholder="写点什么..." class="textarea" name="content" bindblur="loseFocus" data-input-type="textarea" data-index="{{index}}" />
+      </view>
+
+      <!-- 图片模块 -->
+      <view hidden="{{typeArr.imgUrls<=0}}" class="img-box">
+        <block wx:for="{{typeArr.imgUrls}}" wx:for-item="imgItem">
+          <view class="img-item">
+            <icon type="clear" color="red" size="20" catchtap="removeFile" data-remove-index="{{index}}" />
+            <image src="{{imgItem}}" mode="widthFix"></image>
+          </view>
+        </block>
+      </view>
+
+      <!-- 视频模块 -->
+       <view hidden="{{typeArr.tempVideoSrc === ''}}" class="video-box">
+        <video src="{{typeArr.tempVideoSrc}}"></video>
+      </view> 
+    </view>
+
+    <!-- 图标点击框 -->
+    <view class="icon-box">
+      <image catchtap="chooseImage" data-index="{{index}}" src="../../img/photo-icon.png" mode="widthFix"></image>
+       <image catchtap="uploadVideo" data-index="{{index}}" src="../../img/video-icon.png" mode="widthFix"></image> 
+    </view>
+    
+  </view>
+  <button class="btn btn-square" data-url="../previewBook/previewBook" formType="submit">提交</button>
+</form>

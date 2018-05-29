@@ -1,0 +1,89 @@
+/* pages/djwhList/djwhList.wxss */
+.list-caption{
+    display:flex;
+    flex-wrap:nowrap;
+    justify-content:space-between;
+    align-items:center;
+    height:110rpx;
+    line-height:110rpx ;
+    font-size:1rem;
+    color:#434343;
+    position:relative;
+    padding-left:7%;
+    margin-bottom:41rpx;
+    border-bottom:1px solid #dcdcdc;
+    width: 99%;
+    box-sizing: border-box;
+}
+.list-caption input{
+    font-size: 0.8rem;
+    width: 90%;
+}
+.list-caption .caption-line{
+    left:3%;
+}
+.search-wrap{
+    width: 50%;
+}
+
+
+.djMenu {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.djTit {
+  display: flex;
+  font-weight: bold;
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 14px;
+}
+
+.djTit view:first-of-type {
+  color: #fe6850;
+  margin-left: -10px;
+  font-weight: 800;
+}
+
+.djList {
+  display: flex;
+  width: 100%;
+  padding: 20rpx 0;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.djList .listL {
+  width: 35%;
+  height: 170rpx;
+  display: inline-block;
+}
+
+.djList .listR {
+  width: 65%;
+  padding: 0 2.5%;
+  font-size: 14px;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 170rpx;
+}
+.djList .listR text{
+  width:100%;
+  overflow:hidden;  
+  text-overflow:ellipsis;  
+  display:-webkit-box;  
+  -webkit-line-clamp:3;  
+  -webkit-box-orient:vertical; 
+}
+.Rbottom {
+  width: 100%;
+  font-size: 12px;
+  color: #a0a0a0;
+}
+.bState{
+    border: 1px solid #3e86ff;
+    color: #3e86ff;
+    padding: 2px 5px;
+    border-radius: 3px;
+}

@@ -1,0 +1,23 @@
+<!--pages/catalogIndex/catalogIndex.wxml-->
+<view class="catalog-wrap">
+  <swiper class="myswiper" display-multiple-items="{{bigLen}}">
+    <block wx:for="{{catalogBig}}" wx:key="{{index}}">
+      <swiper-item>
+        <view class="{{item.myclass}}" data-idx='{{index}}' bindtap='changeBig'>{{item.name}}</view>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<scroll-view scroll-y scroll-into-view="{{toView}}" style='height: 100vh' scroll-with-animation="true" enable-back-to-top="true" bindscroll="scroll">
+  <view class="myplace"></view>
+
+  <!-- 子栏目循环 start -->
+  <block wx:for="{{catalogBig}}" wx:key="{{index}}">
+    <view class="second-level getTop" id="toView_{{index}}">{{item.name}}</view>
+    <view class="remedy"></view>
+    <mylist arr="{{catalogSmall[item.name]}}" bindmyevent="onMyEvent"></mylist>
+    <view class="myline"></view>
+  </block>
+  <!-- 子栏目循环 end -->
+  <view style='height: 80vh;'></view>
+</scroll-view>

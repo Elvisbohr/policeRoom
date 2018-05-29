@@ -1,0 +1,28 @@
+<!--pages/suishou/suishou.wxml-->
+<swiper class="slide">
+  <block wx:for="{{imgUrls}}">
+    <swiper-item>
+      <image src="{{item.img}}" class="slide-image" mode='scaleToFill'/>
+    </swiper-item>
+  </block>
+</swiper>
+<view class="content">
+  <view class="bigTitle">报料广场</view>
+  <view class="list-wrap">
+    <view class="item" wx:for="{{arr}}" bindtap="goDetail" data-id="{{item.id}}">
+      <image class="img" src="{{item.cover}}"></image>
+      <view class="title">{{item.title}}</view>
+      <view class="qu">{{item.qu}}</view>
+      <view class="item-bottom">
+        <view class="time">{{item.createTime}}</view>
+        <view class="look"><image class="eye" src='{{eye}}'></image>{{item.views}}</view>
+      </view>
+    </view>
+    <view hidden="{{!isLoading}}" class="bottom-tips">--- 正在加载 ---</view>
+    <view hidden="{{isLoading}}" class="bottom-tips">--- 到底了 ---</view>
+  </view>
+</view>
+<!-- <view class="place"></view> -->
+<!-- <view class="bottom">
+  <view class="btn" bindtap='jump'>我要报料</view>
+</view> -->

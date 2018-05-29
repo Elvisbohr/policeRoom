@@ -1,0 +1,28 @@
+/* pages/dProgress/dProgress.wxss */
+.pages{
+  padding:25rpx;
+}
+.inputbox{
+  width:100%;
+  height:100rpx;
+  border:1px solid #c9c9c9;
+  border-radius: 10rpx;
+  margin-bottom: 30rpx;
+  padding:20rpx;
+}
+.inputbox label{
+  width:200rpx;
+}
+.inputbox input{
+  width:calc(100% - 200rpx);
+}
+.but{
+  width:100%;
+  height:100rpx;
+  border-radius: 10rpx;
+  text-align: center;
+  line-height: 100rpx;
+  color:#fff;
+  background:#2fbbff;
+  margin-top:30rpx;
+}

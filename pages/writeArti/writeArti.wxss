@@ -1,0 +1,287 @@
+/* pages/write/write.wxss */
+
+page {
+  background: #f7f7fa;
+  min-height: 100%;
+}
+
+.caption, .fill-info {
+  width: 98%;
+  margin: 0 auto;
+}
+
+.caption {
+  height: 110rpx;
+  line-height: 110rpx;
+  border-bottom: 1px solid #dcdcdc;
+}
+
+.caption .caption-line {
+  left: 3.2%;
+}
+
+.caption .text {
+  margin-left: 6.5%;
+}
+
+.caption image {
+  width: 52.63rpx;
+}
+
+.choose-type {
+  padding: 39rpx 0 6rpx;
+  z-index: 3;
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #dcdcdc;
+  width: 98%;
+  margin: 0 auto;
+}
+
+.choose-type .type-item {
+  border-radius: 3px;
+  box-sizing: border-box;
+  padding: 0 7px;
+  height: 52.55rpx;
+  line-height: 52.55rpx;
+  position: relative;
+  font-size: 0.82rem;
+  border: 1px solid #dcdcdc;
+  color: #aaa;
+  margin: 0 2.3% 33rpx;
+  text-align: center;
+}
+
+.choose-type .type-item.on {
+  background: #6a9ef7;
+  color: #fff;
+}
+
+.choose-type .type-item icon {
+  position: absolute;
+  right: -10px;
+  top: -10px;
+}
+
+.choose-type .green-btn {
+  float: right;
+  margin-right: 2.3%;
+}
+
+/* 填写信息框 */
+
+.fill-info input {
+  font-family: "微软雅黑";
+  color: #aaa;
+}
+
+.fill-info .content-box, .fill-info .icon-box {
+  width: 89.7%;
+  margin: 0 auto;
+}
+
+.fill-info .content-box .textarea-box {
+  height: 200px;
+  overflow: hidden;
+  margin: 15px 0;
+}
+
+.fill-info .content-box textarea {
+  font-size: 14px;
+  line-height: 20px;
+  height: 200px;
+  overflow: hidden;
+  margin: 0;
+}
+
+.fill-info .textarea {
+  color: #707070;
+  font-size: 0.85rem;
+  width: 100%;
+  height: 80px;
+}
+
+.fill-info .img-box {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.fill-info .img-box .img-item {
+  width: 23%;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-right: 1.2%;
+  margin-bottom: 2%;
+  position: relative;
+  padding-top: 8px;
+}
+
+.fill-info .img-box .img-item icon {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.fill-info .img-box .img-item image {
+  width: 84%;
+  height: 100rpx;
+  display: block;
+  border: 1px solid #dcdcdc;
+}
+
+.fill-info .video-box {
+  margin-bottom: 2%;
+}
+
+.fill-info .video-box video {
+  width: 100%;
+  height: 500rpx;
+}
+
+.fill-info .icon-box {
+  text-align: right;
+}
+
+.fill-info .icon-box image {
+  width: 39px;
+  margin-right: 10px;
+}
+
+/*.fill-info .item{
+    border-bottom:1px solid #dcdcdc;
+    font-size: 0.9rem;
+    padding: 0 5% 36.67rpx;
+}
+.fill-info .item text{
+    margin-top: 36rpx;
+    margin-bottom: 40rpx;
+    display:block;
+}
+.fill-info .item textarea{
+    font-size: 0.82rem;
+    width: 100%;
+    height: 140rpx;
+    color:#aaa;
+}
+.fill-info .icon-box{
+    width: 27%;
+    margin-left: 73%;
+}
+.fill-info .icon-box image{
+    width: 44.25%;
+}
+.fill-info .address{
+    position:relative;
+    height: 125.88rpx;
+    line-height: 125.88rpx;
+    margin-top: 25rpx;
+    padding-bottom: 0;
+    justify-content:flex-start;
+    align-items:center;
+}
+.fill-info .address-icon{
+    width: 5.1%;
+    margin-right: 22rpx;
+}
+.fill-info .address text{
+    margin-right: 22rpx;
+}
+.fill-info .address .res-text{
+    width: 48%;
+    overflow:hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis
+}
+.fill-info .arrow-icon{
+    width: 3%;
+    position:absolute;
+    right: 5%;
+}*/
+
+.tag, .cover {
+  border-bottom: 1px solid #dcdcdc;
+  width: 98%;
+  margin: 0 auto;
+}
+
+.tag{
+  height: 90rpx;
+  line-height: 90rpx;
+  color: #aaa;
+  font-size: 0.82rem;
+  padding-left: 6.5%;
+  box-sizing: border-box;
+}
+.title{
+  width:98%;
+  min-height: 90rpx;
+  margin:0 auto;
+  padding:0 40rpx;
+  border-bottom: 1px solid #dcdcdc;
+}
+.title input {
+  font-family: "微软雅黑";
+}
+.title label{
+  white-space:nowrap;
+}
+
+.cover{
+  color: #bfbfbf;
+  font-size: 0.875rem;
+  line-height: 90rpx;
+  padding-left: 6.5%;
+  padding-bottom:25rpx;
+}
+.cover .img-box{
+  width: 4rem;
+  height: 4rem;
+  position: relative;
+}
+.cover .img-box view{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  text-align: center;
+  top: 0;
+  left: 0;
+  background:rgba(0,0,0,0.2);
+}
+.cover .img-box .chooseSrc{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.cover .img-box view image{
+  width: 2.2rem;
+  margin: 0 auto;
+  display: block;
+}
+.label {
+  font-size: 0.82rem;
+  padding-left: 6.5%;
+  white-space: nowrap;
+  -webkit-flex-shrink: 0;
+  flex-shrink: 0;
+}
+
+.flex {
+  display: -webkit-flex;
+  display: flex;
+}
+
+.hs {
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+}
+
+.vc {
+  -webkit-align-items: center;
+  align-items: center;
+}

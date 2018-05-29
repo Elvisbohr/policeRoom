@@ -1,0 +1,28 @@
+<!--pages/waiting/waiting.wxml-->
+<view class="jwhf-elegant">
+  <view class="already">
+    <view class="header">
+      <view class="line"></view>
+      <view class="title">已回访</view>
+    </view>
+    <view class="con">
+      <view class="item">
+        <view class="time">2017/05/09 10:08</view>
+        <view class="desc">
+          <view class="s-item">
+            <view class="label">案件类别</view>
+            <view class="text">翻窗-5000元现金 3部手机</view>
+          </view>
+          <view class="s-item">
+            <view class="label">发案时间</view>
+            <view class="text">2017-5-8 7:26</view>
+          </view>
+          <view class="s-item">
+            <view class="label">发案地址</view>
+            <view class="text">桃园二巷秀水商场门口</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

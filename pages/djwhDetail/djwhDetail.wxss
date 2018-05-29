@@ -1,0 +1,242 @@
+/* pages/partyList/partyList.wxss */
+/* 在使用的Wxss中引入WxParse.css,可以在app.wxss */
+@import "/wxParse/wxParse.wxss";
+page {
+  background: #f6f6f6;
+}
+
+.pages {
+  padding-bottom: 60px;
+}
+
+.plHead {
+  width: 100%;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #f1f1f1;
+  position: fixed;
+  padding-top: 25px;
+  line-height: 22px;
+  height: 200rpx;
+  overflow: hidden;
+  background: #fff;
+  z-index: 99;
+  box-sizing: content-box;
+}
+
+.headTitle {
+  width: 90%;
+  font-size: 18px;
+  font-weight: bold;
+  display: block;
+  margin: 0px auto 30px;
+  height: 44px;
+  overflow:hidden;  
+  text-overflow:ellipsis;  
+  display:-webkit-box;  
+  -webkit-line-clamp:2;  
+  -webkit-box-orient:vertical; 
+}
+
+.headList {
+  width: 90%;
+  margin: 0 auto;
+  font-size: 12px;
+  color: #a0a0a0;
+  overflow: hidden;
+}
+
+.plConter {
+  width:100%; 
+  margin: 0 auto;
+  padding: 139px 24rpx 10px;
+  word-wrap: break-word;
+  overflow: hidden;
+}
+.plConter image{
+  width:100%;
+}
+.conImg {
+  width: 100%;
+}
+
+.conText {
+  margin-top: 10px;
+  font-size: 1rem;
+  line-height: 26px;
+  color: #626262;
+  letter-spacing: 2px;
+}
+
+.phone {
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 22px;
+  color: #626262;
+  letter-spacing: 1px;
+}
+
+.btn-box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-box button {
+  width: 40%;
+}
+
+/* 评论区域 */
+
+.comment-area {
+  background: #eee;
+  margin: 15px auto 0;
+  position: relative;
+  color: #303030;
+  font-size: 14px;
+}
+
+.comment-area .dt {
+  height: 45px;
+  background: #fff;
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 15px;
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.comment-area .comments {
+  position: relative;
+  height: 45px;
+  line-height: 45px;
+}
+
+.comment-area .comments .line {
+  height: 4px;
+  width: 36px;
+  left: 50%;
+  margin-left: -18px;
+  background: #3e86ff;
+  position: absolute;
+  bottom: 0;
+  border-radius: 10px;
+}
+
+.comment-area .praise {
+  color: #919191;
+  display: flex;
+  align-items: center;
+}
+
+.comment-area .praise image {
+  width: 24px;
+  height: 24px;
+  display: block;
+  margin-right: 3px;
+}
+
+.comment-area .dd {
+  background: #fff;
+  padding: 15px;
+}
+
+.comment-area .dd .item {
+  display: table;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.comment-area .dd .face {
+  display: table-cell;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  flex-shrink: 0;
+  margin-right: 15px;
+}
+
+.comment-area .dd .face image {
+  width: 40px;
+  height: 40px;
+}
+
+.comment-area .dd .desc {
+  display: table-cell;
+  vertical-align: top;
+  padding-left: 10px;
+}
+
+.comment-area .dd .time {
+  line-height: 20px;
+  font-size: 12px;
+}
+
+.comment-area .dd .nickname {
+  line-height: 18px;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.comment-area .dd .time {
+  color: #909090;
+}
+
+.comment-area .dd .content {
+  margin-top: 6px;
+  line-height: 18px;
+  border-bottom: 1px solid #dedede;
+  padding-bottom: 10px;
+  margin-bottom: 5px;
+}
+
+/* 回复框 */
+
+.reply-area {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  background: #f5f5f5;
+  z-index: 99;
+}
+
+.reply-area .wrap {
+  width: 95%;
+  height: 50px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.reply-area .wrap input {
+  width: 71%;
+  height: 30px;
+  line-height: 30px;
+  border-bottom: 1px solid #74a7fe;
+  box-sizing: border-box;
+  padding: 0 5px;
+  font-size: 14px;
+}
+
+.reply-area .wrap button {
+  width: 20%;
+  font-size: 14px;
+  height: 36px;
+  line-height: 36px;
+  border-radius: 200px;
+  position: static;
+  border: 1px solid #dadada;
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+}
+
+.reply-area .wrap .btn {
+  border: none;
+}
+
+.praise.on {
+  color: #478cff;
+}
+/* img{
+    width: 100%;
+} */

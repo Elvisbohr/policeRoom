@@ -1,0 +1,15 @@
+<!--pages/dProgress/dProgress.wxml-->
+<view class='pages'>
+  <form  bindsubmit="onInquire" report-submit='true'>
+    <!-- <view class="inputbox flex vc">
+      <label>姓名</label>
+      <input placeholder='请输入姓名'></input>
+    </view> -->
+    <view class="inputbox flex vc">
+      <label>身份证号</label>
+      <input placeholder='请输入身份证号' name= 'idCard'></input>
+    </view>
+    <button class='but' formType='submit'>查询</button>
+  </form>
+</view>
+

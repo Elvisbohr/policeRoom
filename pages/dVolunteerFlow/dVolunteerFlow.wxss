@@ -1,0 +1,86 @@
+/* pages/dVolunteerFlow/dVolunteerFlow.wxss */
+.box{
+  padding:0 25rpx;
+}
+.inputbox{
+  width:100%;
+  height:100rpx;
+  border-bottom:1px solid #e0e0e0;
+  position: relative;
+  /* padding-right:20rpx; */
+  padding:20rpx 20rpx 20rpx 0;
+}
+.inputbox > label{
+  width:200rpx;
+}
+.inputbox > input,.inputbox > .radio-group,.inputbox > picker{
+  width:calc(100% - 200rpx);
+  height:100%;
+  text-align: right;
+  overflow: hidden;
+}
+.inputbox > picker{
+  padding-right:50rpx;
+}
+.picker{
+  width:100%;
+  height:100%;
+  overflow: hidden;
+}
+.pL30{
+  display: block;
+  font-size:28rpx;
+  line-height: 100rpx;
+  position: absolute;
+  right:0;
+  top:0;
+}
+.hui{
+  width:100%;
+  height:22rpx;
+  background:#ebebeb;
+}
+.noborder{
+  border:0;
+}
+.textbox{
+  width:100%;
+  overflow: hidden;
+  padding-top:20rpx;
+}
+textarea{
+  height:370rpx;
+  border:1px solid #36bbff;
+  border-radius: 10rpx;
+  margin-top:20rpx;
+  line-height: 40rpx;
+  padding:25rpx;
+}
+.but{
+  width:100%;
+  height:100rpx;
+  border-radius: 10rpx;
+  text-align: center;
+  line-height: 100rpx;
+  color:#fff;
+  background:#2fbbff;
+  margin:30rpx 0;
+}
+.imgbox{
+  width:100%;
+  overflow: hidden;
+  padding:20rpx 0;
+}
+.imgbox > .img{
+  width:150rpx;
+  height:150rpx;
+  border:1px solid #ebebeb;
+  margin-left:50rpx;
+}
+.imgbox > .img image{
+  width:100%;
+  height:100%;
+}
+.border{
+  border-bottom:1px solid #e0e0e0;
+}

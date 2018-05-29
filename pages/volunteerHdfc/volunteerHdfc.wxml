@@ -1,0 +1,17 @@
+<!--pages/volunteerHdfc/volunteerHdfc.wxml-->
+<view class='pages'>
+    <view class='main'>
+        <block wx:for="{{hdfc}}">
+            <view class='list flex vc'>
+                <image class='listL shrink0' src='{{item.img}}'></image>
+                <view class='listR flex ha column'>
+                    <view class='listRtit'>{{item.tit}}</view>
+                    <view class='listRb flex vc hb'>
+                        <view class='listRsite'>{{item.size}}</view>
+                        <view class='listRtime'>{{item.time}}</view>
+                    </view>
+                </view>
+            </view>
+        </block>
+    </view>
+</view>

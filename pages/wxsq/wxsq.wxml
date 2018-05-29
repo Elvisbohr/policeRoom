@@ -1,0 +1,47 @@
+<!--pages/wxsq/wxsq.wxml-->
+<view class="pages">
+  <scroll-view wx:if="{{list.length>0}}" class="scroll" scroll-y='true' bindscrolltolower="bindscrolltolower">
+    <view class="box">
+      <navigator url="../detailHf/detailHf?title=温馨社区&articleId={{item.id}}&status={{item.status}}" wx:for="{{list}}">
+        <view class="li flex">
+          <view class='img'>
+            <image src="{{item.cover}}" mode='aspectFill'></image>
+          </view>
+          <view class="con flex column hb">
+            <view>
+              <view class="title">{{item.title}}</view>
+            </view>     
+            <view class="flex hb">
+              <view class='tip'>{{item.labelName}}</view>
+              <view class='time'>{{item.createTime}}</view>
+            </view>
+          </view>
+            <!-- 1已通过2待审核3未通过 -->
+            <view class="ti {{item.status===2?'a1':''}} {{item.status===3?'a2':''}}"></view>
+            <view class="ti1">  
+              <view>已</view>  
+              <view>通过</view>  
+            </view>
+            <view wx:if='{{item.status===2}}' class="ti1 a11">  
+              <view>待</view>  
+              <view>审核</view>  
+            </view>
+            <view wx:if='{{item.status===3}}' class="ti1 a22">  
+              <view>未</view>  
+              <view>通过</view>  
+            </view>
+          
+        </view>
+      </navigator>
+    </view> 
+    <view class="jia" hidden='{{hidden}}'>暂无更多</view>
+  </scroll-view>
+   <view class='noNum' wx:if="{{list.length==0}}">
+      <image src="../../img/noNum1.jpg" mode="aspectFill"></image>
+    </view>
+  <!-- 编辑按钮 -->
+  <navigator url='../writeArti/writeArti' class="edit-btn">
+    <image src="../../img/edit.png" mode="widthFix"></image>
+  </navigator>   
+
+</view>

@@ -1,0 +1,45 @@
+<!--pages/baoliao/baoliao.wxml-->
+<view class="content">
+  <input class="inputTitle" placeholder='标题' bindinput="titleInp"></input>
+  <view class="title-pic-wrap">
+    <view style="color: #aaaaaa">上传头图(必填)：</view>
+    <view class="opera-wrap">
+      <view class="opera" bindtap='goTitlePic'>
+        <image class="icon" src="{{iconPic}}"></image>
+      </view>
+    </view>
+    <view class="title-pic">
+      <image class="title-pic-img" src="{{preImgTitle}}"></image>
+    </view>
+  </view>
+  <textarea class="con" placeholder='内容' bindinput="textInp"></textarea>
+  <view class="dizhi-wrap">
+    <image class="dizhiIcon" src="{{dizhiIcon}}"></image>
+    <view class="dizhi">{{address}}</view>
+    <view class="section" style="margin: 20rpx 0;">
+      <picker bindchange="bindPickerChange" range-key="{{'name'}}" value="{{index}}" range="{{quList}}">
+        <view class="picker">
+          选择区域：{{quText}}
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class="opera-wrap">
+    <view class="opera" bindtap='goPic'>
+      <image class="icon" src="{{iconPic}}"></image>
+    </view>
+    <view class="opera" bindtap='goCamera'>
+      <image class="icon" src="{{iconCamera}}"></image>
+    </view>
+    <view class="opera" bindtap='goShoot'>
+      <image class="icon" src="{{iconShoot}}"></image>
+    </view>
+  </view>
+  <view class="preimg-wrap" hidden="{{preImg.length === 0}}">
+    <image class="preimg" src="{{item}}" wx:for="{{preImg}}"></image>
+  </view>
+  <view class="preVideo-wrap" hidden="{{preVideo === ''}}">
+    <video src="{{preVideo}}"   controls ></video>
+  </view>
+  <view class="btn" bindtap="goTi">提交</view>
+</view>

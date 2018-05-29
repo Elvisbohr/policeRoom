@@ -1,0 +1,68 @@
+/* pages/wxsqList/wxsqList.wxss */
+.pages{
+  color:#434343;
+  font-size:28rpx;
+  width:100%;
+  height:100%;
+}
+.img{
+  width:100%;
+  height:270rpx;
+}
+.img image{
+  width:100%;
+  height:100%;
+}
+.title{
+  width:100%;
+  height:100rpx;
+  padding:24rpx;
+}
+.title .line{
+  width:4rpx;
+  height:35rpx;
+  background:#fe6850;
+  margin-right:20rpx;
+}
+.listbox{
+  width:100%;
+  height:calc(100% - 370rpx);
+  padding:0 24rpx;
+}
+.list {
+  width:100%;
+  height:190rpx;
+  border-bottom:1px solid #f1f1f1;
+  padding:20rpx 0;
+}
+.list image{
+  width:230rpx;
+  height:100%;
+}
+.list .right{
+  width:calc(100% - 230rpx);
+  height:100%;
+  padding-left:50rpx;
+}
+.right .tit{
+  width:100%;
+  overflow:hidden;  
+  text-overflow:ellipsis;  
+  display:-webkit-box;  
+  -webkit-line-clamp:2;  
+  -webkit-box-orient:vertical; 
+}
+.right .time{
+  color:#a0a0a0;
+  font-size: 20rpx;
+}
+.right .time .tip{
+  border:1px solid #3e86ff;
+  color:#3e86ff;
+  border-radius: 10rpx;
+  padding:5rpx 15rpx;
+}
+.jia{
+  text-align: center;
+  padding:20rpx 0;
+}

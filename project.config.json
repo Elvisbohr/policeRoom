@@ -1,0 +1,71 @@
+{
+	"description": "项目配置文件。",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.0.8",
+	"appid": "wx768ef2998b568e91",
+	"projectname": "%E8%AD%A6%E5%8A%A1%E5%AE%A42.0.4",
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "我的",
+					"pathName": "pages/mine/mine",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "签到",
+					"pathName": "pages/signIn/signIn",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "实名认证",
+					"pathName": "pages/Certification/Certification",
+					"query": ""
+				},
+				{
+					"id": 3,
+					"name": "tis",
+					"pathName": "pages/wxsqList/wxsqList",
+					"query": ""
+				},
+				{
+					"id": 4,
+					"name": "志愿者申请",
+					"pathName": "pages/volunteerIndex/volunteerIndex",
+					"query": ""
+				}
+			]
+		}
+	}
+}

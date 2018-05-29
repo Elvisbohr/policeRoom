@@ -1,0 +1,5 @@
+/* pages/test/test.wxss */
+.item{
+  height: 800rpx;
+  width: 100%;
+}

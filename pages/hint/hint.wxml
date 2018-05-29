@@ -1,0 +1,5 @@
+<!--pages/hint/hint.wxml-->
+<view class='pages'>
+    <image class='discern' mode='widthFix' src='../../images/discern.png'></image>
+    <button class='discernbtn' bindtap='discernbtn'>下一步</button> 
+</view>

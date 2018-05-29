@@ -1,0 +1,15 @@
+<!--pages/sspDetail/sspDetail.wxml-->
+<view class="head">
+  <view class="title">{{article.title}}</view>
+  <view class="subtitle">{{article.createTime}}</view>
+</view>
+<view class="myplace"></view>
+<scroll-view class="con">
+  <view class="preVideo-wrap" hidden="{{video === ''}}">
+    <video src="{{video}}"   controls ></video>
+  </view>
+  <view class="article-img-wrap" wx:for="{{imgs}}">
+    <image class="article-img" src="{{item}}" mode="widthFix"></image>
+  </view>
+  {{article.content}}
+</scroll-view>

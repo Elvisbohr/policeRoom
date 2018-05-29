@@ -1,0 +1,25 @@
+/* pages/huji/huji.wxss */
+.content{
+  padding: 30rpx;
+}
+.li{
+  position: relative;
+  height: 110rpx;
+  border-bottom: 1rpx solid #e0e0e0;
+}
+.title{
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 80%;
+  word-wrap: break-word;
+}
+.icon{
+  position: absolute;
+  width: 20rpx;
+  height: 30rpx;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}

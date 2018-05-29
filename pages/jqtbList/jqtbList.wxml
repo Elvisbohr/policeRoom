@@ -1,0 +1,31 @@
+<!--pages/dang/dang.wxml-->
+<view class="pages">
+  <view class="banner">
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="true" interval="5000" duration="800">
+      <block wx:for="{{collection.bannerUrls}}">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image" />
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="heng">
+      <image src="{{serverAddress}}/img/party/jdbannerbtm.png"></image>
+    </view>
+  </view>
+
+
+<view class="list-caption">
+    <view class="caption-line"></view>
+    <view>{{nowTitle}}</view>
+</view>
+<!-- 列表 -->
+<scroll-view scroll-y="true" class="djMenu">
+    <view class="djList" bindtap="skipUrl" wx:for="{{collection.lists}}" data-d-index="{{index}}">
+        <view class="text-con">{{item.contents}}</view>
+        <view class="tag-box">
+            <view class="tag">{{item.titType}}</view>
+            <view class="time">{{item.time}}</view>
+        </view>
+    </view>
+</scroll-view>
+  </view>

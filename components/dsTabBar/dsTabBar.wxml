@@ -1,0 +1,33 @@
+<view class="tabBar" style="background-color: #ffffff;border-top: 1rpx solid {{tabBar.borderStyle}}" hidden="{{tabBar.hide}}">
+  <view class="bar-item" wx:for="{{tabBar.list}}" bindtap="switch" data-id='{{index}}' wx:key="{{index}}">
+  <view class="icon-wrap {{variation.change(index,item.isActive)}}">
+    
+      <view direction="all" class="icon-tips-wrap" hidden="{{!item.tips}}">{{item.tips}}</view>
+
+    <image class="icon" src="{{item.iconPath}}" mode="scaleToFill"></image>
+  </view>
+  <view style="{{item.isActive ? 'color: '+tabBar.selectedColor+';' : ''}}">{{item.text}}</view>
+  </view>
+</view>
+<view class="mask {{tabBar.goMask ? 'myOpacity' : 'myOpacityBack'}}" hidden="{{tabBar.maskHide}}">
+  <view class="mask-top">
+    <view class="mask-date">
+      <view class="mask-date-1">
+        <view class="mask-date-1-1">{{tabBar.date.day}}</view>
+        <view class="mask-date-1-2">
+          <view>{{tabBar.date.week}}</view>
+          <view>{{tabBar.date.month}}/{{tabBar.date.year}}</view>
+        </view>
+      </view>
+      <view class="mask-date-2">
+      </view>
+    </view>
+    <view class="mask-ad"></view>
+  </view>
+  <view class="mask-con">
+  
+  </view>
+  <view class="mask-bottom">
+    <image class="mask-btn {{tabBar.goMask ? 'myRotate' : 'myRotateBack'}}" src="{{tabBar.plusSrc}}" mode="scaleToFill" bindtap='closeMask'></image>
+  </view>
+</view>

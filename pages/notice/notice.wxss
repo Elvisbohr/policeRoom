@@ -1,0 +1,92 @@
+/* pages/notice/notice.wxss */
+.pages{
+    background: #efefef;
+}
+image {
+   display: block; 
+  width: 100%;
+  height: auto;
+}
+icon{
+    display: block;
+}
+/* 我的 */
+.h40{
+    height: 40rpx;
+    width: 100%;
+}
+.head{
+    width: 100%;
+    height: 164rpx;
+    background: #fff;
+    padding: 0 40rpx;
+    margin: 0 0 40rpx;
+}
+user{
+    font-size: 28rpx;
+    color: 333333;
+}
+.userImg{
+    width: 130rpx;
+    height: 130rpx;
+    border-radius: 65rpx;
+    overflow: hidden;
+    margin-right: 20rpx;
+}
+.binding{
+    font-size: 26rpx;
+    color: #585858;
+}
+/* 导航 */
+.nav{
+    background: #fff;
+}
+.navList{
+    width: 90%;
+    height: 100rpx;
+    line-height: 100rpx;
+    margin: 0 5%;
+    border-bottom: 1px solid #f1f1f1;
+}
+.navList:last-child{
+     border-bottom: none;
+}
+.navListLeft{
+    height: inherit;
+    line-height: inherit;
+    font-size: 28rpx;
+    font-weight: 400;
+    color: #333333;
+}
+
+.navListRight{
+    height: inherit;
+    line-height: inherit;
+    font-size: 24rpx;
+    color: #333333;
+}
+.pL30{
+    padding-left: 30rpx;
+}
+.pR30{
+    padding-right: 30rpx;
+}
+.navListLeft .iconfont{
+    font-size: 48rpx;
+} 
+.navListRight .iconfont{
+    font-size: 34rpx;
+}
+/* 图标颜色 */
+.nav-wxsq{
+    color: #fc7888;
+}
+.nav-jyxc{
+    color: #faae4b;
+}
+.nav-zyz{
+    color: #d81e06;
+}
+.nav-ssp{
+    color: #ff4d4d;
+}

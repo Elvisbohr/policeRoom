@@ -1,0 +1,46 @@
+<!--pages/notice/notice.wxml-->
+<view class='pages'>
+    <view class='h40'></view>
+    <view class='nav'>
+        <navigator url='../tongzhi/tongzhi' class='navList flex vc hb'>
+            <view class='navListLeft flex vc'>
+                <icon class='iconfont icon-shenbao pR30 nav-jyxc'></icon>
+                <view>通知公告</view>
+            </view>
+            <view class='navListRight flex vc hb'>
+                <icon class='iconfont icon-xiangyoujiantou pL30'></icon>
+            </view>
+        </navigator>
+        <navigator url='../wxsqList/wxsqList' class='navList flex vc hb'>
+            <view class='navListLeft flex vc'>
+                <icon class='iconfont icon-fangzi01-copy pR30 nav-wxsq'></icon>
+                <view>温馨社区</view>
+            </view>
+            <view class='navListRight flex vc hb'>
+                <icon class='iconfont icon-xiangyoujiantou pL30'></icon>
+            </view>
+        </navigator>
+
+    </view>
+    <view class='h40'></view>
+    <view class='nav'>
+        <navigator url='../volunteerIndex/volunteerIndex' class='navList flex vc hb'>
+            <view class='navListLeft flex vc'>
+                <icon class='iconfont icon-zhiyuanzhe pR30 nav-zyz'></icon>
+                <view>志愿者</view>
+            </view>
+            <view class='navListRight flex vc hb'>
+                <icon class='iconfont icon-xiangyoujiantou pL30'></icon>
+            </view>
+        </navigator>
+        <navigator url='../suishou/suishou' class='navList flex vc hb'>
+            <view class='navListLeft flex vc'>
+                <icon class='iconfont icon-suishoupai pR30 nav-ssp'></icon>
+                <view>随手拍</view>
+            </view>
+            <view class='navListRight flex vc hb'>
+                <icon class='iconfont icon-xiangyoujiantou pL30'></icon>
+            </view>
+        </navigator>
+    </view>
+</view>

@@ -1,0 +1,39 @@
+<form bindsubmit="formSubmit" report-submit="true">
+   <view class="fill-info">
+    <!-- 内容框 -->
+    <view class="content-box">
+      <textarea maxlength="-1" value="{{parameter.content}}" placeholder-class="place-holder" placeholder="写点什么..." class="textarea" name="content" bindblur="inputBlur" data-name="content" />
+      <!-- 图片模块 -->
+      <view hidden="{{parameter.imgs.length<=0}}" class="img-box">
+        <block wx:for="{{parameter.imgs}}" wx:for-item="imgItem">
+          <view class="img-item">
+            <icon type="clear" color="red" size="20" catchtap="removeFile" data-remove-index="{{index}}" />
+            <image src="{{imgItem}}" mode="widthFix"></image>
+          </view>
+        </block>
+      </view>
+      <!-- 视频模块 -->
+       <view hidden="{{parameter.video === ''}}" class="video-box">
+        <video src="{{parameter.video}}"></video>
+      </view> 
+    </view>
+    <!-- 图标点击框 -->
+    <view class="icon-box">
+      <image catchtap="chooseImage" data-index="{{index}}" src="../../img/photo-icon.png" mode="widthFix"></image>
+       <image catchtap="chooseVideo" data-index="{{index}}" src="../../img/video-icon.png" mode="widthFix"></image> 
+    </view>
+    <view class="item address flex">
+      <!-- <image class="address-icon" src="../../img/sj.png" mode="widthFix"></image> -->
+      <input class="sjadd" style="width:94%;"  value="{{parameter.name}}" placeholder="姓名 （必填，仅工作人员可见）" bindblur="inputBlur" data-name="name"  auto-focus/>
+    </view>
+    <view class="item address flex">
+      <!-- <image class="address-icon" src="../../img/sj.png" mode="widthFix"></image> -->
+      <input class="sjadd" style="width:94%;"  value="{{parameter.phone}}" placeholder="联系电话 （必填，仅工作人员可见）" bindblur="inputBlur" data-name="phone"/>
+    </view>
+    <view class="item address flex">
+      <!-- <image class="address-icon" src="../../img/sj.png" mode="widthFix"></image> -->
+      <input name='address' class="sjadd" style="width:94%;"  value="{{address}}" placeholder="详细地址 （必填，仅工作人员可见）" bindblur="inputBlur" data-name="address"/>
+    </view>
+  </view> 
+  <button class="btn btn-square" formType="submit">提交</button>
+</form>

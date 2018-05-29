@@ -1,0 +1,4 @@
+<!--pages/catalogDetail/catalogDetail.wxml-->
+<view class="content">
+  <mylist arr="{{zaixian}}" bindmyevent="onMyEvent"></mylist>
+</view>

@@ -1,0 +1,9 @@
+<!-- 组件模板 -->
+<view class="wrap">
+  <view class="tag" wx:for="{{arr}}" bindtap="onTap" data-temp='{{item.id}}'>
+    <view class="cata-small">
+      <text class="text">{{item.name}}</text>
+      <image class="icon" src="{{item.icon}}" mode='aspectFit' style='{{item.adjust}}'></image>
+    </view>
+  </view>
+</view>

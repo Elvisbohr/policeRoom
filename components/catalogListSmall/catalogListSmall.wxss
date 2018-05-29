@@ -1,0 +1,60 @@
+@import "/font/iconfont.wxss"; 
+.wrap{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.tag{
+  margin-bottom: 60rpx;
+  flex: 0 0 42vw;
+  height: 20vw;
+  box-shadow: 0 0 25rpx #dce9ff;
+  position: relative;
+}
+.tag:nth-last-child(1), .tag:nth-last-child(2) {
+  margin-bottom: 0;
+}
+.cata-small{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+  padding: 0 0 0 20rpx;
+  font-size: 26rpx;
+}
+.text{
+  display: inline-block;
+  width: 50%;
+  vertical-align: middle;
+  color: #000000;
+}
+.icon{
+  display: inline-block;
+  width: 70rpx;
+  height: 70rpx;
+  vertical-align: middle;
+}
+.myiconfont{
+  font-size: 76rpx;
+  margin-bottom: 10rpx;
+}
+.color-0{
+  background: -webkit-gradient(linear, left top, right bottom, from(#a27ef1), to(#c19ef8));
+}
+.color-1{
+  background: -webkit-gradient(linear, left top, right bottom, from(#faac4b), to(#faca49));
+}
+.color-2{
+  background: -webkit-gradient(linear, left top, right bottom, from(#ff6142), to(#fd8d7c));
+}
+.color-3{
+  background: -webkit-gradient(linear, left top, right bottom, from(#05aef0), to(#68d1fa));
+}
+.color-4{
+  background: -webkit-gradient(linear, left top, right bottom, from(#1e9b4f), to(#55ba6e));
+}
+.color-5{
+  background: -webkit-gradient(linear, left top, right bottom, from(#1f80ef), to(#5399f3));
+}

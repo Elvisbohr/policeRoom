@@ -1,0 +1,502 @@
+<!--pages/flow/flow.wxml-->
+<form bindsubmit="onFlow" report-submit='true'>
+<scroll-view scroll-y='true' scroll-top='{{top}}' id='step'>
+  <view class='header relative'>
+    <view class='xuline'>
+      <view class="box box1 {{step===1||step===2?'active':''}}">
+        <view class='yuan'></view>
+        <view class='text'>申请人信息</view>
+      </view>
+      <view class="box box2 {{step===3||step===4?'active':''}}">
+        <view class='yuan'></view>
+        <view class='text'>申报内容</view>
+      </view>
+      <view class="box box3 {{step===5?'active':''}}">
+        <view class='yuan'></view>
+        <view class='text'>上传证明</view>
+      </view> 
+      <view class="box box4 {{step===6?'active':''}}">
+        <view class='yuan'></view>
+        <view class='text'>取件方式</view>
+      </view> 
+      <view class="box box5 {{step===7?'active':''}}">
+        <view class='yuan'></view>
+        <view class='text'>确认信息</view>
+      </view>  
+    </view>
+  </view>
+
+
+  <!-- 申报人信息 -->
+  <view hidden="{{step===1?false:true}}">
+    <view class='tit flex'>
+      <view class='line'></view>  
+      <view class='text'>申报人信息</view>
+    </view>
+    <view class='inputbox'>
+      <view class='input flex vc'>
+        <view>姓名</view>
+        <input placeholder='请输入姓名' name="name"></input>
+      </view>
+      <view class='input flex vc'>
+        <view>联系电话</view>
+        <input type='number' name='tel' placeholder='请输入联系电话'></input>
+      </view>
+      <view class='input flex vc'>
+        <view>身份证号码</view>
+        <input type="idcard" name='idCard' placeholder='请输入身份证号码'></input>
+      </view>
+    </view>
+    <view class='bluebox'>
+      <view class='title'><view class="hao">!</view>温馨提示:</view>
+      <view class="con">您的手机号码非常重要，业务办理过程中，相关信息会以短信的方式发送到您的手机，遇到问题，工作人员可能会直接与您联系。请您在平台中留下的手机号码是最近常用的。</view>  
+    </view>
+    <view class='button flex hb'>
+      <navigator url='../newborn/newborn' class='prev'>上一步</navigator>
+      <!-- <view class='next' data-step='2' bindtap='next' >下一步</view> -->
+      <button class='next' data-index="1" data-step='2' formType="submit">下一步</button>
+    </view>
+  </view>
+  <!-- 申请人现居住地址 -->
+  <view hidden="{{step===2?false:true}}">
+    <view class='tit flex'>
+      <view class='line'></view>  
+      <view class='text'>申请人现居住地址</view>
+    </view>
+    <view class='inputbox'>
+      <view class='input flex vc'>
+        <view>地址</view>
+        <picker name="address" mode="region" data-index='1' bindchange="bindRegionChange"  value="{{region}}"> 
+          <view class="picker">
+            {{region[0]}} {{region[1]}} {{region[2]}}
+          </view>
+        </picker>
+      </view>
+      <view class='input flex vc'>
+        <view>详细地址</view>
+        <input name="delAddress" placeholder='请输入详细地址'></input>
+      </view>
+    </view>
+    <view class='bluebox'>
+      <view class='title'><view class="hao">!</view>温馨提示:</view>
+      <view class="con">您在平台上所留的居住地址是我们预设的快递寄送地址。</view>  
+    </view>
+    <view class='button flex hb'>
+      <view class='prev' data-step='1' bindtap='prev'>上一步</view>
+      <!-- <view class='next' data-step='3'  bindtap='next'>下一步</view> -->
+      <button class='next' data-index="2" data-step='3' formType="submit">下一步</button>
+    </view>
+  </view>
+  <!-- 申请人与婴儿关系 -->
+  <view hidden="{{step===3?false:true}}">
+    <view class='tit flex'>
+      <view class='line'></view>  
+      <view class='text'>申请人与婴儿关系</view>
+    </view>
+    <view class='inputbox'>
+      <view class='input flex vc'>
+        <view>关系</view>
+        <view class='ul flex vc'>
+          <view wx:for="{{relaArr}}" class="li {{relation==item.id?'active':''}}" data-value="{{item.id}}" data-index="rela" bindtap='choose'>{{item.name}}</view>
+        </view>
+      </view>
+    </view>
+    <view class='bluebox'>
+      <view class='title'><view class="hao">!</view>温馨提示:</view>
+      <view>婴儿出生申报需由婴儿的监护人或户主申请落户。</view>  
+    </view>
+
+    <view class='tit flex'>
+      <view class='line'></view>  
+      <view class='text'>请选择随父申报还是随母申报</view> 
+    </view>
+    <view class='inputbox'>
+      <view class='input flex vc'>
+        <view>随父/母申报</view>
+        <view class='ul flex vc'>
+          <view wx:for="{{relationArr}}" class="li {{relation1==item.id?'active':''}}" data-value="{{item.id}}" data-index="relation" bindtap='choose'>{{item.name}}</view>
+        </view>
+      </view>
+    </view>
+
+    <view class='tit flex'>
+      <view class='line'></view>  
+      <view class='text'>请录入父亲或母亲的相关信息</view> 
+    </view>
+    <view class='inputbox'>
+      <view class='input flex vc'>
+        <view>姓名</view>
+        <input name="Fname" placeholder='请输入姓名'></input>
+      </view>
+      <view class='input flex vc'>
+        <view>身份证号码</view>
+        <input name="FidCard" type="idcard" placeholder='请输入身份证号码'></input>
+      </view>
+    </view>
+    <view class='bluebox'>
+      <view class='title'><view class="hao">!</view>温馨提示:</view>
+      <view class="con">根据相关规定，婴儿户口不能申报落户在已被注销户学生集体户、单位集体户等户内。如果核实您的申请如属于以上情形的，我们将会电话或短信通知不予办理。您如有疑问请到登记地派出所窗口询问。</view>  
+    </view>
+    <view class='button flex hb'>
+      <view class='prev' data-step='2' bindtap='prev'>上一步</view>
+      <!-- <view class='next' data-step='4' bindtap='next'>下一步</view> -->
+      <button class='next' data-index="3" data-step='4' formType="submit">下一步</button>
+    </view>
+  </view>
+  <!-- 婴儿信息 -->
+  <view hidden="{{step===4?false:true}}">
+    <view class='tit flex'>
+      <view class='line'></view>  
+      <view class='text'>婴儿信息</view>
+    </view>
+    <view class='bluebox'>
+      <view class='title'><view class="hao">!</view>温馨提示:</view>
+      <view class="con">申报的婴儿姓名、性别、出生日期应与《出生医学证明》上的登载的信息一致；经核查如不一致的我们将会电话或短信提醒您，请持相关材料至落户地派出所办理。</view>  
+    </view>
+    <view class='inputbox'>
+      <view class='input flex vc'>
+        <view>姓名</view>
+        <input name="newName" placeholder='请输入姓名'></input>
+      </view>
+      <view class='input flex vc'>
+        <view>性别</view>
+        <view class='ul flex vc'>
+          <view wx:for="{{sexArr}}" class="li {{sex==item.id?'active':''}}" data-value="{{item.id}}" data-index="sex" bindtap='choose'>{{item.name}}</view>
+        </view>
+      </view>
+      <view class='input flex vc'>
+        <view>出生年月</view>
+        <picker name="date" mode="date" value="{{date}}" bindchange="bindDateChange">
+          <view class="picker">
+            {{date}}
+            <text class='rightJ'>></text>
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class='bluebox'>
+      <view class='title'><view class="hao">!</view>温馨提示:</view>
+      <view class="con">若婴儿父母两人的民族不同，需父母双方到登记地派出所共同签署确认婴儿民族成分。</view>  
+    </view>
+    <view class='inputbox'>
+      <view class='input flex vc'>
+        <view>民族</view>
+        <picker name="family" bindchange="bindPickerChange" value="{{array[index]}}" range="{{array}}">
+          <view class="picker">
+            {{array[index]}}
+            <text class='rightJ'>></text>
+          </view>
+        </picker>
+      </view>
+    </view>
+
+    <view class='tit flex'>
+      <view class='line'></view>  
+      <view class='text'>婴儿籍贯</view> 
+    </view>
+    <view class='bluebox'>
+      <view class='title'><view class="hao">!</view>温馨提示:</view>
+      <view>婴儿籍贯应填写婴儿祖父现居住地。 </view>  
+    </view>
+    <view class='inputbox'>
+      <view class='input flex vc'>
+        <view>籍贯地址</view>
+        <picker name="newAddress" mode="region" data-index='2' bindchange="bindRegionChange" value="{{region1}}">
+          <view class="picker">
+            {{region1[0]}} {{region1[1]}} {{region1[2]}}
+            <text class='rightJ'>></text>
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class='button flex hb'>
+      <view class='prev' data-step='3' bindtap='prev'>上一步</view>
+      <!-- <view class='next' data-step='5' bindtap='next'>下一步</view> -->
+      <button class='next' data-index="4" data-step='5' formType="submit">下一步</button>
+    </view>
+  </view>
+  <!-- 上传证明 -->
+  <view hidden="{{step===5?false:true}}">
+    <view class='tit flex'>
+      <view class='line'></view>  
+      <view class='text'>婴儿父亲手持身份证及同意申报落户声明书拍照上传</view>
+    </view>
+    <view class='bluebox'>
+      <view class='title'><view class="hao">!</view>温馨提示:</view>
+      <view class="con">婴儿出生申报户口登记，需系其父母双方共同意愿，请婴儿父亲手持身份证及同意申报落户声明书拍照上传证明。婴儿父母登记为同户且民族信息一致的，可以不用上传证明。</view>  
+    </view>
+    <view class='bluebox'>
+      <view class='title'><view class="hao">!</view>示范照片:</view>
+      <view class='imgbox flex ha'>
+        <view class='img'>
+          <image mode="widthFix" src='https://djfy.djfy365.com/mall/upload/d-img/a1.jpg' bindtap="previewImg"></image>
+          <view>申明书写范本</view>
+        </view>
+        <view class='img'>
+          <image mode="widthFix" src='https://djfy.djfy365.com/mall/upload/d-img/a2.jpg'bindtap="previewImg2"></image>
+          <view>拍照姿势示例</view>
+        </view>
+      </view>
+    </view>
+    <view class='uplodePhoto'>
+      <view class='flex title hb'>
+        <view class='titl'>照片上传</view>
+        <view class="number">
+          <text wx:if="{{files==''}}">0</text>
+          <text wx:else>1</text>
+          /1
+        </view>
+      </view>
+      <view class='flex imgbox'>
+        <view wx:if="{{files!=''}}" class="weui-uploader__file" bindtap="previewImage" id="{{files}}">
+            <image class="weui-uploader__img" src="{{files}}" mode="aspectFill" />
+        </view>
+        <view class='img'>
+          <image bindtap="chooseImage" mode="widthFix" src='../../images/add.png'></image>
+        </view>
+      </view>
+    </view>
+    <view class='button flex hb'>
+      <view class='prev' data-step='4' bindtap='prev'>上一步</view>
+      <!-- <view class='next' data-step='6' bindtap='next'>下一步</view> -->
+      <button class='next' data-index="5" data-step='6' formType="submit">下一步</button>
+    </view>
+  </view>
+  <!-- 取件方式 -->
+  <view hidden="{{step===6?false:true}}">
+    <view class='tit flex'>
+      <view class='line'></view>  
+      <view class='text'>请选择领取方式</view>
+    </view>
+    <view class='inputbox'>
+      <view class='input flex vc'>
+        <view>领取方式</view>
+        <view class='ul flex vc'>
+          <view wx:for="{{wayArr}}" class="li {{way==item.id?'active':''}}" data-value="{{item.id}}" data-index="way" bindtap='choose'>{{item.name}}</view>
+        </view>
+      </view>
+    </view>
+    <!-- 到所领取 -->
+    <view wx:if="{{way==1}}">
+       <view class='bluebox'>
+        <view class='title'><view class="hao">!</view>温馨提示:</view>
+        <view class="con">您选择到派出所窗口领取。请您留意我们的短信或电话通知，并按照通知的提示，带上身份证以及其他必要的证件，于工作时间到制定的派出所窗口领取办理结果件。如果提示您还需要通知其他相关人员到场的，请务必告知其他相关人员一并到场办理。</view>  
+      </view>
+    </view>
+   <!-- 邮寄到付 -->
+    <view wx:if="{{way==2}}">
+      <view class='bluebox'>
+        <view class='title'><view class="hao">!</view>温馨提示:</view>
+        <view class="con">您选择快递寄送办理结果件。由于婴儿出生登记的信息需要在您的户口本上签注，并且按照规定，出生申报之后，户口登记部门需要留存《出生医学证明》上的证明副页。为方便您提交这些材料，我们在网上受理完毕之后，讲委托快递工作人员上门收取相关证件，并在签注、留存完毕之后通过快递寄送给您，请您注意与快递工作人员做好对接。谢谢！我们将根据您在平台上所留的个人信息收、寄送快递，如果您要另外指定上门取件及办结收件的地址，请在下方修改快递收发信息。</view>   
+      </view>
+      <view class='tit flex'>
+        <view class='line'></view>  
+        <view class='text'>请选择快递方式</view>
+      </view>
+      <view class='inputbox'>
+        <view class='input flex vc'>
+          <view>快递方式</view>
+          <view class='ul flex vc'>
+             <view wx:for="{{expressWayArr}}" class="li {{expressWay==item.id?'active':''}}" data-value="{{item.id}}" data-index="expressWay" bindtap='choose'>{{item.name}}</view>
+         </view> 
+         </view> 
+      </view>
+      <view class='bluebox'>
+        <view class='title'><view class="hao">!</view>快递资费参考:</view>
+        <view class="con">【提示】以下信息为1趟快递的自费参考。上门取件与办结收件为2次快递，需付款2次</view>
+        <view class="con">【EMS】太原市内：8元、山西省内：12元、其他：20元</view>
+        <view class="con">【顺丰标快】（1kg以内）寄达地--太原市内：10元、山西省内：12元、其他：20元</view>  
+      </view>
+
+      <view class='tit flex'>
+        <view class='line'></view>  
+        <view class='text'>上门取件</view>
+      </view>
+      <view class='bluebox'>
+        <view class='title'><view class="hao">!</view>温馨提示:</view>
+        <view> 当前上门取件快递资费约20元  </view>
+      </view>
+      <view class='inputbox'>
+        <view class='input flex vc'>
+          <view>姓名</view>
+          <input name="kname" placeholder='请输入姓名'></input>
+        </view>
+        <view class='input flex vc'>
+          <view>联系电话</view>
+          <input name="ktel" type='number' placeholder='请输入联系电话'></input>
+        </view>
+        <view class='input flex vc'>
+          <view>地址</view>
+          <picker name="kaddress" mode="region" data-index="3" bindchange="bindRegionChange" value="{{region2}}">
+            <view class="picker">
+              {{region2[0]}} {{region2[1]}} {{region2[2]}}
+              <text class='rightJ'>></text>
+            </view>
+          </picker>
+        </view>
+        <view class='input flex vc'>
+          <view>详细地址</view>
+          <input name="kdelAddress" placeholder='请输入详细地址'></input>
+        </view>     
+      </view>
+
+      <view class='tit flex'>
+        <view class='line'></view>  
+        <view class='text'>办结收件信息</view>
+      </view>
+      <view class='bluebox'>
+        <view class='title'><view class="hao">!</view>温馨提示:</view>
+        <view> 当前办结收件快递资费约20元  </view>
+      </view>
+      <view class='inputbox'>
+        <view class='input flex vc'>
+          <view>姓名</view>
+          <input name="Bname" placeholder='请输入姓名'></input>
+        </view>
+        <view class='input flex vc'>
+          <view>联系电话</view>
+          <input name="Btel" type='number' placeholder='请输入联系电话'></input>
+        </view>
+        <view class='input flex vc'>
+          <view>地址</view>
+          <picker name="Baddress" mode="region" data-index="4" bindchange="bindRegionChange" value="{{region3}}">
+            <view class="picker">
+              {{region3[0]}} {{region3[1]}} {{region3[2]}}
+              <text class='rightJ'>></text>
+            </view>
+          </picker>
+        </view>
+        <view class='input flex vc'>
+          <view>详细地址</view>
+          <input name="BdelAddress" placeholder='请输入详细地址'></input>
+        </view>     
+      </view>
+
+    </view>
+    <view class='button flex hb'>
+      <view class='prev' data-step='5' bindtap='prev'>上一步</view>
+      <button class='next' data-index="6" data-step='7' formType="submit">下一步</button>
+    </view>
+  </view>
+  <!-- 确认信息 -->
+  <view class='confirm' hidden="{{step===7?false:true}}">
+    <view class='title'>出生申报—申请单</view>
+    <view class="con">
+      <view class="li flex">
+        <view>申请人姓名：</view>
+        <view>{{infoData.name}}</view>
+      </view>
+      <view class="li flex">
+        <view>申请人联系电话：</view>
+        <view>{{infoData.tel}}</view>
+      </view>
+      <view class="li flex">
+        <view>申请人身份证号码：</view>
+        <view>{{infoData.idCard}}</view>
+      </view>
+      <view class="li flex">
+        <view>申请人现居住地址：</view>
+        <view>{{infoData.address[0]}}{{infoData.address[1]}}{{infoData.address[2]}}{{infoData.delAddress}}</view>
+      </view>
+      <view class="li flex">
+        <view>申请人与婴儿关系：</view>
+        <view wx:if="{{relation==1}}">监护人</view>
+        <view wx:if="{{relation==2}}">户主</view>
+      </view>
+      <view class="li flex">
+        <view>随父/母申报：</view>
+        <view wx:if="{{relation1==1}}">随父申报</view>
+        <view wx:if="{{relation1==2}}">随母申报</view>
+      </view>
+      <view class="li flex">
+        <view>父/母姓名：</view>
+        <view>{{infoData.Fname}}</view>
+      </view>
+      <view class="li flex">
+        <view>父/母身份证号：</view>
+        <view>{{infoData.FidCard}}</view>
+      </view>
+      <view class="li flex">
+        <view>婴儿姓名：</view>
+        <view>{{infoData.newName}}</view>
+      </view>
+      <view class="li flex">
+        <view>婴儿性别：</view>
+        <view wx:if="{{sex===1}}">男</view>
+        <view wx:if="{{sex===2}}">女</view>
+      </view>
+      <view class="li flex">
+        <view>婴儿出生年月：</view>
+        <view>{{infoData.date}}</view>
+      </view>
+      <view class="li flex">
+        <view>婴儿民族：</view>
+        <view>{{infoData.family}}</view>
+      </view>
+      <view class="li flex">
+        <view>婴儿籍贯：</view>
+        <view>{{infoData.newAddress[0]}}{{infoData.newAddress[1]}}{{infoData.newAddress[2]}}</view>
+      </view>
+      <view class="li flex">
+        <view>领取方式：</view>
+        <view wx:if="{{way==1}}">到所领取</view>
+        <view wx:if="{{way==2}}">邮寄到付</view>
+      </view>
+      <view wx:if="{{way===2}}">
+        <view class="li flex">
+          <view>邮寄方式：</view>
+          <view wx:if="{{expressWay==1}}">EMS</view>
+          <view wx:if="{{expressWay==2}}">顺丰</view>
+        </view>
+        <view class="li flex">
+          <view>上门取件联系人姓名：</view>
+          <view>{{infoData.kname}}</view>
+        </view>
+        <view class="li flex">
+          <view>上门取件联系电话：</view>
+          <view>{{infoData.ktel}}</view>
+        </view>
+        <view class="li flex">
+          <view>上门取件地址：</view>
+          <view>{{infoData.kaddress[0]}}{{infoData.kaddress[1]}}{{infoData.kaddress[2]}}{{infoData.kdelAddress}}</view>
+        </view>
+        <view class="li flex">
+          <view>办结收件联系人姓名：</view>
+          <view>{{infoData.Bname}}</view>
+        </view>
+        <view class="li flex">
+          <view>办结收件联系电话：</view>
+          <view>{{infoData.Btel}}</view>
+        </view>
+        <view class="li flex">
+          <view>办结收件地址：</view>
+          <view>{{infoData.Baddress[0]}}{{infoData.Baddress[1]}}{{infoData.Baddress[2]}}{{infoData.BdelAddress}}</view>
+        </view>
+      </view>
+
+
+
+
+
+
+    </view>
+    <view class='bluebox'>
+      <view class='title'>
+        <view class="hao">!</view>
+        温馨提示:
+      </view>
+      <view>请仔细核对以上信息，如果准确无误，请在下面方框内打勾并提交，如果有差错，请按“上一步”回退到相应页面修改。审核通过后请根据短信提醒携带相应材料，到指定的派出所户籍窗口领取（或审核通过后请根据短信提醒准备相应材料，交由上门取件的快递员帮您寄送），谢谢您的支持！</view>  
+    </view>
+    <label class="checkbox">
+      <checkbox value="" checked='true'  color='#2b7aff'/>
+      <text class='tip'>本人已仔细核对，上述信息准确无误。</text>        
+    </label>
+    <view class='button flex hb'>
+      <view class='prev' data-step='6' bindtap='prev'>上一步</view>
+      <button class='next' bindtap="submit">提交</button>
+    </view>
+  </view>
+
+</scroll-view>
+</form>
+

@@ -1,0 +1,44 @@
+<!--pages/volunteerIndex/volunteerIndex.wxml-->
+<view class="pages">
+    <view class="banner">
+        <swiper autoplay="true" interval="5000" duration="800">
+            <block wx:for="{{banner}}">
+                <swiper-item>
+                    <image src="{{item}}" class="slide-image" />
+                </swiper-item>
+            </block>
+        </swiper>
+    </view>
+    <!-- tabmenu -->
+    <swiper indicator-active-color="#2979ff" class="tabMenu">
+        <swiper-item class="flex vc ha">
+            <block wx:for="{{tabMenus}}" wx:for-index="index" wx:for-item="item">
+                <view class="s-box" bindtap="shopSkip" data-url="{{item.url}}">
+                    <view class="pic">
+                        <image src="{{item.icon}}"></image>
+                    </view>
+                    <view class="text">{{item.name}}</view>
+                </view>
+            </block>
+        </swiper-item>
+    </swiper>
+    <!-- 列表 -->
+    <view class='tit flex vc'>
+        <view class='titItem'>热门消息</view>
+    </view>
+    <scroll-view scroll-y="true" bindscrolltolower="loadMore" class="djMenu">
+        <view class="djList flex vc hb" wx:for="{{lists}}" data-name="{{item.labelName}}" data-id="{{item.id}}">
+            <image class="listL shrink0" src="{{item.cover}}"></image>
+            <view class='listC shrink0 flex hb column'>
+                <view class='listCtit'>{{item.title}}</view>
+                <view class='listCtime'>{{item.beginTime}}</view>
+                <view class='listCsite'>{{item.addresss}}</view>
+            </view>
+            <view class="listR shrink0 flex hb column">
+                <view class='listRdistance'>{{item.distance}}</view>                
+                <navigator url='../hdDetails/hdDetails?id={{item.id}}' class='listRbtn'>立即参加</navigator>                
+            </view>
+        </view>
+         <view class='loadMore' bindtap='loadMore'>{{moreTit}}</view> 
+    </scroll-view>
+</view>

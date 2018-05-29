@@ -1,0 +1,23 @@
+<!--pages/partyList/partyList.wxml-->
+<!-- // 引入富文本   模板 -->
+<import src="../../wxParse/wxParse.wxml"/>
+<view class="pages">
+
+    <!-- 标题区域 -->
+    <view class="plHead">
+        <text class='headTitle'>{{detialObj.title}}</text>
+        <view class="headList">
+            <text class="fl">{{detialObj.createTime}}</text>
+            <text class="fr">来源: {{detialObj.source}}</text>
+        </view>
+    </view>
+
+    <!-- 内容区域 -->
+    <view class="plConter">
+      <view class="conbox">
+       <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+
+        <!-- <rich-text nodes="{{detialObj.content}}"></rich-text> -->
+      </view>  
+    </view>
+</view>

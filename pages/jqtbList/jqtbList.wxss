@@ -1,0 +1,108 @@
+/* pages/djwhList/djwhList.wxss */
+page,.pages{
+  width: 100%;
+  height: 100%;
+}
+.banner {
+  width: 100%;
+  height: 22%;
+}
+
+.banner swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.banner .heng {
+  width: 100%;
+  height: 20px;
+  position: relative;
+  margin-top: -20px;
+}
+
+.banner .heng image {
+  width: 100%;
+  height: 100%;
+}
+
+.slide-image {
+  width: 100%;
+  height: 100%;
+}
+
+.banner image {
+  width: 100%;
+}
+
+
+
+.list-caption{
+    display:flex;
+    flex-wrap:nowrap;
+    justify-content:space-between;
+    align-items:center;
+    height:8%;
+    font-size:1rem;
+    color:#434343;
+    position:relative;
+    padding-left:7%;
+    margin-bottom:41rpx;
+    border-bottom:1px solid #dcdcdc;
+    width: 99%;
+    box-sizing: border-box;
+}
+.list-caption input{
+    font-size: 0.8rem;
+    width: 90%;
+}
+.list-caption .caption-line{
+    left:3%;
+}
+.search-wrap{
+    width: 50%;
+}
+
+
+.djMenu {
+  padding-left: 15px;
+  padding-right: 15px;
+  height: 65%;
+  margin-top: 2%;
+  box-sizing: border-box;
+}
+
+.djTit {
+  display: flex;
+  font-weight: bold;
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 14px;
+}
+.tag{
+    color:#3e86ff;
+    border: 1px solid #3e86ff;
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+.djList {
+  width: 100%;
+  padding: 20rpx 0;
+  border-bottom: 1px solid #f1f1f1;
+}
+.djList .text-con{
+  font-size: 0.9rem;
+  color:#7d7d7d;
+  line-height: 1.3rem;
+}
+.djList .tag-box{
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+}
+.djList .tag-box .time{
+  color:#a0a0a0;
+}
+
+

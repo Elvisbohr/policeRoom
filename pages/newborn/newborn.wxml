@@ -1,0 +1,31 @@
+<!--pages/newborn/newborn.wxml-->
+<view class='newborn'>
+  <view class='title'>出生申报—办理需知</view>
+  <view class='con'>
+    <view class='ti'>一、办理依据</view>
+    <view class='text'>《中华人民共和国户口登记条例》</view>
+    <view class='text'>《山西省常住户口登记管理规定》</view>
+    <view class='text'>《山西省＜出生医学证明＞管理规定》</view>
+  </view>
+  <view class='con'>
+    <view class='ti'>二、申报条件</view>
+    <view class='text'>婴儿出生后一个月以内，由婴儿的监护人或者户主向婴儿父亲或母亲常住户口所在地的公安派出所申报出生登记。婴儿出生1个月后申报出生登记的，由公安派出所对未按时申报出生登记的情况说明进行核查。</view>
+  </view>
+  <view class='con'>
+    <view class='ti'>三、申报材料</view>
+    <view class='text'>我们将通过政务数据资源核验婴儿《出生医学证明》、父母的居民身份证、父母婚姻状况证明等信息，如果无法完成核验，我们将联系您持相关证明原件到户籍地派出所办理，请您留意电话与短消息。</view>
+  </view>
+  <view class='con'>
+    <view class='ti'>四、网上办理流转时限</view>
+    <view class='text'>3个工作日（快递收寄送达时间不计）</view>
+  </view>
+  <view class='bluebox'>
+    <view class='title'><view class="hao">!</view>温馨提示</view>
+    <view>网上办理暂未开通非婚生小孩出生申报。如属非婚生小孩出生申报，请携带小孩《出生医学证明》、父或母身份证、户口簿，个人书面声明到落户地派出所户籍窗口申报，需调查核实后予以办理落户。</view>  
+  </view>
+  <label class="checkbox">
+    <checkbox value="" checked  color='#2b7aff'/>
+    <text class='tip'>我已阅读以上内容。</text>        
+  </label>
+  <navigator url='../flow/flow' class='button'>下一步</navigator>
+</view>

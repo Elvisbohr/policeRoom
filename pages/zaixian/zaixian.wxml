@@ -1,0 +1,6 @@
+<!--pages/zaixian/zaixian.wxml-->
+<!-- 在线办事 -->
+<block wx:for="{{catalogBig}}">
+  <view class="second-level" id="zaixian">{{item.name}}</view>
+  <mylist arr="{{catalogSmall[item.name]}}" bindmyevent="onMyEvent"></mylist>
+</block>

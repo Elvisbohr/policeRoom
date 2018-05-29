@@ -1,0 +1,23 @@
+@import "/font/iconfont.wxss"; 
+.cata-small-wrap{
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin: 0 0 30rpx;
+}
+.cata-small{
+  flex: 0 0 25vw;
+  text-align: center;
+  padding: 0 20rpx;
+  font-size: 26rpx;
+  margin-bottom: 30rpx;
+  height:150rpx;
+}
+.icon{
+  height: 65rpx;
+  margin-bottom: 10rpx;
+}
+.myiconfont{
+  font-size: 76rpx;
+  margin-bottom: 10rpx;
+}

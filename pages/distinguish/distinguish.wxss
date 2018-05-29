@@ -1,0 +1,19 @@
+/* pages/distinguish/distinguish.wxss */
+.userinfo,.page-body,.page-body-wrapper,.page-body-wrapper> view,.page-body-wrapper> view>camera,.page-body-wrapper> view>view{
+  width:100%;
+  height:100%;
+}
+camera{
+  position: relative;
+}
+.img{
+  opacity: 0.5;
+  width:100%;
+  height:100%;
+  position: absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  margin:auto;
+}

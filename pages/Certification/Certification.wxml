@@ -1,0 +1,54 @@
+<!--pages/Certification/Certification.wxml-->
+<view class='pages'>
+    <view class='head flex vc'>
+        <view class='title'>认证信息</view>
+    </view>
+    <view class='content'>
+        <form bindsubmit="formSubmit">
+            <view class='mian'>
+            <view class='list flex vc'>
+                <view class='listLeft shrink0'>姓名</view>
+                <view class='listRight'>
+                    <input name='name' placeholder='请输入姓名'></input>
+                </view>
+            </view>
+            <view class='list flex vc'>
+                <view class='listLeft shrink0'>身份证号码</view>
+                <view class='listRight'>
+                    <input name='sfznum' placeholder='请输入身份证号码'></input>
+                </view>
+            </view>
+            <view class='list flex vc'>
+                <view class='listLeft shrink0'>手机号码</view>
+                <view class='listRight'>
+                    <input name='phone' bindblur="num" type='number' maxlength='11' placeholder='请输入手机号码'></input>
+                </view>
+            </view>
+            <view class='list flex vc'>
+                <view class='listLeft shrink0'>短信验证码</view>
+                <view class='listRight relative'>
+                    <input name='yzm' placeholder='请输入短信验证码'></input>
+                </view>
+                <view class='verify' bindtap='verify'>{{verifyInfo}}</view>
+            </view>
+            <view class='list flex vc'>
+                <view class='listLeft shrink0'>现居住地址</view>
+                <view class='listRight'>
+                    <picker name="region" mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+                        <view class="cityPicker">
+                            {{region[0]}} {{region[1]}} {{region[2]}}
+                        </view>
+                    </picker>
+                </view>
+            </view>
+            <view class='list flex vc'>
+                <view class='listLeft shrink0'>现居住详细地址</view>
+                <view class='listRight'>
+                    <input name='address' placeholder='请输入详细地址'></input>
+                </view>
+            </view>
+            </view>
+            <button class='submit' formType="submit">提<text></text>交</button>
+        </form>
+    </view>
+</view>

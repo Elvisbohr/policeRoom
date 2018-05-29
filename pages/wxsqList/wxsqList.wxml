@@ -1,0 +1,23 @@
+<!--pages/wxsqList/wxsqList.wxml-->
+<view class="pages">
+  <view class="img">
+    <image src="{{bannerImg}}" mode="aspectFill"></image>  
+  </view>
+  <view class="title flex vc">
+    <view class="line"></view>
+    <text>温馨社区</text>
+  </view>
+  <scroll-view class="listbox" scroll-y='true' bindscrolltolower="bindscrolltolower">
+    <navigator url="../detailHf/detailHf?title=温馨社区&articleId={{item.id}}&status={{item.status}}" class="list flex" wx:for="{{list}}">
+      <image src='{{item.cover}}' mode="aspectFill"></image>
+      <view class="right flex column hb">
+        <view class="tit">{{item.title}}</view>
+        <view class="time flex vc hb">
+          <view class="tip">{{item.labelName}}</view>
+          <view>{{item.createTime}}</view>
+        </view>
+      </view>
+    </navigator>
+    <view class="jia" hidden='{{hidden}}'>暂无更多</view>
+  </scroll-view>
+</view>

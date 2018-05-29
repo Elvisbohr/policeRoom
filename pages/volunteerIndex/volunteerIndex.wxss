@@ -1,0 +1,281 @@
+/* pages/volunteerIndex/volunteerIndex.wxss */
+
+page, .pages {
+    width: 100%;
+    height: 100%;
+}
+
+.banner {
+    width: 100%;
+    height: 22%;
+}
+
+.banner swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.banner .heng {
+    width: 100%;
+    height: 20px;
+    position: relative;
+    margin-top: -20px;
+}
+
+.banner .heng image {
+    width: 100%;
+    height: 100%;
+}
+
+.slide-image {
+    width: 100%;
+    height: 100%;
+}
+
+.banner image {
+    width: 100%;
+}
+
+/*要闻*/
+
+.subNav {
+    width: 100%;
+    height: 6%;
+    font-size: 0.8rem;
+    overflow: hidden;
+    display: table;
+}
+
+.subNav .navTag, .subNav #summary, .subNav .line {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.subNav .line {
+    width: 5px;
+}
+
+.subNav .navTag {
+    color: #fe6850;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-align: right;
+    width: 60px;
+    padding-left: 10px;
+}
+
+.example {
+    display: block;
+    width: 100%;
+    height: 100rpx;
+}
+
+/* tabMenu */
+
+.tabMenu {
+    width: 100%;
+    height: 15%;
+    border-top: 1px solid #f1f1f1;
+    border-bottom: 1px solid #f1f1f1;
+    position: relative;
+}
+
+.tabMenu .box {
+    flex-wrap: nowrap;
+    align-content: center;
+    height: 100%;
+    position: absolute;
+}
+
+.tabMenu swiper-item {
+    height: 100%;
+    font-size: 0.7rem;
+    color: #7d7d7d;
+}
+
+.tabMenu swiper-item .s-box {
+    width: 25%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+.tabMenu image {
+    width: 41px;
+    height: 41px;
+    display: block;
+    margin: 0 auto;
+}
+
+.tabMenu .text {
+    margin-top: 16rpx;
+    white-space: nowrap;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.tit {
+    height: 108rpx;
+    border-top: 18rpx solid #efefef;
+    border-bottom: 1px solid #d6d6d6;
+}
+
+.titItem {
+    /* height: 30rpx; */
+    border-left: 4rpx solid #2fbbff;
+    margin-left: 24rpx;
+    padding-left: 20rpx;
+    color: #333;
+    font-size: 30rpx;
+}
+
+.djMenu {
+    height: 48%;
+    box-sizing: border-box;
+    padding: 0 24rpx;
+    overflow: hidden;
+}
+
+.djTit {
+    display: flex;
+    font-weight: bold;
+    height: 70rpx;
+    line-height: 70rpx;
+    font-size: 14px;
+}
+
+.djTit view:first-of-type {
+    color: #fe6850;
+    margin-left: -10px;
+    font-weight: 800;
+}
+
+.djList {
+    width: 100%;
+    height: 220rpx;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.djList .listL {
+    width: 130rpx;
+    height: 150rpx;
+}
+
+.listC {
+    width: 325rpx;
+    height: 140rpx;
+    color: #333;
+    font-size: 24rpx;
+}
+
+.listCtit {
+    color: #333;
+    font-size: 30rpx;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.listCsite {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.djList .listR {
+    height: 150rpx;
+    width: 200rpx;
+}
+.listRdistance{
+    text-align: right;
+    color: #282828;
+    font-size: 24rpx;
+}
+.listRbtn{
+    color: #fff;
+    background: #37b1ff;
+    width: 186rpx;
+    height: 70rpx;
+    line-height: 70rpx;
+    text-align: center;
+    font-size: 30rpx;
+    border-radius: 8rpx;
+    align-self:flex-end;
+}
+/* 列表End */
+.marquee_box {
+    width: 100%;
+    position: relative;
+}
+
+.marquee_text {
+    white-space: nowrap;
+    position: absolute;
+    top: 0;
+}
+
+.right-icon {
+    position: absolute;
+    right: 0;
+    top: 7%;
+    height: 100%;
+    visibility: hidden;
+}
+
+.right-icon.jmjy {
+    visibility: visible;
+    -webkit-animation-name: flash;
+    animation-name: flash;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-iteration-count: 3;
+    animation-iteration-count: 3;
+}
+
+@-webkit-keyframes flash {
+    50%, 99% {
+        opacity: 1;
+    }
+
+    from, 25%, 75% {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@keyframes flash {
+    50%, 99% {
+        opacity: 1;
+    }
+
+    from, 25%, 75% {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+/* 加载更多 */
+
+.loadMore {
+    text-align: center;
+    width: 100%;
+    height: 60rpx;
+    line-height: 60rpx;
+    margin-top: 30rpx;
+    font-size: 14px;
+    color: #666;
+}

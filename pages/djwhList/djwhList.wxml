@@ -1,0 +1,19 @@
+<!--pages/djwhList/djwhList.wxml-->
+<!-- header -->
+<view class="list-caption">
+    <view class="caption-line"></view>
+    <view>{{title}}</view>
+</view>
+
+<!-- List -->
+<view class="djMenu">
+    <view class="djList" bindtap="skipUrl" wx:for="{{collection}}" data-name="{{item.columnName}}" data-id="{{item.id}}">
+        <image class="listL" src="{{item.cover}}" mode="aspectFill"></image>
+        <view class="listR">
+        <text>{{item.title}}</text>
+        <view class="Rbottom">
+            <view class="fr">{{item.createTime}}</view>
+        </view>
+        </view>
+    </view>
+</view>

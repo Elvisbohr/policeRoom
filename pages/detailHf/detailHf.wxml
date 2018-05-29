@@ -1,0 +1,73 @@
+<!--pages/detailHf/detailHf.wxml-->
+<view class="pages">
+
+  <!-- 标题区域 -->
+  <view class="plHead">
+    <text wx:if="{{title=='温馨社区'}}" class='headTitle'>{{detialObj.title}}</text>   
+    <text wx:if="{{title=='建言献策'}}" class='headTitle'>建言献策</text>   
+    <view class="headList">
+      <text class="fl">{{detialObj.createTime}}</text>
+      <text wx:if="{{title=='温馨社区'}}" class="fr">来源: {{detialObj.source}}</text>
+      <text wx:if="{{title=='建言献策'}}" class="fr">来源: {{detialObj.name}}</text>
+    </view>
+  </view>
+
+  <!-- 内容区域 -->
+  <view class="plConter">
+    <image wx:if="{{imgUrls.length>0}}" class="conImg" wx:for="{{imgUrls}}" src="{{item}}" mode="widthFix"></image>
+
+    <!-- 是否显示视频 -->
+     <view wx:if="{{video!=''&&video!=null}}">
+      <video src="{{video}}" style="width:100%;"></video>
+    </view> 
+
+    <text class="conText">
+      {{detialObj.content}}
+    </text>
+
+    <view class="conPhone" wx:if="{{title=='建言献策'}}">
+      <view class='phone'>联系电话：{{detialObj.telephone}}</view>
+      <view class='phone'>详细地址：{{detialObj.geolocation}}</view>
+    </view>
+    
+  </view>
+
+  <!-- 评论区域 -->
+  <view class="comment-area" wx:if="{{detialObj.status==1}}">
+    <view class="comment-box">
+      <!-- 评论区域头部 -->
+      <view class="dt">
+        <view class="comments">
+          评论 
+          <view class="line"></view>
+        </view>
+      </view>
+      <view class="dd">
+        <block wx:for="{{comment}}">
+          <view class="item">
+            <!-- 头像 -->
+            <view class="face">
+              <image src="../../img/tou.png" mode="aspectFit"></image>
+            </view>
+            <!-- 内容 -->
+            <view class="desc">
+              <!-- <view class="nickname">{{item.name}}</view> -->
+              <view class="time">{{item.createTime}}</view>
+              <view class="content">{{item.content}}</view>
+            </view>
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 回复框 -->
+ <view class="reply-area" wx:if="{{title=='温馨社区'&&status==1}}">
+  <form bindsubmit="replay">
+    <view class="wrap">
+      <input name="comment" placeholder="{{placeHolder}}" placeholder-class="place-holder"/>
+      <button form-type="submit" class="{{sendButClass}}">发送</button>
+    </view>
+  </form>
+</view> 

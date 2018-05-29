@@ -1,0 +1,65 @@
+/* pages/Certification/Certification.wxss */
+
+.pages {
+    background: #efefef;
+}
+
+.head {
+    height: 90rpx;
+}
+
+.head .title {
+    margin-left: 26rpx;
+    padding-left: 16rpx;
+    height: 30rpx;
+    border-left: 4rpx solid #2979ff;
+    color: #333;
+    font-size: 26rpx;
+}
+
+/* 主体 */
+.content {
+    width: 100%;
+}
+.mian{
+    background: #fff;    
+}
+.list {
+    width: 96%;
+    height: 94rpx;
+    margin: 0 2%;
+    border-bottom: 2rpx solid #d0d0d0;
+}
+.list:last-child{
+    border-bottom: none;
+}
+.listLeft {
+    width: 33%;
+    font-size: 32rpx;
+    color: #333;
+}
+
+.verify {
+    position: absolute;
+    right: 20rpx;
+    font-size: 26rpx;
+    color: #3e9afc;
+    padding: 4rpx 16rpx;
+    border-radius: 4px;
+    z-index: 99;
+}
+.submit{
+    width: 576rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+    background: #5293ff;
+    font-size: 32rpx;
+    color: #fff;
+    text-align: center;
+    margin-top: 100rpx;
+    border-radius: 50rpx;
+}
+.submit text{
+     padding: 0 5rpx; 
+}
+/* 主体End */

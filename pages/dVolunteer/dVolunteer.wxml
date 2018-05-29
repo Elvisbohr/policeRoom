@@ -1,0 +1,24 @@
+<!--pages/dVolunteer/dVolunteer.wxml-->
+<view class="pages">
+  <view class="con">
+    <view class="title">一、个人申请需满足以下条件:</view>
+    <view> （一）自愿从事志愿者服务;</view>
+    <view> （二）承认和遵守《太原市志愿者服务条例》和本会章程;</view>
+    <view> （三）年满10周岁,具有相应的民事行为能力;</view>
+    <view> （四）符合从事的志愿者服务所要求的身体条件、服务技能或服务资格。</view>
+  </view>
+  <view class="con">
+    <view class="title">二、个人志愿者申须经如下程序:</view>
+    <view> （一）申请人提交入会申请表;</view>
+    <view> （二）本会进行资料审核;</view>
+    <view> （三）双方签定义工服务协议;</view>
+    <view> （四）本会进行入会培训后,发给志愿者服务证件及标志。</view>
+  </view>
+  <view class="nextbox">
+    <checkbox-group class="radio-group  flex vc" bindchange="checkboxChange">
+      <checkbox checked="{{checked}}" color="#2fbbff"/>
+      <view class='text'>我已阅读并且同意《志愿者报名须知》和《志愿者服务协议》</view>
+    </checkbox-group>
+    <button class="but" bindtap="next">下一步</button>
+  </view>
+</view>

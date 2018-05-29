@@ -1,0 +1,74 @@
+<!--pages/partyList/partyList.wxml-->
+<view class="pages">
+
+  <!-- 标题区域 -->
+  <view class="plHead">
+     <text class='headTitle'>{{detialObj.title}}</text> 
+    <view class="headList">
+      <text class="fl">{{detialObj.createTime}}</text>
+      <text class="fr">来源: {{detialObj.source}}</text>
+    </view>
+  </view>
+
+  <!-- 内容区域 -->
+  <view class="plConter">
+    <image wx:if="{{imgUrls.length>0}}" class="conImg" wx:for="{{imgUrls}}" src="{{item}}" mode="widthFix"></image>
+
+    <!-- 是否显示视频 -->
+    <!-- <view wx:if="{{detialObj.video}}">
+      <video src="{{detialObj.video}}" style="width:100%;"></video>
+    </view> -->
+
+    <text class="conText">
+      {{detialObj.content}}
+    </text>
+
+    <!-- <view hidden="{{!(detialObj.phone!=='')}}" class="phone" style="margin-top:10px;">
+      联系电话:  {{detialObj.phone}}
+    </view> -->
+    
+  </view>
+
+  <!-- 评论区域 -->
+  <view wx:if="{{type===1}}" class="comment-area">
+    <view class="comment-box">
+      <!-- 评论区域头部 -->
+      <view class="dt">
+        <view class="comments">
+          评论 {{detialObj.discussNum}}
+          <view class="line"></view>
+        </view>
+        <view class="praise {{detialObj.isLike?'on':''}}" bindtap="thumbUp" data-article-id="{{articleId}}">
+          <image src="{{detialObj.isLike?'../../img/praise2.png':'../../img/praise1.png'}}" mode="widthFix"></image>
+          <text style="padding-top:3px;">{{detialObj.likesCount}}</text>
+        </view>
+      </view>
+      <view class="dd">
+        <block wx:for="{{detialObj.discuss}}">
+          <view class="item">
+            <!-- 头像 -->
+            <view class="face">
+              <image src="{{item.img}}" mode="aspectFit"></image>
+            </view>
+            <!-- 内容 -->
+            <view class="desc">
+              <view class="nickname">{{item.name}}</view>
+              <view class="time">{{item.time}}</view>
+              <view class="content">{{item.content}}</view>
+            </view>
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 回复框 -->
+<view wx:if="{{type===1}}" class="reply-area">
+  <form bindsubmit="replay">
+    <view class="wrap">
+      <input value="{{sendContent}}" name="sendContent" placeholder="{{placeHolder}}" placeholder-class="place-holder" bindinput="sendConChange" />
+      <button form-type="submit" class="{{sendButClass}}">发送</button>
+    </view>
+  </form>
+</view>

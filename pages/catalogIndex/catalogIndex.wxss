@@ -1,0 +1,62 @@
+/* pages/catalogIndex/catalogIndex.wxss */
+.myswiper{
+  width: 100%;
+  height: 100%;
+}
+.myplace{
+  height: 90rpx;
+}
+.myline{
+  border-top: 1rpx solid #e8e8e8;
+}
+.remedy{
+  height: 30rpx;
+}
+.catalog-wrap{
+  display: flex;
+  text-align: center;
+  height: 90rpx;
+  line-height: 90rpx;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background-color: white;
+  /* opacity: 0; */
+}
+.catalog-big{
+  box-sizing: border-box;
+  flex: 1 0 200rpx;
+  border-bottom: 1rpx solid #e8e8e8;
+}
+.catalog-big.active{
+  color: #3e86ff;
+  border-bottom: 1rpx solid #3e86ff;
+}
+.cata-small-wrap{
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin: 30rpx 0;
+}
+.cata-small{
+  flex: 0 0 25vw;
+  text-align: center;
+  padding: 0 20rpx;
+  font-size: 26rpx;
+}
+.icon{
+  height: 65rpx;
+  margin-bottom: 10rpx;
+}
+.myiconfont{
+  font-size: 76rpx;
+  margin-bottom: 10rpx;
+}
+.second-level{
+  margin: 0 20rpx;
+  font-size: 32rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+}
