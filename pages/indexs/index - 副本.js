@@ -1,13 +1,10 @@
 //包含高德地图js文件
 var amapFile = require('../../lib/amap-wx.js');
-// import tabMenus from '../../utils/indexList.js';
-
 //获取应用实例
 var app = getApp();
 Page({
     data: {
         serverAddress: app.globalData.serverAddress,
-        // tabMenus: tabMenus,
         //树叶组
         leaves: [
             "../../img/flower/flower_03.png",
@@ -37,6 +34,9 @@ Page({
         // folder: 'newYears'
         // folder: 'winter'    
     },
+    latitude: 0,    // 纬度
+    longitude: 0,   // 经度
+    addressName: "",//当前位置名称
     onShow: function () {
         var self = this;
         var chooseId = app.globalData.cid;
@@ -67,35 +67,6 @@ Page({
             }
         });
     },
-    indexNav: function (data) {
-        let that = this
-        //首页获取
-        wx.request({
-            url: app.globalData.adminAddress + '/column/list',
-            data: data,
-            method: "GET",
-            // header: { 'content-type': 'application/x-www-form-urlencoded' },
-            success: function (res) {
-                console.log('首页导航数据', res.data)
-                //拼接数组,加入跳转地址
-                var navObj = res.data.data;
-                for (var i = 0; i < navObj.length; i++) {
-                    if (navObj[i].name == "党建文化") {
-                        navObj[i].skipUrl = "../dang/dang?pid=" + navObj[i].pid + '&id=' + navObj[i].id + '&name=' + navObj[i].name;
-                    } else if (navObj[i].name == "阳光警务") {
-                        navObj[i].skipUrl = "../dang/dang?pid=" + navObj[i].pid + '&id=' + navObj[i].id + '&name=' + navObj[i].name;
-                    } else if (navObj[i].name == "警民家园") {
-                        navObj[i].skipUrl = "../notice/notice";
-                    } else if (navObj[i].name == "在线办事") {
-                        navObj[i].skipUrl = "../dZxbs/dZxbs";
-                    }
-                }
-                that.setData({
-                    tabMenus: navObj
-                })
-            }
-        })
-    },
     onHide: function () {
         this.setData({
             perform: false,
@@ -118,13 +89,42 @@ Page({
         //设置canvas的宽和高
         this.setData({
             canvasW: 750 / 1334 * (app.globalData.pageH * 0.86),
-            canvasH: app.globalData.pageH * 0.86,
+            canvasH: app.globalData.pageH * 0.86
         })
+
         //获取nav数据
-        let navdata = {};
-        navdata.pid = 0;
-        navdata.type = 1;
-        that.indexNav(navdata);
+        // wx.request({
+        //   url: app.globalData.adminAddress + '/api/category',
+        //   data: {},
+        //   method: 'GET',
+        //   success: function (res) {
+        //     //拼接数组,加入跳转地址
+        //     var navObj = res.data.data;
+        //     for (var i = 0; i < navObj.length; i++) {
+        //       if (navObj[i].name == "警民家园") {
+        //         navObj[i].skipUrl = "../dang/dang?type=jw&";
+        //       } else if (navObj[i].name == "党建文化") {
+        //         navObj[i].skipUrl = "../dang/dang?type=dj&";
+        //       } else if (navObj[i].name == "时代新人") {
+        //         navObj[i].skipUrl = "../dang/dang?type=sd&";
+        //       }else if (navObj[i].name == "阳光警务") {
+        //         navObj[i].skipUrl = "../mission/mission?";
+        //       } else if (navObj[i].name == "警务助手") {
+        //         navObj[i].skipUrl = "../assistant/assistant?";
+        //       }
+        //     }
+        //     that.setData({
+        //       navObj: navObj
+        //     })
+        //     app.globalData.navObj = navObj;
+        //   },
+        //   fail: function (res) {
+        //     wx.showToast({
+        //       title: "网络错误",
+        //       icon: "loading"
+        //     })
+        //   }
+        // })
     },
     //获取天气信息
     getWeather: function (options) {
@@ -329,35 +329,33 @@ Page({
         }, that.data.stTimeLength)
     },
     //页面跳转
-    skip: function (e) {
-        var communityId = this.data.community.id;
-        if (communityId) {
-            wx.navigateTo({
-                url: e.currentTarget.dataset.url,
-                success: function (res) {
-                    // 家园页面
-                }
-            })
-            
-        } else {
-            wx.showToast({
-                "title": "请选择社区",
-                "icon": "loading",
-                'duration': 1000
-            })
-        }
-    },
-    //我的页面跳转
-    skipLogin: function (e) {
-        console.log(e)
-        wx.navigateTo({
-            url: '../mine/mine',
-            success: function (res) {
-                // 家园页面
-
-            }
-        })
-    },
+    // skip: function (e) {
+    //     var communityId = this.data.community.id;
+    //     if (communityId) {
+    //         wx.navigateTo({
+    //             url: e.currentTarget.dataset.url + "id=" + e.currentTarget.dataset.id,
+    //             success: function (res) {
+    //                 // 家园页面
+    //             }
+    //         })
+    //     } else {
+    //         wx.showToast({
+    //             "title": "请选择社区",
+    //             "icon": "loading",
+    //             'duration': 1000
+    //         })
+    //     }
+    // },
+    //登陆页面跳转
+    // skipLogin: function (e) {
+    //     console.log(e)
+    //     wx.navigateTo({
+    //         url: e.currentTarget.dataset.url + "?id=" + e.currentTarget.dataset.id,
+    //         success: function (res) {
+    //             // 家园页面
+    //         }
+    //     })
+    // },
     //判断当前用户是什么用户
     // judgeUser: function () {
     //     var that = this,

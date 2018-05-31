@@ -1,56 +1,70 @@
-<!--pages/index/index.wxml-->
-<view class='pages'>
-    <form bindsubmit="formSubmit" report-submit='true'>
-        <view class='banner'>
-            <view class="btnform" bindtap="location">
-                <image mode="widthFix" src="../../img/maps.png"></image>
-                <view class="formtext">{{community.name}}</view>
-            </view>
-        </view>
-    </form>
-    <!-- 导航 -->
-    <view class='nav flex vc newline'>
-        <block wx:for="{{tabMenus}}" wx:if="{{index <= 6}}">
-            <view bindtap='tapNav' data-index='{{index}}' class='navList flex column vc hc'>
-                <image class='navListImg' src='{{item.icon}}'></image>
-                <view class='navListTit'>{{item.name}}</view>
-            </view>
-        </block>
-        <navigator url='../catalogIndex/catalogIndex' class='navList flex column vc hc'>
-            <image class='navListImg navListImg1' src='../../images/more.png'></image>
-            <view class='navListTit'>更多</view>
-        </navigator>
-    </view>
-    <!-- 头条 -->
-    <view class='new flex vc' bindtap='jump'>
-        <view class='newMain flex vc'>
-            <view class='newL shrink0'>
-                <view>警务</view>
-                <view>头条</view>
-            </view>
-            <view class='newR'>
-                <swiper autoplay='true' interval='2000' circular='true' vertical='true' display-multiple-items='2'>
-                    <block wx:for="{{news}}">
-                        <swiper-item>
-                            <view class='newItemList'>{{item.title}}</view>
-                        </swiper-item>
-                    </block>
-                </swiper>
-            </view>
-        </view>
-    </view>
-    <!-- 列表 -->
-    <scroll-view class='djMenu' style='height:{{pagesH}}px' bindscrolltolower="loadMore" scroll-y>
-        <view class="djList flex" wx:for="{{lists}}" bindtap="skipDetail" data-name="{{item.columnName}}" data-id="{{item.id}}">
-            <image class="listL" src="{{item.cover}}" mode="aspectFill"></image>
-            <view class="listR">
-                <text>{{item.title}}</text>
-                <view class="Rbottom flex vc hb">
-                    <view class="bState bState{{index}}">{{item.columnName}}</view>
-                    <view>{{item.createTime}}</view>
-                </view>
-            </view>
-        </view>
-        <view class='loadMore' bindtap='loadMore'>{{moreTit}}</view>
-    </scroll-view>
+<!-- 登录按钮 -->
+<image src="../../img/login.png" mode="widthFix" class="login-icon" bindtap="skipLogin" data-url="../login/login"></image>
+<!-- 背景图片 -->
+<image src="../../img/{{folder}}/back.jpg" class="back"></image>
+
+<!----------------漂浮的物品------------------->
+<!-- 春季--落花组 -->
+<view wx:if='{{folder=="spring"}}' class="leaves fallings">
+  <image wx:for="{{leaves}}" class="falling leaf leaf{{index}}" src="{{item}}" mode="widthFix"></image>
+</view>  
+<!-- 端午组 -->
+<view wx:if='{{folder=="duanwu"}}' class="duanwus fallings">
+  <image wx:for='{{[1,2,3,4]}}' class="falling duanwu duanwu{{index}}" src="../../img/{{folder}}/firecracker.png" mode="widthFix"></image>
+  <image class="zhou" src="../../img/duanwu/1.png" mode="widthFix"></image>
+  <image class="shui" src="../../img/duanwu/back.png" mode="widthFix"></image>
+</view>  
+<!--  春节组--烟花  和   冬季--雪花  -->
+<view wx:if='{{folder!="duanwu"&&folder!="spring"}}' class="leaves fallings">
+  <image wx:for='{{[1,2,3,4,5,6]}}' class="falling leaf leaf{{index}}" src="../../img/{{folder}}/firecracker.png" mode="widthFix"></image>
+</view> 
+<!----------------漂浮的物品------------------->
+
+<!-- 人物画布 -->
+<view hidden="{{canvasShow}}" class="canvas_box" style="position:absolute;width:{{canvasW}}px;height:{{canvasH}}px;">
+  <canvas canvas-id="myCanvas"></canvas>
 </view>
+<!-- 按钮和天气组 -->
+<view class="container">
+  <!-- 天气 -->
+  <view hidden="{{weatherShow}}" class="weather">
+    <view class="flex">
+      <text class="centigrade">{{weather.temperature}}℃</text>
+      <image src="{{weather.weaImg}}" mode="widthFix" class="weaImg"></image>
+    </view>
+    <view class='flex'>
+      <view>{{weather.weather}}</view>
+      <view class="green_text">湿度:{{weather.humidity}}</view>
+    </view>
+  </view>
+  <!-- 小区 -->
+  <view class="btnform" bindtap="location">
+    <image mode="widthFix" src="../../img/maps.png"></image>
+    <view class="formtext">{{community.name}}</view>
+  </view>
+
+  <!--  按钮  -->
+   <block wx:for="{{tabMenus}}">
+      <view class="btn btn{{index+1}} {{btnAni}} btn-{{folder}}" bindtap="skip" data-url="{{item.skipUrl}}" data-id="{{item.id}}">
+      <view class='snowBack'>
+          <image src='../../img/winter/btn.png' mode="widthFix"></image>
+        </view>
+        {{item.name}}
+      </view>  
+  </block> 
+  <!--  按钮  -->
+</view>
+
+<!--加载页面-->
+ <view hidden="{{loadingShow}}" class="loading">
+  <view class="wrap">
+    <view class="logo">
+      <image src="../../img/logo.png" mode="widthFix"></image>
+    </view>
+    <view class="line">
+      <image src="../../img/line.png"></image>
+    </view>
+    <view class="slogan">智慧警务一小步 · 幸福社区一大步</view>
+    <view class="support">大集方圆科技有限公司提供技术服务</view>
+  </view>
+</view> 

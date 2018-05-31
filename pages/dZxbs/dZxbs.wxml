@@ -1,0 +1,31 @@
+<!--pages/dZxbs/dZxbs.wxml-->
+<view class='pages'>
+  <scroll-view class="scroll" scroll-y="true" bindscroll="bindscroll">
+    <form bindsubmit="formSubmit" report-submit='true'>
+        <view class='banner'></view>
+    </form>
+    <!-- 头条 -->
+    <view class="new flex vc {{o?'top':''}}" bindtap='jump'>
+        <view class='newMain flex vc'>
+            <view class='newL shrink0'>
+                <view>警务</view>
+                <view>头条</view>
+            </view>
+            <view class='newR'>
+                <swiper autoplay='true' interval='2000' circular='true' vertical='true' display-multiple-items='2'>
+                    <block wx:for="{{news}}">
+                        <swiper-item>
+                            <view class='newItemList'>{{item.title}}</view>
+                        </swiper-item>
+                    </block>
+                </swiper>
+            </view>
+        </view>
+    </view>
+    <!-- 在线办事 -->
+    <block wx:for="{{catalogBig}}">
+      <view class="second-level" id="zaixian">{{item.name}}</view>
+      <mylist arr="{{catalogSmall[item.name]}}" bindmyevent="onMyEvent"></mylist>
+    </block>
+  </scroll-view>
+</view>

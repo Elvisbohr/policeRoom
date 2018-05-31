@@ -10,7 +10,8 @@ App({
         tabMenus: [],
         navObj: {},//导航数据
         // adminAddress: "https://jws.kulizhi.com/jws",
-        adminAddress: "https://jws.kulizhi.com/police-mini/api",
+        // adminAddress: "https://jws.kulizhi.com/police-mini/api",
+        adminAddress: "http://192.168.1.115:8080/policere-mini/api",
         // adminAddress: "http://192.168.1.189:9999/police-mini/api",
         pageW: "",//屏幕宽
         pageH: "",//屏幕高        pixelRatio: "",
@@ -19,6 +20,7 @@ App({
         userInfoWX: { 'avatarUrl': '', 'nickName': '', 'openid': '' },
         community: [],//社区列表
         location: {}, 
+        allWeather: ['晴', '多云', '阴', '阵雨', '雷阵雨', '雷阵雨并伴有冰雹', '雨夹雪', '小雨', '中雨', '大雨', '暴雨', '大暴雨', '特大暴雨', '阵雪', '小雪', '中雪', '大雪', '暴雪', '雾', '冻雨', '沙尘暴', '小雨-中雨', '中雨-大雨', '大雨-暴雨', '暴雨-大暴雨', '大暴雨-特大暴雨', '小雪-中雪', '中雪-大雪', '大雪-暴雪', '浮尘', '扬沙', '强沙尘暴', '飑', '龙卷风', '弱高吹雪', '轻霾', '霾'],//所有天气现象
         qqxcxKey: "M6SBZ-PTA36-P5FSA-E44GM-WKOYS-U7F2D", //腾讯地图小程序key
     },
     onLaunch: function () {

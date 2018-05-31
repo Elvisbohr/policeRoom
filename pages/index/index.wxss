@@ -1,159 +1,682 @@
-/* pages/index/index.wxss */
-.pages{
-     overflow-x: hidden; 
-}
-.banner {
-    width: 100%;
-    height: 22%;
-    position: relative;
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-    background-image: url('https://jws.kulizhi.com:443/jws/upload/head/2017/8/201708181922496415.jpg');
+/**index.wxss**/
+
+page {
+  overflow: hidden;
 }
 
-.banner swiper {
-    width: 100%;
-    height: 100%;
+page, canvas, .leaves {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+  position: realtive;
 }
 
-.banner swiper .slide-image {
-    width: 100%;
-    height: 100%;
+.container {
+  position: absolute;
+  right: 40rpx;
+  top: 15%;
+  width: 270rpx;
+  display: -webkit-flex;
+  display: flex;
+  flex-wrap: wrap;
+  z-index: 5;
+}
+
+.btn {
+  margin-bottom: 64.21rpx;
+}
+
+.canvas_box {
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  left: 2.7%;
+  z-index: 1;
+}
+
+/* 登陆按钮 */
+
+.login-icon {
+  width: 10%;
+  position: absolute;
+  z-index: 5;
+  right: 30rpx;
+  top: 30rpx;
+}
+
+/* 树叶 */
+
+.fallings {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+  overflow: hidden;
+}
+
+.fallings .falling {
+  position: absolute;
+}
+
+.leaves .leaf0, .leaves .leaf1, .leaves .leaf4 {
+  width: 6.93%;
+  top: 0.17%;
+  left: 100%;
+}
+
+.leaves .leaf1 {
+  top: 17.74%;
+  left: 18.93%;
+}
+
+.leaves .leaf2 {
+  width: 9.86%;
+  top: 7.29%;
+  left: 109.86%;
+}
+
+.leaves .leaf3 {
+  width: 3.33%;
+  top: -20%;
+  left: 82.5%;
+}
+
+.leaves .leaf4 {
+  top: 8.29%;
+  left: 106.93%;
+}
+
+.leaves .leaf5 {
+  width: 5%;
+  top: 8.29%;
+  left: 106.93%;
+}
+
+/* 树叶动画 */
+
+.leaves .leaf0 {
+  -webkit-animation: aniLeaf0 4s 1s infinite linear;
+  animation: aniLeaf0 4s 1s infinite linear;
+}
+
+/* 天气 */
+
+.weather view {
+  margin-bottom: 10rpx;
+}
+
+.weather {
+  font-size: 0.9rem;
+  color: #535353;
+  margin-left: 11%;
+  width: 100%;
+}
+
+.weather .centigrade {
+  font-size: 1.4rem;
+}
+
+.weather .weaImg {
+  width: 69.47rpx;
+}
+
+/* 按钮 */
+
+.btn {
+  visibility: hidden;
+  position: relative;
+}
+
+.btn1.animate {
+  animation: bounceInLeft;
+}
+
+@-webkit-keyframes aniLeaf0 {
+  0% {
+    top: 0.17%;
+    left: 100%;
+  }
+
+  80% {
+    top: 39.46%;
+    left: -7%;
+  }
+
+  100% {
+    top: 39.46%;
+    left: -7%;
+  }
+}
+
+@keyframes aniLeaf0 {
+  0% {
+    top: 0.17%;
+    left: 100%;
+  }
+
+  80% {
+    top: 39.46%;
+    left: -7%;
+  }
+
+  100% {
+    top: 39.46%;
+    left: -7%;
+  }
+}
+
+.leaves .leaf1 {
+  -wekbit-animation: aniLeaf1 6s infinite linear;
+  animation: aniLeaf1 6s infinite linear;
+}
+
+@-webkit-keyframes aniLeaf1 {
+  0% {
+    top: -5%;
+    left: 80.93%;
+  }
+
+  80% {
+    top: 25.75%;
+    left: -7%;
+  }
+
+  100% {
+    top: 39.46%;
+    left: -7%;
+  }
+}
+
+@keyframes aniLeaf1 {
+  0% {
+    top: -5%;
+    left: 80.93%;
+  }
+
+  80% {
+    top: 25.75%;
+    left: -7%;
+  }
+
+  100% {
+    top: 39.46%;
+    left: -7%;
+  }
+}
+
+.leaves .leaf2 {
+  -wekbit-animation: aniLeaf2 5s 2s infinite linear;
+  animation: aniLeaf2 5s 2s infinite linear;
+}
+
+@-webkit-keyframes aniLeaf2 {
+  0% {
+    top: 7.29%;
+    left: 109.86%;
+  }
+
+  80% {
+    top: 44.2%;
+    left: -9.86%;
+  }
+
+  100% {
+    top: 44.2%;
+    left: -7%;
+  }
+}
+
+@keyframes aniLeaf2 {
+  0% {
+    top: 7.29%;
+    left: 109.86%;
+  }
+
+  80% {
+    top: 44.2%;
+    left: -15%;
+  }
+
+  100% {
+    top: 44.2%;
+    left: -15%;
+  }
+}
+
+.leaves .leaf3 {
+  -wekbit-animation: aniLeaf3 6s 1.5s infinite linear;
+  animation: aniLeaf3 6s 1.5s infinite linear;
+}
+
+@-webkit-keyframes aniLeaf3 {
+  0% {
+    top: -20%;
+    left: 82.5%;
+  }
+
+  80% {
+    top: 120%;
+    left: -15%;
+  }
+
+  100% {
+    top: 120%;
+    left: -15%;
+  }
+}
+
+@keyframes aniLeaf3 {
+  0% {
+    top: -20%;
+    left: 82.5%;
+  }
+
+  80% {
+    top: 120%;
+    left: -15%;
+  }
+
+  100% {
+    top: 120%;
+    left: -15%;
+  }
+}
+
+.leaves .leaf4 {
+  -wekbit-animation: aniLeaf4 5s 0.7s infinite linear;
+  animation: aniLeaf4 5s 0.7s infinite linear;
+}
+
+@-webkit-keyframes aniLeaf4 {
+  0% {
+    top: 8.29%;
+    left: 106.93%;
+  }
+
+  80% {
+    top: 56.8%;
+    left: -15%;
+  }
+
+  100% {
+    top: 56.8%;
+    left: -15%;
+  }
+}
+
+@keyframes aniLeaf4 {
+  0% {
+    top: 8.29%;
+    left: 106.93%;
+  }
+
+  80% {
+    top: 56.8%;
+    left: -15%;
+  }
+
+  100% {
+    top: 56.8%;
+    left: -15%;
+  }
+}
+
+.leaves .leaf5 {
+  -wekbit-animation: aniLeaf5 8s 0.7s infinite linear;
+  animation: aniLeaf5 8s 0.7s infinite linear;
+}
+
+@-webkit-keyframes aniLeaf5 {
+  0% {
+    top: 8.29%;
+    left: 106.93%;
+  }
+
+  80% {
+    top: 56.8%;
+    left: -6.93%;
+  }
+
+  100% {
+    top: 56.8%;
+    left: -6.93%;
+  }
+}
+
+@keyframes aniLeaf5 {
+  0% {
+    top: 8.29%;
+    left: 106.93%;
+  }
+
+  80% {
+    top: 56.8%;
+    left: -6.93%;
+  }
+
+  100% {
+    top: 56.8%;
+    left: -6.93%;
+  }
+}
+
+/* 端午动画 */
+
+.duanwus .duanwu0 {
+  width: 8.6%;
+  left: 25.33%;
+  -wekbit-animation: duanwuAni 5.4s 0s infinite linear;
+  animation: duanwuAni 5.4s 0s infinite linear;
+}
+
+.duanwus .duanwu1 {
+  width: 12.4%;
+  left: 57.6%;
+  -wekbit-animation: duanwuAni 6s 0.6s infinite linear;
+  animation: duanwuAni 6s 0.6s infinite linear;
+}
+
+.duanwus .duanwu2 {
+  width: 12.26%;
+  left: 10.26%;
+  -wekbit-animation: duanwuAni 6.6s 1.2s infinite linear;
+  animation: duanwuAni 6.6s 1.2s infinite linear;
+}
+
+.duanwus .duanwu3 {
+  width: 12.4%;
+  left: 70.2%;
+  -wekbit-animation: duanwuAni 7.5s 1.8s infinite linear;
+  animation: duanwuAni 7.5s 1.8s infinite linear;
+}
+
+.duanwus .zhou {
+  width: 100%;
+  bottom: 0;
+  position: absolute;
+  -wekbit-animation: zhou 10s 1.8s infinite linear;
+  animation: zhou 10s 1.8s infinite linear;
+  z-index: 4;
+}
+
+@-webkit-keyframes duanwuAni {
+  from {
+    top: -50%;
+  }
+
+  to {
+    top: 100%;
+  }
+}
+
+@keyframes duanwuAni {
+  from {
+    top: -50%;
+  }
+
+  to {
+    top: 100%;
+  }
+}
+
+@-webkit-keyframes zhou {
+  from {
+    right: -100%;
+  }
+
+  to {
+    right: 100%;
+  }
+}
+
+@keyframes zhou {
+  from {
+    right: -100%;
+  }
+
+  to {
+    right: 100%;
+  }
+}
+
+/* 按钮组 */
+
+.animated {
+  visibility: visible;
+  opacity: 0;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: fadeInRight;
+  animation-name: fadeInRight;
+}
+
+.btn1.animated {
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+}
+
+.btn2.animated {
+  -webkit-animation-delay: 0.6s;
+  animation-delay: 0.6s;
+}
+
+.btn3.animated {
+  -webkit-animation-delay: 0.9s;
+  animation-delay: 0.9s;
+}
+
+.btn4.animated {
+  -webkit-animation-delay: 1.2s;
+  animation-delay: 1.2s;
+}
+
+.btn5.animated {
+  -webkit-animation-delay: 1.5s;
+  animation-delay: 1.5s;
+}
+
+@-webkit-keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
 }
 
 .btnform {
-    width: 220rpx;
-    height: 100rpx;
-    line-height: 100rpx;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: absolute;
-    top: 4rpx;
-    left: 4rpx;
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .btnform image {
-    width: 55rpx;
+  width: 55rpx;
 }
 
 .formtext {
-    font-size: 0.8rem;
-    line-height: 1rem;
-    width: 70%;
-    color: #fff;
+  font-size: 0.8rem;
+  line-height: 1rem;
+  width: 70%;
 }
 
-/* nav */
-
-.navList {
-    width: 25%;
-    height: 160rpx;
+.shui {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
-.navListTit {
-    color: #7d7d7d;
-    font-size: 24rpx;
-    margin: 15rpx 0 0;
+.support {
+  color: #b0b0b0;
+  font-size: 0.75rem;
+  position: absolute;
+  bottom: 22px;
+  text-align: center;
+  width: 100%;
 }
 
-.navListImg {
-    width: 70rpx;
-    height: 70rpx;
-}
-.navListImg1{
-  width: 60rpx;
-  height: 60rpx;
-}
-/* 头条 */
+/* 冬天 */
 
-.new {
-    width: 100%;
-    height: 140rpx;
-    border-top: 20rpx solid #f3f3f3;
-    border-bottom: 20rpx solid #f3f3f3;
+.snowBack {
+  position: absolute;
+  width: 74%;
+  left: 13%;
+  top: 0;
 }
 
-.newMain {
-    height: 100rpx;
+.snowBack image {
+  width: 100%;
+  display: block;
 }
 
-.newL {
-    width: 194rpx;
-    height: inherit;
-    color: #fe6850;
-    font-size: 32rpx;
-    text-align: center;
-    font-weight: bold;
-    border-right: 1px solid #e5e5e5;
-    padding: 10rpx 0;
+.snow {
+  width: 10px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 5px #fff;
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
 }
 
-.newR {
-    width: 550rpx;
-    color: #535353;
-    height: inherit;
-    font-size: 26rpx;
+.snow1 {
+  -wekbit-animation: aniLeaf4 6s 1.8s infinite linear;
+  animation: aniLeaf4 6s 1.8s infinite linear;
 }
 
-.newR swiper {
-    height: inherit;
-    width: inherit;
-    padding: 10rpx 0 10rpx 16rpx;
+.snow2 {
+  -wekbit-animation: aniLeaf2 6s 2.1s infinite linear;
+  animation: aniLeaf2 6s 2.1s infinite linear;
 }
 
-.newItemList {
-    width: 85%;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    height: 40rpx;
+.snow3 {
+  -wekbit-animation: aniLeaf1 6s 2.4s infinite linear;
+  animation: aniLeaf1 6s 2.4s infinite linear;
 }
 
-/* 列表 */
-
-.djMenu {
-    box-sizing: border-box;
-    /* padding-left: 15px; */
-    /* padding-right: 15px; */
-     overflow: hidden; 
-     padding:0 24rpx;
+.snow4 {
+  -wekbit-animation: aniLeaf5 6s 2.8s infinite linear;
+  animation: aniLeaf5 6s 2.8s infinite linear;
 }
 
-.djList {
-    width: 100%;
-    padding: 20rpx 0;
-    overflow: hidden;
-    border-bottom: 1px solid #f1f1f1;
+@-webkit-keyframes aniLeaf4 {
+  0% {
+    top: 20%;
+    left: 109.86%;
+  }
+
+  80% {
+    top: 66%;
+    left: -9.86%;
+  }
+
+  100% {
+    top: 66%;
+    left: -7%;
+  }
 }
 
-.djList .listL {
-    width: 35%;
-    height: 170rpx;
-    display: inline-block;
+@keyframes aniLeaf4 {
+  0% {
+    top: 20%;
+    left: 109.86%;
+  }
+
+  80% {
+    top: 66%;
+    left: -9.86%;
+  }
+
+  100% {
+    top: 66%;
+    left: -7%;
+  }
 }
 
-.djList .listR {
-    width: 64%;
-    padding: 0 2.5%;
-    font-size: 14px;
-    display: inline-flex;
-    flex-direction: column;
-    justify-content: space-between;
+@-webkit-keyframes aniLeaf5 {
+  0% {
+    top: 0;
+    left: 99.93%;
+  }
+
+  80% {
+    top: 33.75%;
+    left: -15%;
+  }
+
+  100% {
+    top: 66.46%;
+    left: -15%;
+  }
 }
 
-.Rbottom {
-    width: 100%;
-    font-size: 12px;
-    color: #a0a0a0;
-    /* display: flex;
-    justify-content: space-between;
-    align-items: center; */
+@keyframes aniLeaf5 {
+  0% {
+    top: 0;
+    left: 99.93%;
+  }
+
+  80% {
+    top: 33.75%;
+    left: -15%;
+  }
+
+  100% {
+    top: 66.46%;
+    left: -15%;
+  }
 }
 
-.bState {
-    color: #3e86ff;
-    border: 1px solid #3e86ff;
-    padding: 2px 5px;
-    border-radius: 3px;
+/*  新年样式  */
+
+.btn-newYears {
+  border: 1px solid #fce350;
+  background: #e83314;
+  box-shadow: 2px 2px 8px #83360f;
+  overflow: hidden;
+}
+
+.btn-newYears::after, .btn-newYears::before {
+  position: absolute;
+  left: 0;
+  display: block;
+  height: 1px;
+  width: 100%;
+  background: #f39537;
+  content: ' ';
+}
+
+.btn-newYears::after {
+  top: 2px;
+}
+
+.btn-newYears::before {
+  bottom: 2px;
 }

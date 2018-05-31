@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "在线办事",
+  "usingComponents": {
+    "mylist": "/components/catalogList/catalogList"
+  }
+}

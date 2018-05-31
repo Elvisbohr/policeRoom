@@ -1,0 +1,56 @@
+<!--pages/index/index.wxml-->
+<view class='pages'>
+    <form bindsubmit="formSubmit" report-submit='true'>
+        <view class='banner'>
+            <view class="btnform" bindtap="location">
+                <image mode="widthFix" src="../../img/maps.png"></image>
+                <view class="formtext">{{community.name}}</view>
+            </view>
+        </view>
+    </form>
+    <!-- 导航 -->
+    <view class='nav flex vc newline'>
+        <block wx:for="{{tabMenus}}" wx:if="{{index <= 6}}">
+            <view bindtap='tapNav' data-index='{{index}}' class='navList flex column vc hc'>
+                <image class='navListImg' src='{{item.icon}}'></image>
+                <view class='navListTit'>{{item.name}}</view>
+            </view>
+        </block>
+        <navigator url='../catalogIndex/catalogIndex' class='navList flex column vc hc'>
+            <image class='navListImg navListImg1' src='../../images/more.png'></image>
+            <view class='navListTit'>更多</view>
+        </navigator>
+    </view>
+    <!-- 头条 -->
+    <view class='new flex vc' bindtap='jump'>
+        <view class='newMain flex vc'>
+            <view class='newL shrink0'>
+                <view>警务</view>
+                <view>头条</view>
+            </view>
+            <view class='newR'>
+                <swiper autoplay='true' interval='2000' circular='true' vertical='true' display-multiple-items='2'>
+                    <block wx:for="{{news}}">
+                        <swiper-item>
+                            <view class='newItemList'>{{item.title}}</view>
+                        </swiper-item>
+                    </block>
+                </swiper>
+            </view>
+        </view>
+    </view>
+    <!-- 列表 -->
+    <scroll-view class='djMenu' style='height:{{pagesH}}px' bindscrolltolower="loadMore" scroll-y>
+        <view class="djList flex" wx:for="{{lists}}" bindtap="skipDetail" data-name="{{item.columnName}}" data-id="{{item.id}}">
+            <image class="listL" src="{{item.cover}}" mode="aspectFill"></image>
+            <view class="listR">
+                <text>{{item.title}}</text>
+                <view class="Rbottom flex vc hb">
+                    <view class="bState bState{{index}}">{{item.columnName}}</view>
+                    <view>{{item.createTime}}</view>
+                </view>
+            </view>
+        </view>
+        <view class='loadMore' bindtap='loadMore'>{{moreTit}}</view>
+    </scroll-view>
+</view>

@@ -150,9 +150,22 @@ Page({
             success: function (res) {
                 wx.hideLoading();
                 console.log('栏目列表', res)
+                //4.初始化collection
+                var collection = res.data.data;
+                //5.拼接tabMenu数组
+                var tabInit = 0, tabMenu = [], tabItem = [];
+                for (var i = 0; i < collection.length; i++) {
+                    //拼数组
+                    tabItem.push(collection[i]);
+                    tabMenu[tabInit] = tabItem;
+                    if (i % 4 === 3) {
+                        tabItem = [];
+                        tabInit++;
+                    }
+                }
                 that.setData({
-                    tabMenus: res.data.data
-                });
+                    tabMenus: tabMenu
+                });                
             },
             fail: function () {
                 wx.showLoading('请求数据失败');

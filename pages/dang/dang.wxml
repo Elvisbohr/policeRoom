@@ -11,17 +11,19 @@
     </view>
     <!-- tabmenu -->
     <swiper indicator-dots="true" indicator-active-color="#2979ff" class="tabMenu">
-        <swiper-item>
-            <block wx:for="{{tabMenus}}" wx:for-index="index" wx:for-item="item">
-                <view class="s-box" style="height:{{tabMenuItemH}}px" bindtap="shopSkip" data-d-type-id="{{item.id}}" data-name="{{item.name}}">
-                    <view class="pic">
-                        <image src="{{item.icon}}"></image>
-                    </view>
-                    <view class="text">{{item.name}}</view>
-                </view>
-            </block>
-        </swiper-item>
-    </swiper>
+    <block wx:for="{{tabMenus}}" wx:for-index="index" wx:for-item="item">
+      <swiper-item>
+        <block wx:for="{{item}}" wx:for-index="sIndex" wx:for-item="sItem">
+          <view class="s-box" style="height:{{tabMenuItemH}}px" bindtap="shopSkip"  data-d-type-id="{{sItem.id}}" data-name="{{sItem.name}}">
+            <view class="pic">
+              <image src="{{sItem.icon}}"></image>
+            </view>
+            <view class="text">{{sItem.name}}</view>
+          </view>
+        </block>
+      </swiper-item>
+    </block>
+  </swiper>
     <!-- 列表 -->
     <scroll-view scroll-y="true" bindscrolltolower="loadMore" class="djMenu">
         <view class="djList" wx:for="{{lists}}" bindtap="skipDetail" data-name="{{item.columnName}}" data-id="{{item.id}}">
