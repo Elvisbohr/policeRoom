@@ -8,7 +8,7 @@
             </view>
             <open-data type="userNickName"></open-data>
         </view>
-        <view class='binding'><text wx:if="{{isOk}}">已绑定</text><text wx:else>未绑定</text></view>
+        <view class='binding'><text wx:if="{{isOk}}">已认证</text><text wx:else>尚未认证</text></view>
     </view>
     <view class='nav'>
         <navigator url='' catchtap="onNo" class='navList flex vc hb'>

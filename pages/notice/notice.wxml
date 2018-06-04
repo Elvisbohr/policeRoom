@@ -1,46 +1,28 @@
 <!--pages/notice/notice.wxml-->
 <view class='pages'>
-    <view class='h40'></view>
-    <view class='nav'>
-        <navigator url='../tongzhi/tongzhi' class='navList flex vc hb'>
-            <view class='navListLeft flex vc'>
-                <icon class='iconfont icon-shenbao pR30 nav-jyxc'></icon>
-                <view>通知公告</view>
-            </view>
-            <view class='navListRight flex vc hb'>
-                <icon class='iconfont icon-xiangyoujiantou pL30'></icon>
-            </view>
-        </navigator>
-        <navigator url='../wxsqList/wxsqList' class='navList flex vc hb'>
-            <view class='navListLeft flex vc'>
-                <icon class='iconfont icon-fangzi01-copy pR30 nav-wxsq'></icon>
-                <view>温馨社区</view>
-            </view>
-            <view class='navListRight flex vc hb'>
-                <icon class='iconfont icon-xiangyoujiantou pL30'></icon>
-            </view>
-        </navigator>
-
+    <view class='head'>
+        <image class='notetit' mode='widthFix' src='../../images/notetit.png'></image>
+        <view class='headTit2'>崇德向善，做文明有礼好市民</view>
+        <image class='notetit' mode='widthFix' src='../../images/notetit2.png'></image>
     </view>
-    <view class='h40'></view>
-    <view class='nav'>
-        <navigator url='../volunteerIndex/volunteerIndex' class='navList flex vc hb'>
-            <view class='navListLeft flex vc'>
-                <icon class='iconfont icon-zhiyuanzhe pR30 nav-zyz'></icon>
-                <view>志愿者</view>
-            </view>
-            <view class='navListRight flex vc hb'>
-                <icon class='iconfont icon-xiangyoujiantou pL30'></icon>
-            </view>
+    <view class='nav flex vc hc'>
+        <navigator url='../tongzhi/tongzhi' class='navList flex vc hc column'>
+            <image class='navImg' src='../../images/notenav11.png'></image>
+            <view>通知公告</view>
         </navigator>
-        <navigator url='../suishou/suishou' class='navList flex vc hb'>
-            <view class='navListLeft flex vc'>
-                <icon class='iconfont icon-suishoupai pR30 nav-ssp'></icon>
-                <view>随手拍</view>
-            </view>
-            <view class='navListRight flex vc hb'>
-                <icon class='iconfont icon-xiangyoujiantou pL30'></icon>
-            </view>
+        <navigator url='../wxsqList/wxsqList' class='navList flex vc hc column ml30'>
+            <image class='navImg' src='../../images/notenav2.png'></image>
+            <view>温馨社区</view>
+        </navigator>
+    </view>    
+    <view class='nav flex vc hc'>
+        <navigator url='../volunteerIndex/volunteerIndex' class='navList flex vc hc column'>
+            <image class='navImg' src='../../images/notenav3.png'></image>
+            <view>志愿者</view>
+        </navigator>
+        <navigator url='../suishou/suishou' class='navList flex vc hc column ml30'>
+            <image class='navImg' src='../../images/notenav4.png'></image>
+            <view>随手拍</view>
         </navigator>
     </view>
 </view>

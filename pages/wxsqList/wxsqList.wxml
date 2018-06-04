@@ -20,4 +20,8 @@
     </navigator>
     <view class="jia" hidden='{{hidden}}'>暂无更多</view>
   </scroll-view>
+    <!-- 编辑按钮 -->
+  <navigator url='../writeArti/writeArti' class="edit-btn">
+    <image src="../../img/edit.png" mode="widthFix"></image>
+  </navigator>
 </view>

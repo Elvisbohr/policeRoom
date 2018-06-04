@@ -3,7 +3,7 @@
 <view class="pages">
   <view class="zblist">
     <view class="ltop">
-      <image class='maps' mode="widthFix" src="../../img/maps1.png"></image>
+      <image class='maps' mode="widthFix" src="../../img/maps.png"></image>
       <text>选择社区</text>
       <view>
         <text class="intro">欢迎登陆警民之家，现已开通以下社区</text>

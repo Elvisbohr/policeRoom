@@ -11,7 +11,8 @@ App({
         navObj: {},//导航数据
         // adminAddress: "https://jws.kulizhi.com/jws",
         // adminAddress: "https://jws.kulizhi.com/police-mini/api",
-        adminAddress: "http://192.168.1.115:8080/policere-mini/api",
+        adminAddress: "https://jws.kulizhi.com/policere-mini2/api",
+        // adminAddress: "http://192.168.1.115:8080/policere-mini/api",
         // adminAddress: "http://192.168.1.189:9999/police-mini/api",
         pageW: "",//屏幕宽
         pageH: "",//屏幕高        pixelRatio: "",

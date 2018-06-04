@@ -66,7 +66,7 @@
  <view class="reply-area" wx:if="{{title=='温馨社区'&&status==1}}">
   <form bindsubmit="replay">
     <view class="wrap">
-      <input name="comment" placeholder="{{placeHolder}}" placeholder-class="place-holder"/>
+      <input name="comment" value='{{forminfo}}' placeholder="{{placeHolder}}" placeholder-class="place-holder"/>
       <button form-type="submit" class="{{sendButClass}}">发送</button>
     </view>
   </form>

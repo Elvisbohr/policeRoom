@@ -15,7 +15,8 @@ Page({
     placeHolder: "发送",//
     sendContent: "",//回复内容
     sendButClass: "",//发送按钮class
-    comment:[]
+    comment:[],
+    forminfo:''
   },
   onLoad: function (options) {
     console.log(options)
@@ -203,6 +204,13 @@ Page({
       },
       method: 'GET',
       success: function (res) {
+          wx.showToast({
+              'title': '提交成功',
+              'icon': 'success'
+          });
+          that.setData({
+              forminfo:''
+          })
         wx.request({
           url: app.globalData.adminAddress + '/communityNewsComment/list',
           data: {

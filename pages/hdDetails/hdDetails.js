@@ -62,59 +62,71 @@ Page({
     },
     signUp: function (e) {
         let that = this;
-        wx.request({
-            url: app.globalData.adminAddress + '/volunteer/info',
-            data: {
-                openId: app.globalData.openId
-            },
-            method: "GET",
-            success: function (res) {
-                if (res.data.status == 200) {
-                    let data = {};
-                    data.activityId = res.data.data.id  //志愿者id
-                    data.volunteerId = that.data.hdId   //活动id
-                    data.formId = e.detail.formId   //formid
-                    console.log(data)
-                    wx.request({
-                        url: app.globalData.adminAddress + '/volunteer/activity/apply',
-                        data: data,
-                        method: "GET",
-                        // header: { 'content-type': 'application/x-www-form-urlencoded' },
-                        success: function (res) {
-                            if (res.data.status == 200) {
-                                console.log('志愿者报名', res.data)
-                                wx.showToast({
-                                    title: res.data.msg,
-                                    icon: 'success',
-                                    duration: 2000
-                                })
-                            } else {
-                                wx.showModal({
-                                    title: res.data.msg,
-                                    showCancel: false,
-                                    success: function (res) {
-                                        if (res.confirm) {
-                                            console.log('用户点击确定')
-                                        }
-                                    }
-                                })
-                            }
-                        }
-                    })
-                } else {
-                    wx.showModal({
-                        title: res.data.msg,
-                        showCancel: false,
-                        success: function (res) {
-                            if (res.confirm) {
-                                console.log('用户点击确定')
-                            }
-                        }
-                    })
-                }
+        setTimeout(function () {
+            wx.showToast({
+                'title': "报名成功",
+                'icon': "success",
+                'duration': 2500
+            });
+        }, 300);
+        setTimeout(function () {
+            wx.navigateBack({
+                delta: 1,
+            })
+        }, 2800);
+        // wx.request({
+        //     url: app.globalData.adminAddress + '/volunteer/info',
+        //     data: {
+        //         openId: app.globalData.openId
+        //     },
+        //     method: "GET",
+        //     success: function (res) {
+        //         if (res.data.status == 200) {
+        //             let data = {};
+        //             data.activityId = res.data.data.id  //志愿者id
+        //             data.volunteerId = that.data.hdId   //活动id
+        //             data.formId = e.detail.formId   //formid
+        //             console.log(data)
+        //             wx.request({
+        //                 url: app.globalData.adminAddress + '/volunteer/activity/apply',
+        //                 data: data,
+        //                 method: "GET",
+        //                 // header: { 'content-type': 'application/x-www-form-urlencoded' },
+        //                 success: function (res) {
+        //                     if (res.data.status == 200) {
+        //                         console.log('志愿者报名', res.data)
+                                // wx.showToast({
+                                //     title: '报名成功',
+                                //     icon: 'success',
+                                //     duration: 2000
+                                // })
+        //                     } else {
+        //                         wx.showModal({
+        //                             title: res.data.msg,
+        //                             showCancel: false,
+        //                             success: function (res) {
+        //                                 if (res.confirm) {
+        //                                     console.log('用户点击确定')
+        //                                 }
+        //                             }
+        //                         })
+        //                     }
+        //                 }
+        //             })
+        //         } else {
+        //             wx.showModal({
+        //                 title: res.data.msg,
+        //                 showCancel: false,
+        //                 success: function (res) {
+        //                     if (res.confirm) {
+        //                         console.log('用户点击确定')
+        //                     }
+        //                 }
+        //             })
+        //         }
 
-            }
-        })
+        //     }
+        // })
 
 
     },

@@ -62,7 +62,7 @@
 				{
 					"id": 4,
 					"name": "志愿者申请",
-					"pathName": "pages/volunteerIndex/volunteerIndex",
+					"pathName": "pages/notice/notice",
 					"query": ""
 				}
 			]

@@ -25,6 +25,7 @@ page, canvas, .leaves {
 
 .btn {
   margin-bottom: 64.21rpx;
+  font-size: 32rpx;
 }
 
 .canvas_box {

@@ -22,7 +22,7 @@
     <view hidden="{{isLoading}}" class="bottom-tips">--- 到底了 ---</view>
   </view>
 </view>
-<!-- <view class="place"></view> -->
-<!-- <view class="bottom">
+ <view class="place"></view> 
+ <view class="bottom">
   <view class="btn" bindtap='jump'>我要报料</view>
-</view> -->
+</view> 

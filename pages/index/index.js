@@ -88,6 +88,8 @@ Page({
                         navObj[i].skipUrl = "../notice/notice";
                     } else if (navObj[i].name == "在线办事") {
                         navObj[i].skipUrl = "../dZxbs/dZxbs";
+                    } else if (navObj[i].name == "个人中心") {
+                        navObj[i].skipUrl = "../mine/mine";
                     }
                 }
                 that.setData({

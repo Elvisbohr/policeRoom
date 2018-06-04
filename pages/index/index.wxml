@@ -1,5 +1,5 @@
 <!-- 登录按钮 -->
-<image src="../../img/login.png" mode="widthFix" class="login-icon" bindtap="skipLogin" data-url="../login/login"></image>
+<!-- <image src="../../img/login.png" mode="widthFix" class="login-icon" bindtap="skipLogin" data-url="../login/login"></image> -->
 <!-- 背景图片 -->
 <image src="../../img/{{folder}}/back.jpg" class="back"></image>
 

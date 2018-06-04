@@ -66,3 +66,13 @@
   text-align: center;
   padding:20rpx 0;
 }
+.edit-btn {
+  position: fixed;
+  top: 81%;
+  right: 0;
+  width: 12.5%;
+}
+
+.edit-btn image {
+  width: 100%;
+}
